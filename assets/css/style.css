@@ -283,3 +283,8 @@ footer .ur-inline{font-family:var(--ur);line-height:2.1;color:var(--gold2)}
 #toTop.show{opacity:1;pointer-events:auto}
 #toTop:hover{background:var(--ink);transform:translateY(-3px)}
 @media(min-width:1100px){#toTop{right:26px}}
+
+/* ---------- v3.1: share row inside the dark feature card ---------- */
+.feature .share-lbl{color:var(--gold2)}
+.feature .share-row .sbtn{color:var(--ivory);border-color:rgba(231,200,119,.55);background:rgba(255,255,255,.03)}
+.feature .share-row .sbtn:hover{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--ink);border-color:var(--gold)}

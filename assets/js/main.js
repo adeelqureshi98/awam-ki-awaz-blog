@@ -115,16 +115,18 @@
   // Share buttons: build real share URLs for this page
   document.querySelectorAll("[data-share]").forEach(function(el){
     var net = el.getAttribute("data-share");
-    var text = encodeURIComponent(pageTitle + " — by Muhammad Adeel");
-    var url = encodeURIComponent(pageUrl);
+    var rawUrl = el.getAttribute("data-share-url") || pageUrl;
+    var rawTitle = el.getAttribute("data-share-title") || (pageTitle + " — by Muhammad Adeel");
+    var text = encodeURIComponent(rawTitle);
+    var url = encodeURIComponent(rawUrl);
     if(net === "wa") el.setAttribute("href", "https://wa.me/?text=" + text + "%20" + url);
     if(net === "fb") el.setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + url);
     if(net === "x") el.setAttribute("href", "https://twitter.com/intent/tweet?text=" + text + "&url=" + url);
     if(net === "copy") el.addEventListener("click", function(){
       var done = function(){ el.textContent = "Link copied"; setTimeout(function(){ el.textContent = "Copy link"; }, 2200); };
-      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(pageUrl).then(done, done); }
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(rawUrl).then(done, done); }
       else {
-        var ta = document.createElement("textarea"); ta.value = pageUrl; document.body.appendChild(ta);
+        var ta = document.createElement("textarea"); ta.value = rawUrl; document.body.appendChild(ta);
         ta.select(); try { document.execCommand("copy"); } catch(e){} document.body.removeChild(ta); done();
       }
     });
