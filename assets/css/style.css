@@ -304,13 +304,57 @@ footer .ur-inline{font-family:var(--ur);line-height:2.1;color:var(--gold2)}
 @media(min-width:1100px){.wa-float{right:26px}}
 
 /* ---------- v3.3: TOOLS page · topics ribbon · homepage tools band ---------- */
-/* Topics ribbon ("topics ki patti") — slim bilingual strip under the hero */
-.topics-ribbon{background:linear-gradient(120deg,var(--ink2),var(--ink) 55%,var(--ink3));border-top:1px solid rgba(201,162,75,.5);border-bottom:1px solid rgba(201,162,75,.5);box-shadow:inset 0 1px 0 rgba(231,200,119,.35),inset 0 -14px 30px rgba(201,162,75,.06),0 14px 34px rgba(11,15,26,.22);padding:15px clamp(16px,4vw,54px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 6px;position:relative;z-index:4}
-.topics-ribbon a{color:var(--ivory);text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;padding:4px 2px;transition:.3s;white-space:nowrap}
-.topics-ribbon a:hover{color:var(--gold2);text-shadow:0 0 14px rgba(231,200,119,.55)}
-.topics-ribbon .tr-ur{font-family:var(--ur);font-size:16px;line-height:1.9;letter-spacing:0;text-transform:none;color:var(--gold2)}
-.topics-ribbon .tr-sep{color:var(--gold);font-size:8px;opacity:.85}
-@media(max-width:640px){.topics-ribbon{gap:6px 3px;padding:12px 10px}.topics-ribbon a{font-size:10.5px;letter-spacing:.1em}.topics-ribbon .tr-ur{font-size:14.5px}}
+/* ---------- v3.3: TOOLS page · topics ribbon · homepage tools band ---------- */
+/* Topics ribbon ("topics ki patti") — v3.6.1: luxury moving topic ticker.
+   Separate gold-rimmed ink-glass tabs in ONE row, travelling right-to-left in
+   a seamless loop (list duplicated once, track animates to -50%). Pauses on
+   hover / focus / touch-hold. Reduced motion: static swipeable row. */
+.topics-ribbon{background:linear-gradient(120deg,var(--ink2),var(--ink) 55%,var(--ink3));border-top:1px solid rgba(201,162,75,.5);border-bottom:1px solid rgba(201,162,75,.5);box-shadow:inset 0 1px 0 rgba(231,200,119,.35),inset 0 -14px 30px rgba(201,162,75,.06),0 14px 34px rgba(11,15,26,.22);display:flex;align-items:stretch;padding:0;position:relative;z-index:4;overflow:hidden}
+/* fixed lead label — a gold brand plate with ink text (not a link, never moves) */
+.topics-ribbon .tr-label{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:7px 18px 8px;background:linear-gradient(180deg,var(--gold2),var(--gold) 60%,var(--gold-deep));color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -8px 14px rgba(90,68,16,.35),6px 0 18px rgba(0,0,0,.35);position:relative;z-index:3}
+.topics-ribbon .tr-label-ur{font-family:var(--ur);font-size:17px;line-height:1.85;font-weight:700}
+.topics-ribbon .tr-label-en{font-size:9px;letter-spacing:.34em;text-transform:uppercase;font-weight:700;margin-left:.34em}
+/* viewport: only the track moves inside it; edge fades stay fixed */
+.topics-ribbon .tr-scroll{flex:1;min-width:0;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 34px,#000 calc(100% - 34px),transparent);mask-image:linear-gradient(90deg,transparent,#000 34px,#000 calc(100% - 34px),transparent)}
+.topics-ribbon .tr-track{display:flex;width:max-content;padding:11px 0;will-change:transform;animation:tr-ticker 45s linear infinite}
+@keyframes tr-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.topics-ribbon:hover .tr-track,.topics-ribbon:focus-within .tr-track,.topics-ribbon.tr-paused .tr-track{animation-play-state:paused}
+.topics-ribbon .tr-set{flex:none;display:flex;align-items:center}
+/* one topic = one separate ink-glass tab; the end margin on EVERY tab
+   (including each set's last) makes the two sets exactly equal in width,
+   which is what makes the -50% loop seamless */
+.topics-ribbon .tr-pill{flex:none;display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;margin-inline-end:12px;border:1px solid rgba(201,162,75,.6);border-radius:999px;padding:5px 16px 6px;background:linear-gradient(180deg,rgba(38,52,84,.92),rgba(11,15,26,.94));box-shadow:inset 0 1px 0 rgba(231,200,119,.35),inset 0 0 14px rgba(201,162,75,.09),0 5px 16px rgba(0,0,0,.38);transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
+.topics-ribbon .tr-pill:hover{border-color:var(--gold2);transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(231,200,119,.5),inset 0 0 16px rgba(201,162,75,.16),0 8px 20px rgba(0,0,0,.4),0 0 20px rgba(231,200,119,.35)}
+.topics-ribbon .tr-pill:active{transform:translateY(0) scale(.97)}
+.topics-ribbon .tr-pill:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+.topics-ribbon .tr-ur{font-family:var(--ur);font-size:15.5px;line-height:1.9;color:var(--gold2)}
+.topics-ribbon .tr-en{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ivory);opacity:.94}
+@media(max-width:640px){
+  .topics-ribbon .tr-label{padding:6px 13px 7px}
+  .topics-ribbon .tr-label-ur{font-size:15.5px}
+  .topics-ribbon .tr-track{padding:10px 0;animation-duration:42s}
+  .topics-ribbon .tr-pill{padding:4px 14px 5px;margin-inline-end:10px}
+  .topics-ribbon .tr-ur{font-size:14.5px}
+  .topics-ribbon .tr-en{font-size:10px;letter-spacing:.12em}
+}
+/* Reduced motion: no auto-move — the strip becomes a static swipeable row
+   and the duplicated set is hidden so nothing repeats */
+@media(prefers-reduced-motion:reduce){
+  .topics-ribbon .tr-track{animation:none!important;transform:none}
+  .topics-ribbon .tr-scroll{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .topics-ribbon .tr-scroll::-webkit-scrollbar{display:none}
+  .topics-ribbon .tr-set[aria-hidden="true"]{display:none}
+}
+/* v3.6.1 side fixes (pre-existing v3.5 mobile overflows on the tools page):
+   wide module tables scroll inside their own box on phones instead of pushing
+   the page sideways, and the countdown cells give their letter-spaced labels
+   room to fit a narrow screen */
+@media(max-width:640px){
+  .tm-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tm-panel .tm-count{gap:8px}
+  .tm-panel .tm-count .tm-cell{padding:14px 4px}
+  .tm-panel .tm-count .tm-u{font-size:10.5px;letter-spacing:.04em}
+}
 
 /* Tool cards grid (tools page + homepage band) */
 .tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
@@ -500,11 +544,11 @@ button.btn{cursor:pointer;border:0;font-family:var(--body)}
 .tm-table td.tm-num,.tm-table th.tm-num{text-align:right;font-variant-numeric:tabular-nums}
 
 /* countdown */
-.tm-count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+.tm-count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:6px}
 .tm-count .tm-cell{background:linear-gradient(160deg,var(--ink2,#111827),var(--ink,#0B0F1A));color:var(--ivory,#F7F2E9);border:1px solid rgba(231,200,119,.45);border-radius:16px;padding:18px 8px;text-align:center}
 .tm-count .tm-n{font-family:var(--serif,'Playfair Display',Georgia,serif);font-size:clamp(28px,4.5vw,44px);font-weight:800;color:var(--gold2,#E7C877);line-height:1.1;font-variant-numeric:tabular-nums}
 .tm-count .tm-u{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#CFC8B8;margin-top:4px}
-.tm-count .tm-u .tm-ur{font-family:var(--ur,'Noto Nastaliq Urdu',serif);letter-spacing:0;text-transform:none}
+.tm-count .tm-u .tm-ur{font-family:var(--ur,'Noto Nastaliq Urdu',serif);letter-spacing:0;text-transform:none;line-height:3;display:block}
 
 /* ---------- CV builder ---------- */
 .tm-cv-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}

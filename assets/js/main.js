@@ -205,4 +205,21 @@
     document.addEventListener("scroll", toggleTop, { passive: true }); toggleTop();
     btn.addEventListener("click", function(){ window.scrollTo({ top: 0, behavior: "smooth" }); });
   }
+
+  // Topics ticker: hold-to-pause on touch (hover/focus pause is pure CSS).
+  // The resume is delayed so a tap lands while the tab is standing still.
+  var ribbon = document.querySelector(".topics-ribbon");
+  if(ribbon){
+    var resumeTimer = null;
+    ribbon.addEventListener("pointerdown", function(){
+      if(resumeTimer){ clearTimeout(resumeTimer); resumeTimer = null; }
+      ribbon.classList.add("tr-paused");
+    });
+    var scheduleResume = function(){
+      if(resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function(){ ribbon.classList.remove("tr-paused"); }, 700);
+    };
+    ribbon.addEventListener("pointerup", scheduleResume);
+    ribbon.addEventListener("pointercancel", scheduleResume);
+  }
 })();
