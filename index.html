@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Awam ki Awaz — عوام کی آواز | Columns by Muhammad Adeel</title>
-<meta name="description" content="Awam ki Awaz (عوام کی آواز) — bilingual Urdu & English columns and analysis by Muhammad Adeel, columnist & analyst from Kot Addu, Pakistan. First column: Governor's Rule and the Fool's Paradise.">
+<title>Khari Baat — کھری بات | Columns by Muhammad Adeel</title>
+<meta name="description" content="Khari Baat (کھری بات) — bilingual Urdu & English columns and analysis by Muhammad Adeel, columnist & analyst from Kot Addu, Pakistan. First column: Governor's Rule and the Fool's Paradise.">
 <meta name="author" content="Muhammad Adeel">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Awam ki Awaz">
-<meta property="og:title" content="Awam ki Awaz — عوام کی آواز | Muhammad Adeel">
+<meta property="og:site_name" content="Khari Baat">
+<meta property="og:title" content="Khari Baat — کھری بات | Muhammad Adeel">
 <meta property="og:description" content="Bilingual columns and analysis by Muhammad Adeel — Columnist & Analyst, Kot Addu, Pakistan.">
 <meta property="og:image" content="assets/img/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Awam ki Awaz — Muhammad Adeel">
+<meta name="twitter:title" content="Khari Baat — کھری بات | Muhammad Adeel">
 <meta name="twitter:description" content="Bilingual Urdu & English columns by Muhammad Adeel, columnist & analyst.">
 <meta name="twitter:image" content="assets/img/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -21,11 +21,34 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Adeel","alternateName":"محمد عدیل","jobTitle":"Columnist & Analyst","address":{"@type":"PostalAddress","addressLocality":"Kot Addu","addressCountry":"PK"},"email":"amarquraishi@yahoo.com"}</script>
 </head>
 <body>
+<canvas id="dust" aria-hidden="true"></canvas>
+<aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+  <a class="side-brand" href="index.html">
+    <span class="brand-mark side-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="side-brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="side-nav">
+    <a href="index.html#latest"><span>01</span>Latest</a>
+    <a href="index.html#columns"><span>02</span>Columns</a>
+    <a href="index.html#about"><span>03</span>About</a>
+    <a href="index.html#podcast"><span>04</span>Podcast</a>
+    <a href="index.html#contact"><span>05</span>Contact</a>
+  </nav>
+  <div class="side-author">
+    <img src="assets/img/adeel-portrait.jpg" alt="Portrait of Muhammad Adeel" width="200" height="200">
+    <div class="sa-name">Muhammad Adeel</div>
+    <div class="sa-ur" lang="ur" dir="rtl">محمد عدیل</div>
+    <div class="sa-role">Columnist &amp; Analyst</div>
+  </div>
+  <a class="side-wa" href="https://wa.me/923318009893" target="_blank" rel="noopener">WhatsApp · 0331-8009893</a>
+  <div class="side-foot">Kot Addu · Pakistan</div>
+</aside>
+<div class="scrim" id="scrim"></div>
 
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Awam ki Awaz home">
-    <span class="brand-mark" lang="ur">ع</span>
-    <span class="brand-name">AWAM KI AWAZ<small lang="ur">عوام کی آواز</small></span>
+  <a class="brand" href="index.html" aria-label="Khari Baat home">
+    <span class="brand-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
   </a>
   <nav class="site-nav" aria-label="Main">
     <a href="index.html#latest">Latest</a>
@@ -33,6 +56,7 @@
     <a href="index.html#columns">Columns</a>
     <a href="index.html#contact">Contact</a>
   </nav>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 <main>
   <!-- HERO -->
@@ -41,10 +65,10 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow">Columns · Analysis · Podcast</p>
-        <div class="hero-urdu" lang="ur" dir="rtl">عوام کی آواز</div>
-        <h1 class="hero-en">Awam Ki Awaz</h1>
+        <div class="hero-urdu" lang="ur" dir="rtl">کھری بات</div>
+        <h1 class="hero-en">Khari Baat</h1>
         <div class="hero-rule" aria-hidden="true"></div>
-        <p class="hero-tag">The voice of the people — bilingual columns in Urdu and English on politics, society and the questions everyone is asking. <span class="ur-inline" lang="ur" dir="rtl">عوام کی بات، عوام کی زبان میں۔</span></p>
+        <p class="hero-tag">Straight, clear and blunt — bilingual columns in Urdu and English on politics, society and the questions everyone is asking. <span class="ur-inline" lang="ur" dir="rtl">سیدھی، صاف اور کھری بات۔</span></p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="posts/governor-rule-fools-paradise.html">Read the latest column</a>
           <a class="btn btn-ghost" href="#about">About the author</a>
@@ -95,7 +119,7 @@
           </div>
           <p>Muhammad Adeel writes on Pakistani politics and society in plain, direct language — the kind a reader finishes. His columns appear in Urdu and English side by side, because the questions he raises belong to everyone.</p>
           <p>Alongside his writing, he works as a Social Media Manager and Content Creator, and hosts <em>Podcast with Adeel</em>. He is based in Kot Addu, Pakistan, and works with readers and clients remotely.</p>
-          <p>On Awam ki Awaz he gives the topic his full research first, then writes it the way he would say it — no decoration, no borrowed outrage.</p>
+          <p>On Khari Baat he gives the topic his full research first, then writes it the way he would say it — no decoration, no borrowed outrage.</p>
           <div class="about-sign" lang="ur" dir="rtl">محمد عدیل</div>
         </div>
       </div>
@@ -108,7 +132,7 @@
       <p class="kicker">In Print</p>
       <h2 class="h2">The Newspaper Column</h2>
       <p class="lede">Every column is also composed as a classic newspaper page — masthead, columns and byline — the way it would sit on a printed broadsheet.</p>
-      <figure class="paper-frame"><img src="assets/img/newspaper-urdu.jpg" alt="Urdu newspaper page: Governor Raj aur Ahmaqon ki Jannat, Awam ki Awaz, by Muhammad Adeel" loading="lazy"></figure>
+      <figure class="paper-frame"><img src="assets/img/newspaper-urdu.jpg" alt="Urdu newspaper page of the column Governor Raj aur Ahmaqon ki Jannat by Muhammad Adeel, showing its original printed Awam ki Awaz masthead" loading="lazy"></figure>
       <p class="caption"><span class="ur-inline" lang="ur" dir="rtl">گورنر راج اور احمقوں کی جنت</span> — Urdu newspaper edition, 16 October 2026.</p>
     </div>
   </section>
@@ -130,7 +154,7 @@
   </section>
 
   <!-- PODCAST STRIP -->
-  <section class="section" style="padding-top:0">
+  <section class="section" id="podcast" style="padding-top:0">
     <div class="wrap reveal">
       <div class="strip">
         <h3>Podcast with Adeel</h3>
@@ -154,8 +178,8 @@
 </main>
 
 <footer>
-  <div class="ur-inline" lang="ur" dir="rtl">عوام کی آواز — محمد عدیل</div>
-  <div>Awam ki Awaz · Columns by Muhammad Adeel · Kot Addu, Pakistan</div>
+  <div class="ur-inline" lang="ur" dir="rtl">کھری بات — محمد عدیل</div>
+  <div>Khari Baat · Columns by Muhammad Adeel · Kot Addu, Pakistan</div>
   <div>© <span id="year">2026</span> Muhammad Adeel. All rights reserved.</div>
 </footer>
 <script src="assets/js/main.js"></script>

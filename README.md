@@ -1,4 +1,4 @@
-# Awam ki Awaz — blog website
+# Khari Baat — blog website
 
 Static site, no build step. Open `index.html` or serve the folder.
 
