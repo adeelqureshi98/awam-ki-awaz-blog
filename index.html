@@ -10,7 +10,9 @@
 <meta property="og:site_name" content="Khari Baat">
 <meta property="og:title" content="Khari Baat — کھری بات | Muhammad Adeel">
 <meta property="og:description" content="Bilingual columns and analysis by Muhammad Adeel — Columnist & Analyst, Kot Addu, Pakistan.">
-<meta property="og:image" content="assets/img/og-cover.jpg">
+<meta property="og:image" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/assets/img/og-cover.jpg">
+<link rel="canonical" href="https://adeelqureshi98.github.io/awam-ki-awaz-blog/">
+<meta property="og:url" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Khari Baat — کھری بات | Muhammad Adeel">
 <meta name="twitter:description" content="Bilingual Urdu & English columns by Muhammad Adeel, columnist & analyst.">
@@ -18,7 +20,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Adeel","alternateName":"محمد عدیل","jobTitle":"Columnist & Analyst","address":{"@type":"PostalAddress","addressLocality":"Kot Addu","addressCountry":"PK"},"email":"amarquraishi@yahoo.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Adeel","alternateName":"محمد عدیل","jobTitle":"Columnist & Analyst","url":"https://adeelqureshi98.github.io/awam-ki-awaz-blog/writer.html","address":{"@type":"PostalAddress","addressLocality":"Kot Addu","addressCountry":"PK"},"email":"amarquraishi@yahoo.com","sameAs":["https://adeelqureshi98.substack.com","https://adeelqureshi98.github.io/adeel-portfolio/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Khari Baat","alternateName":"کھری بات","url":"https://adeelqureshi98.github.io/awam-ki-awaz-blog/","inLanguage":["en","ur"],"author":{"@type":"Person","name":"Muhammad Adeel"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://adeelqureshi98.github.io/awam-ki-awaz-blog/blog.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 </head>
 <body>
 <canvas id="dust" aria-hidden="true"></canvas>
@@ -30,9 +33,10 @@
   <nav class="side-nav">
     <a href="index.html#latest"><span>01</span>Latest</a>
     <a href="index.html#columns"><span>02</span>Columns</a>
-    <a href="index.html#about"><span>03</span>About</a>
-    <a href="index.html#podcast"><span>04</span>Podcast</a>
-    <a href="index.html#contact"><span>05</span>Contact</a>
+    <a href="blog.html"><span>03</span>Blog</a>
+    <a href="writer.html"><span>04</span>Writer</a>
+    <a href="index.html#podcast"><span>05</span>Podcast</a>
+    <a href="index.html#contact"><span>06</span>Contact</a>
   </nav>
   <div class="side-author">
     <img src="assets/img/adeel-portrait.jpg" alt="Portrait of Muhammad Adeel" width="200" height="200">
@@ -52,8 +56,9 @@
   </a>
   <nav class="site-nav" aria-label="Main">
     <a href="index.html#latest">Latest</a>
-    <a href="index.html#about">About</a>
     <a href="index.html#columns">Columns</a>
+    <a href="blog.html">Blog</a>
+    <a href="writer.html">Writer</a>
     <a href="index.html#contact">Contact</a>
   </nav>
 <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -121,6 +126,7 @@
           <p>Alongside his writing, he works as a Social Media Manager and Content Creator, and hosts <em>Podcast with Adeel</em>. He is based in Kot Addu, Pakistan, and works with readers and clients remotely.</p>
           <p>On Khari Baat he gives the topic his full research first, then writes it the way he would say it — no decoration, no borrowed outrage.</p>
           <div class="about-sign" lang="ur" dir="rtl">محمد عدیل</div>
+          <p style="margin-top:18px"><a class="btn btn-gold" href="writer.html">About the writer</a></p>
         </div>
       </div>
     </div>
@@ -142,19 +148,66 @@
     <div class="wrap reveal">
       <p class="kicker">Archive</p>
       <h2 class="h2">All Columns</h2>
+      <div class="search-box" style="margin-top:34px">
+        <label for="colSearch">Search the columns</label>
+        <input type="search" id="colSearch" data-filter="post-row" placeholder="Type a word from a title…" autocomplete="off">
+        <p class="no-match" data-no-match hidden>No column matches that search yet.</p>
+      </div>
       <div class="post-list">
         <a class="post-row" href="posts/inflation-ten-percent-salary-same.html">
           <span class="d">23 Oct 2026</span>
-          <span class="t">Inflation Hits 10 Percent, Your Salary Does Not<small lang="ur" dir="rtl">مہنگائی دس فیصد، تنخواہ وہیں کی وہیں</small></span>
+          <span class="t"><span class="cat">Economy</span><br>Inflation Hits 10 Percent, Your Salary Does Not<small lang="ur" dir="rtl">مہنگائی دس فیصد، تنخواہ وہیں کی وہیں</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="post-row" href="posts/governor-rule-fools-paradise.html">
           <span class="d">16 Oct 2026</span>
-          <span class="t">Governor's Rule and the Fool's Paradise<small lang="ur" dir="rtl">گورنر راج اور احمقوں کی جنت</small></span>
+          <span class="t"><span class="cat">Politics</span><br>Governor's Rule and the Fool's Paradise<small lang="ur" dir="rtl">گورنر راج اور احمقوں کی جنت</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
       <p class="lede" style="margin-top:26px">New columns are added here as they are published — Urdu and English, always together.</p>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section" id="blog" style="padding-top:0">
+    <div class="wrap reveal">
+      <p class="kicker">From the Blog</p>
+      <h2 class="h2">Notes &amp; Guides</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">بلاگ</p>
+      <p class="lede">The columns argue a case. The blog explains, guides and goes behind the scenes.</p>
+      <div class="blog-grid">
+        <a class="blog-card" href="blog/small-business-social-media.html">
+          <span class="cat">Business</span>
+          <span class="bc-date">23 Oct 2026 · Urdu + English</span>
+          <span class="bc-t">Why Every Small Business Needs Social Media</span>
+          <span class="bc-ur" lang="ur" dir="rtl">ہر چھوٹے کاروبار کو سوشل میڈیا کیوں چاہیے</span>
+          <span class="bc-x">Walk through any bazaar in Kot Addu in the evening and watch the shopkeepers. Between two customers, almost every one of them picks up his phone…</span>
+          <span class="bc-more">Read the post →</span>
+        </a>
+        <a class="blog-card" href="blog/how-i-write-a-column.html">
+          <span class="cat">Writing</span>
+          <span class="bc-date">23 Oct 2026 · Urdu + English</span>
+          <span class="bc-t">How I Write a Column</span>
+          <span class="bc-ur" lang="ur" dir="rtl">میں کالم کیسے لکھتا ہوں</span>
+          <span class="bc-x">People sometimes ask me how a column gets written. They imagine a man sitting down in a mood, letting the words pour out…</span>
+          <span class="bc-more">Read the post →</span>
+        </a>
+        <a class="blog-card" href="blog/podcast-with-adeel.html">
+          <span class="cat">Podcast</span>
+          <span class="bc-date">23 Oct 2026 · Urdu + English</span>
+          <span class="bc-t">Podcast with Adeel: Why I Started Talking into a Mic</span>
+          <span class="bc-ur" lang="ur" dir="rtl">پوڈکاسٹ ود عدیل: میں نے مائیک پر بات کیوں شروع کی</span>
+          <span class="bc-x">For years, my words reached people in one way only, in print, on a screen, read silently. Then one day a reader said something that stayed with me…</span>
+          <span class="bc-more">Read the post →</span>
+        </a>
+      </div>
+      <p style="text-align:center;margin-top:34px"><a class="btn btn-gold" href="blog.html">Visit the blog</a></p>
+      <div class="subscribe-band">
+        <h3>Get Khari Baat in your inbox</h3>
+        <p>Every column and blog post is also published free on Substack. Subscribe once and each new piece arrives by email.</p>
+        <a class="btn btn-gold" href="https://adeelqureshi98.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
+      </div>
     </div>
   </section>
 
