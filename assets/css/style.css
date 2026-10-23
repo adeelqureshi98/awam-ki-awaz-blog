@@ -143,8 +143,12 @@ footer .ur-inline{font-family:var(--ur);line-height:2.1;color:var(--gold2)}
 .post-hero .date{letter-spacing:.32em;font-size:12px;text-transform:uppercase;color:var(--gold2)}
 .post-hero h1{font-family:var(--serif);font-size:clamp(30px,4.6vw,52px);line-height:1.22;max-width:20em;margin:20px auto 8px}
 .post-hero .ur-h1{font-family:var(--ur);font-size:clamp(32px,5vw,54px);line-height:2;color:var(--gold2);max-width:22em;margin:0 auto}
-.byline{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:30px;color:#CFC8B8;font-size:15px}
-.byline img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.byline{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:30px;color:#CFC8B8;font-size:15px;text-align:left}
+.byline img{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;object-position:top center;border:2px solid var(--gold)}
+.byline-text{display:flex;flex-direction:column;line-height:1.45}
+.byline-name{white-space:nowrap}
+.byline-role{color:#9d968a;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-top:2px}
+@media(max-width:400px){.byline{font-size:13.5px;gap:11px}.byline img{width:50px;height:50px}}
 .lang-toggle{display:flex;gap:8px;justify-content:center;margin:44px auto 0;flex-wrap:wrap}
 .lang-toggle button{cursor:pointer;border:1px solid var(--gold);background:transparent;color:var(--ink);padding:11px 26px;border-radius:999px;font-size:15px;letter-spacing:.06em;transition:.3s;min-height:44px;font-family:var(--body)}
 .lang-toggle button.ur-btn{font-family:var(--ur);padding-top:4px}
@@ -288,3 +292,13 @@ footer .ur-inline{font-family:var(--ur);line-height:2.1;color:var(--gold2)}
 .feature .share-lbl{color:var(--gold2)}
 .feature .share-row .sbtn{color:var(--ivory);border-color:rgba(231,200,119,.55);background:rgba(255,255,255,.03)}
 .feature .share-row .sbtn:hover{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--ink);border-color:var(--gold)}
+
+/* ---------- v3.2: Home tab active state · floating WhatsApp button ---------- */
+.side-nav a[aria-current="page"]{opacity:1;color:var(--gold2)}
+.side-nav a[aria-current="page"] span{color:var(--gold2)}
+.site-nav a[aria-current="page"]{opacity:1;color:var(--gold2);border-bottom:1px solid var(--gold);padding-bottom:3px}
+.wa-float{position:fixed;right:20px;bottom:22px;z-index:56;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(11,15,26,.32),0 2px 8px rgba(11,15,26,.22);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(11,15,26,.38),0 4px 10px rgba(11,15,26,.24)}
+.wa-float svg{width:29px;height:29px;fill:#fff;display:block}
+#toTop{bottom:92px}
+@media(min-width:1100px){.wa-float{right:26px}}
