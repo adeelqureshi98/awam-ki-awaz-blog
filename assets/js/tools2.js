@@ -21,7 +21,7 @@
     var debts = parseFloat($("zk-debts").value) || 0;
     var goldVal = gw * gp, silverVal = sw * sp;
     var net = cash + goldVal + silverVal + other - debts;
-    var nisab = 52.5 * sp; /* silver nisab: 612.36 g = 52.5 tola */
+    var nisab = ($("zk-basis") && $("zk-basis").value === "gold") ? 7.5 * gp : 52.5 * sp; /* silver nisab 612.36 g = 52.5 tola (default) · gold nisab 87.48 g = 7.5 tola */
     var due = net >= nisab && net > 0 ? net * 0.025 : 0;
     $("zk-nisab").textContent = "Rs " + fmt(nisab);
     $("zk-net").textContent = "Rs " + fmt(Math.max(net, 0));
@@ -30,13 +30,13 @@
       ? "آپ کا مال نصاب سے زیادہ ہے — زکاٰۃ واجب ہے۔ · Your wealth is above nisab — zakat is due."
       : "آپ کا مال نصاب سے کم ہے — زکاٰۃ واجب نہیں۔ · Your wealth is below nisab — no zakat due.";
   }
-  ["zk-cash", "zk-gold-w", "zk-gold-p", "zk-gold-u", "zk-silver-w", "zk-silver-p", "zk-silver-u", "zk-other", "zk-debts"].forEach(function (id) {
+  ["zk-cash", "zk-gold-w", "zk-gold-p", "zk-gold-u", "zk-silver-w", "zk-silver-p", "zk-silver-u", "zk-other", "zk-debts", "zk-basis"].forEach(function (id) {
     on(id, "input", zkCalc); on(id, "change", zkCalc);
   });
   if ($("zk-cash")) zkCalc();
 
   /* ============ TOOL 6 — CURRENCY ============ */
-  var RATES = { USD: 1, PKR: 280, SAR: 3.75, AED: 3.6725, GBP: 0.79, EUR: 0.92 }; /* per 1 USD, fallback */
+  var RATES = { USD: 1, PKR: 277.0, SAR: 3.74831, AED: 3.67347, GBP: 0.74663, EUR: 0.89160 }; /* per 1 USD — FACTS fallbacks 23 Oct 2026 (USD 277.0, SAR 73.9, AED 75.4, GBP 371.0, EUR 310.7) */
   var liveRates = false;
   function curConvert() {
     var amt = parseFloat($("cur-amt").value) || 0;
@@ -73,21 +73,35 @@
   if ($("cur-amt")) curInit();
 
   /* ============ TOOL 7 — ELECTRICITY BILL ============ */
-  /* NEPRA uniform domestic tariff, effective 1 Jul 2025, maintained for CY2026
-     (verified Oct 2026: Express Tribune / The News / LESCO tariff guides).
-     Protected: 1-50 Rs 3.95, 51-100 Rs 7.74, 101-200 Rs 13.01 (protected = <=200 units).
-     Non-protected: 22.44 / 28.91 / 33.10 / 37.99 / 40.22 / 41.62 / 42.76 / 47.69. */
-  var NP_SLABS = [[100, 22.44], [200, 28.91], [300, 33.10], [400, 37.99], [500, 40.22], [600, 41.62], [700, 42.76], [Infinity, 47.69]];
-  var P_SLABS = [[50, 3.95], [100, 7.74], [200, 13.01]];
+  /* NEPRA notified uniform consumer tariff, in force from 1 Jan 2026 (FACTS-verified,
+     4 news sources): Lifeline 1-50 Rs 3.95, 51-100 Rs 7.74 · Protected 1-100 Rs 10.54,
+     101-200 Rs 13.01 · Non-protected 22.44 / 28.91 / 33.10 / 37.99 / 40.22 / 41.62 /
+     42.76 / 47.69. Model: slab subtotal + FPA (editable, default Rs 3/unit) + customer
+     charges -> GST 18% -> + TV fee Rs 35. All slab rates editable in the UI. */
+  var NP_CAPS = [100, 200, 300, 400, 500, 600, 700, Infinity];
+  var NP_DEF = [22.44, 28.91, 33.10, 37.99, 40.22, 41.62, 42.76, 47.69];
+  var L_SLABS = [[50, 3.95], [100, 7.74]];
+  function ebNp() {
+    var out = [];
+    for (var i = 0; i < 8; i++) { var v = parseFloat($("eb-r" + (i + 1)).value); out.push([NP_CAPS[i], isNaN(v) ? NP_DEF[i] : v]); }
+    return out;
+  }
+  function ebPick(cat, units) {
+    if (cat === "lifeline" && units <= 100) return { slabs: L_SLABS, note: "" };
+    if (cat === "protected" || cat === "lifeline") {
+      if (units <= 200) {
+        var p1 = parseFloat($("eb-p1").value); if (isNaN(p1)) p1 = 10.54;
+        var p2 = parseFloat($("eb-p2").value); if (isNaN(p2)) p2 = 13.01;
+        return { slabs: [[100, p1], [200, p2]], note: cat === "lifeline" ? "نوٹ: 100 سے زیادہ یونٹ پر لائف لائن ختم ہو جاتی ہے — پروٹیکٹڈ نرخ لگائے گئے ہیں۔ · Note: above 100 units lifeline ends, so protected rates are applied." : "" };
+      }
+      return { slabs: ebNp(), note: "نوٹ: 200 سے زیادہ یونٹ پر پروٹیکٹڈ درجہ ختم ہو جاتا ہے — نان پروٹیکٹڈ نرخ لگائے گئے ہیں۔ · Note: above 200 units the protected status is lost, so non-protected rates are applied." };
+    }
+    return { slabs: ebNp(), note: "" };
+  }
   function ebCalc() {
     var units = Math.max(0, Math.floor(parseFloat($("eb-units").value) || 0));
-    var cat = $("eb-cat").value;
-    var note = "";
-    var slabs = NP_SLABS;
-    if (cat === "protected") {
-      if (units <= 200) slabs = P_SLABS;
-      else note = "نوٹ: 200 سے زیادہ یونٹ پر پروٹیکٹڈ درجہ ختم ہو جاتا ہے — نان پروٹیکٹڈ نرخ لگائے گئے ہیں۔ · Note: above 200 units the protected status is lost, so non-protected rates are applied.";
-    }
+    var picked = ebPick($("eb-cat").value, units);
+    var slabs = picked.slabs;
     var rows = "", energy = 0, prev = 0;
     for (var i = 0; i < slabs.length; i++) {
       var cap = slabs[i][0], rate = slabs[i][1];
@@ -97,18 +111,22 @@
       rows += "<tr><td>" + (prev + 1) + " – " + (cap === Infinity ? "∞" : cap) + "</td><td class='num'>" + inSlab + "</td><td class='num'>" + rate.toFixed(2) + "</td><td class='num'>" + fmt(amt, 2) + "</td></tr>";
       prev = cap;
     }
-    var fpa = units * 3.00; /* approximate fuel price adjustment */
-    var gst = (energy + fpa) * 0.18;
+    var fpaRate = parseFloat($("eb-fpa-rate").value) || 0;
+    var fpa = units * fpaRate;
+    var cust = parseFloat($("eb-cust").value) || 0;
+    var gst = (energy + fpa + cust) * 0.18;
     var tv = 35;
-    var total = energy + fpa + gst + tv;
+    var total = energy + fpa + cust + gst + tv;
     $("eb-rows").innerHTML = rows || "<tr><td colspan='4'>—</td></tr>";
     $("eb-energy").textContent = "Rs " + fmt(energy, 2);
     $("eb-fpa").textContent = "Rs " + fmt(fpa, 2);
+    $("eb-cust-val").textContent = "Rs " + fmt(cust, 2);
     $("eb-gst").textContent = "Rs " + fmt(gst, 2);
     $("eb-total").textContent = "Rs " + fmt(total);
-    $("eb-note").textContent = note;
+    $("eb-note").textContent = picked.note;
   }
-  on("eb-units", "input", ebCalc); on("eb-cat", "change", ebCalc);
+  ["eb-units", "eb-fpa-rate", "eb-p1", "eb-p2", "eb-r1", "eb-r2", "eb-r3", "eb-r4", "eb-r5", "eb-r6", "eb-r7", "eb-r8"].forEach(function (id) { on(id, "input", ebCalc); });
+  on("eb-cat", "change", ebCalc); on("eb-cust", "change", ebCalc); on("eb-cat", "input", ebCalc);
   if ($("eb-units")) ebCalc();
 
   /* ============ TOOL 8 — PASSPORT PHOTO ============ */
@@ -160,16 +178,16 @@
 
   /* ============ TOOL 9 — PRAYER TIMES + QIBLA ============ */
   var CITIES = {
-    "kot-addu": { city: "Kot Addu", country: "Pakistan", method: 1, lat: 30.4682, lng: 70.9644 },
+    "kot-addu": { city: "Kot Addu", country: "Pakistan", method: 1, lat: 30.4691, lng: 70.9670 },
     "multan": { city: "Multan", country: "Pakistan", method: 1, lat: 30.1575, lng: 71.5249 },
     "lahore": { city: "Lahore", country: "Pakistan", method: 1, lat: 31.5204, lng: 74.3587 },
     "karachi": { city: "Karachi", country: "Pakistan", method: 1, lat: 24.8608, lng: 67.0011 },
     "islamabad": { city: "Islamabad", country: "Pakistan", method: 1, lat: 33.7294, lng: 73.0931 },
-    "peshawar": { city: "Peshawar", country: "Pakistan", method: 1, lat: 34.0151, lng: 71.5249 },
+    "peshawar": { city: "Peshawar", country: "Pakistan", method: 1, lat: 34.0151, lng: 71.5785 },
     "quetta": { city: "Quetta", country: "Pakistan", method: 1, lat: 30.1798, lng: 66.9750 },
-    "dubai": { city: "Dubai", country: "United Arab Emirates", method: 4, lat: 25.2048, lng: 55.2708 },
-    "makkah": { city: "Makkah", country: "Saudi Arabia", method: 4, lat: 21.3891, lng: 39.8579 },
-    "madinah": { city: "Madinah", country: "Saudi Arabia", method: 4, lat: 24.5247, lng: 39.5692 },
+    "dubai": { city: "Dubai", country: "United Arab Emirates", method: 16, lat: 25.2048, lng: 55.2708 },
+    "makkah": { city: "Makkah", country: "Saudi Arabia", method: 4, lat: 21.4225, lng: 39.8262 },
+    "madinah": { city: "Madinah", country: "Saudi Arabia", method: 4, lat: 24.4672, lng: 39.6111 },
     "riyadh": { city: "Riyadh", country: "Saudi Arabia", method: 4, lat: 24.7136, lng: 46.6753 }
   };
   function qiblaBearing(lat, lng) {
@@ -187,7 +205,7 @@
     var arrow = $("qb-arrow");
     if (arrow) arrow.setAttribute("transform", "rotate(" + bearing.toFixed(1) + " 75 75)");
     $("pr-err").style.display = "none";
-    var url = "https://api.aladhan.com/v1/timingsByCity?city=" + encodeURIComponent(c.city) + "&country=" + encodeURIComponent(c.country) + "&method=" + c.method;
+    var url = "https://api.aladhan.com/v1/timingsByCity?city=" + encodeURIComponent(c.city) + "&country=" + encodeURIComponent(c.country) + "&method=" + c.method + "&school=" + (c.country === "Pakistan" ? 1 : 0); /* school=1: Hanafi Asr for Pakistan */
     fetch(url)
       .then(function (r) { return r.json(); })
       .then(function (d) {
