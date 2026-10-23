@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — اوزار | Khari Baat by Muhammad Adeel</title>
+<meta name="description" content="Free tools for Khari Baat readers: a Nastaliq poetry card generator, an age and Hijri date converter, a YouTube income calculator, and a BMI and health calculator. In Urdu and English. قارئین کے لیے مفت اوزار۔">
+<meta name="author" content="Muhammad Adeel">
+<link rel="canonical" href="https://adeelqureshi98.github.io/awam-ki-awaz-blog/tools.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Khari Baat">
+<meta property="og:title" content="Tools — اوزار | Khari Baat by Muhammad Adeel">
+<meta property="og:description" content="Free bilingual tools for readers: poetry card generator, age & Hijri converter, YouTube income calculator, BMI calculator.">
+<meta property="og:url" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/tools.html">
+<meta property="og:image" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tools — اوزار | Khari Baat by Muhammad Adeel">
+<meta name="twitter:description" content="Free bilingual tools for readers: poetry card generator, age & Hijri converter, YouTube income calculator, BMI calculator.">
+<meta name="twitter:image" content="assets/img/og-cover.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tools — اوزار | Khari Baat","url":"https://adeelqureshi98.github.io/awam-ki-awaz-blog/tools.html","inLanguage":["en","ur"],"author":{"@type":"Person","name":"Muhammad Adeel","url":"https://adeelqureshi98.github.io/awam-ki-awaz-blog/writer.html"},"hasPart":[{"@type":"WebApplication","name":"Nastaliq Poetry Card Generator","applicationCategory":"DesignApplication"},{"@type":"WebApplication","name":"Age & Hijri Converter","applicationCategory":"UtilitiesApplication"},{"@type":"WebApplication","name":"YouTube Income Calculator","applicationCategory":"FinanceApplication"},{"@type":"WebApplication","name":"BMI & Health Calculator","applicationCategory":"HealthApplication"}]}</script>
+</head>
+<body>
+<canvas id="dust" aria-hidden="true"></canvas>
+<aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+  <a class="side-brand" href="index.html">
+    <span class="brand-mark side-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="side-brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="side-nav">
+    <a href="index.html"><span>01</span>Home</a>
+    <a href="index.html#latest"><span>02</span>Latest</a>
+    <a href="index.html#columns"><span>03</span>Columns</a>
+    <a href="blog.html"><span>04</span>Blog</a>
+    <a href="tools.html" aria-current="page"><span>05</span>Tools</a>
+    <a href="writer.html"><span>06</span>Writer</a>
+    <a href="index.html#podcast"><span>07</span>Podcast</a>
+    <a href="index.html#contact"><span>08</span>Contact</a>
+  </nav>
+  <div class="side-author">
+    <img src="assets/img/adeel-portrait.jpg" alt="Portrait of Muhammad Adeel" width="200" height="200">
+    <div class="sa-name">Muhammad Adeel</div>
+    <div class="sa-ur" lang="ur" dir="rtl">محمد عدیل</div>
+    <div class="sa-role">Columnist &amp; Analyst</div>
+  </div>
+  <a class="side-wa" href="https://wa.me/923318009893" target="_blank" rel="noopener">WhatsApp · 0331-8009893</a>
+  <div class="side-foot">Kot Addu · Pakistan</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Khari Baat home">
+    <span class="brand-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="index.html#latest">Latest</a>
+    <a href="index.html#columns">Columns</a>
+    <a href="blog.html">Blog</a>
+    <a href="writer.html">Writer</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main>
+  <section class="post-hero">
+    <div class="aurora" aria-hidden="true"></div>
+    <div style="position:relative;z-index:2">
+      <p class="date">Tools · Free for Readers</p>
+      <div class="ur-h1" lang="ur" dir="rtl">اوزار</div>
+      <h1>Tools</h1>
+      <p class="page-sub">Free tools for Khari Baat readers — a poetry card maker, an age and Hijri converter, a YouTube income calculator and a health calculator. <span lang="ur" dir="rtl">قارئین کے لیے مفت اوزار — شاعری کارڈ، عمر و ہجری حساب، یوٹیوب آمدنی اور صحت کیلکولیٹر۔</span></p>
+    </div>
+  </section>
+
+  <!-- TOPICS RIBBON -->
+  <nav class="topics-ribbon" aria-label="Topics">
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">سیاست</span> Politics</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">معیشت</span> Economy</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">بین الاقوامی امور</span> International</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">کھانا</span> Food</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">صحت</span> Health</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">کھیل و کرکٹ</span> Sports &amp; Cricket</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">سائنس و ٹیکنالوجی</span> Science &amp; Tech</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">آن لائن کمائی</span> Online Earning</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">تعلیم</span> Education</a><span class="tr-sep" aria-hidden="true">◆</span>
+    <a href="blog.html"><span class="tr-ur" lang="ur" dir="rtl">سماج</span> Society</a>
+  </nav>
+
+  <!-- TOOL CARDS -->
+  <section class="section" style="padding-top:56px;padding-bottom:20px">
+    <div class="wrap reveal">
+      <p class="kicker">The Toolkit</p>
+      <h2 class="h2">Four Free Tools</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">چار مفت اوزار</p>
+      <p class="lede">Everything runs right here in your browser — nothing to install, nothing uploaded anywhere. <span lang="ur" dir="rtl">ہر اوزار آپ کے براؤزر ہی میں چلتا ہے۔</span></p>
+      <div class="tools-grid">
+        <a class="tool-card" href="#tool-card">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10h10M7 13.5h6"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">Poetry Card Generator</span>
+          <span class="tool-ur" lang="ur" dir="rtl">شاعری کارڈ جنریٹر</span>
+          <span class="tool-x">Turn a favourite sher or quote into a royal gold-framed Nastaliq card for WhatsApp status. <span class="x-ur" lang="ur" dir="rtl">اپنا پسندیدہ شعر سنہرے فریم والے کارڈ میں ڈھالیے۔</span></span>
+          <span class="tool-tags"><span class="chip">Nastaliq</span><span class="chip">HD Download</span><span class="chip">1:1 · 9:16</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-age">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M16.6 14.2a2.9 2.9 0 1 0 1.7 5.3 3.4 3.4 0 0 1-1.7-5.3z"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">Age &amp; Hijri Converter</span>
+          <span class="tool-ur" lang="ur" dir="rtl">عمر اور ہجری کنورٹر</span>
+          <span class="tool-x">Your exact age in years, months, days and hours — plus your Hijri date of birth. <span class="x-ur" lang="ur" dir="rtl">درست عمر اور ہجری تاریخ پیدائش جانیے۔</span></span>
+          <span class="tool-tags"><span class="chip">Hijri · Umm al-Qura</span><span class="chip">Birthday Countdown</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-youtube">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10.4 9.7v4.6l4.2-2.3z" fill="currentColor" stroke="none"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">YouTube Income Calculator</span>
+          <span class="tool-ur" lang="ur" dir="rtl">یوٹیوب آمدنی کیلکولیٹر</span>
+          <span class="tool-x">Estimate Shorts and long-video earnings by views, niche and audience country. <span class="x-ur" lang="ur" dir="rtl">ویوز کے حساب سے متوقع آمدنی کا تخمینہ لگائیے۔</span></span>
+          <span class="tool-tags"><span class="chip">RPM</span><span class="chip">USD · PKR · AED</span><span class="chip">Shorts</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-bmi">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.2s-6.8-4.4-8.6-8.8C2.1 8 4.1 4.9 7.5 4.9c1.8 0 3.5 1 4.5 2.5 1-1.5 2.7-2.5 4.5-2.5 3.4 0 5.4 3.1 4.1 6.5-1.8 4.4-8.6 8.8-8.6 8.8z"/><path d="M6 12h2.6l1.2-2.4 2.1 4.2 1.3-1.8h2.9"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">BMI &amp; Health Calculator</span>
+          <span class="tool-ur" lang="ur" dir="rtl">صحت اور بی ایم آئی کیلکولیٹر</span>
+          <span class="tool-x">BMI, ideal weight, daily water and calories from your height and weight. <span class="x-ur" lang="ur" dir="rtl">قد و وزن سے بی ایم آئی، مثالی وزن، پانی اور کیلوریز جانیے۔</span></span>
+          <span class="tool-tags"><span class="chip">BMI · WHO</span><span class="chip">Calories</span><span class="chip">Water</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL A: CARD GENERATOR -->
+  <section class="section tool-sec alt" id="tool-card" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 01</p>
+      <h2 class="h2">Poetry Card Generator</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">نستعلیق شاعری و کارڈ جنریٹر</p>
+      <div class="tool-panel">
+        <div class="tool-cols">
+          <div>
+            <div class="f-group">
+              <label class="f-label" for="cardText"><span class="fl-ur" lang="ur" dir="rtl">شعر یا قول لکھیے</span><span class="fl-en">Your poetry / quote — one line per misra</span></label>
+              <textarea class="f-input" id="cardText">خودی کو کر بلند اتنا کہ ہر تقدیر سے پہلے
+خدا بندے سے خود پوچھے بتا تیری رضا کیا ہے</textarea>
+              <div class="quick-fill" aria-label="Quick fill samples">
+                <button type="button" data-fill="خودی کو کر بلند اتنا کہ ہر تقدیر سے پہلے&#10;خدا بندے سے خود پوچھے بتا تیری رضا کیا ہے">علامہ اقبال</button>
+                <button type="button" data-fill="ہزاروں خواہشیں ایسی کہ ہر خواہش پہ دم نکلے&#10;بہت نکلے میرے ارمان لیکن پھر بھی کم نکلے">مرزا غالب</button>
+                <button type="button" data-fill="ستاروں سے آگے جہاں اور بھی ہیں&#10;ابھی عشق کے امتحاں اور بھی ہیں">اقبال — ستاروں سے آگے</button>
+              </div>
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="cardTag"><span class="fl-ur" lang="ur" dir="rtl">کارڈ کا عنوان (اختیاری)</span><span class="fl-en">Card title / tag — optional</span></label>
+              <input class="f-input" type="text" id="cardTag" dir="rtl" placeholder="مثلاً: شعرِ روز" style="font-family:var(--ur);text-align:right">
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="cardCreator"><span class="fl-ur" lang="ur" dir="rtl">آپ کا نام (اختیاری)</span><span class="fl-en">Your name on the card — optional</span></label>
+              <input class="f-input" type="text" id="cardCreator" dir="rtl" placeholder="مثلاً: محمد عدیل" style="font-family:var(--ur);text-align:right">
+            </div>
+            <div class="f-row">
+              <div class="f-group">
+                <label class="f-label" for="cardTheme"><span class="fl-ur" lang="ur" dir="rtl">تھیم منتخب کیجیے</span><span class="fl-en">Theme</span></label>
+                <select class="f-select" id="cardTheme">
+                  <option value="royal">Royal Gold · شاہی سنہری</option>
+                  <option value="emerald">Emerald Court · زمردی</option>
+                  <option value="ivory">Ivory Paper · ہاتھی دانت</option>
+                  <option value="midnight">Midnight Ink · نصف شب</option>
+                </select>
+              </div>
+              <div class="f-group">
+                <span class="f-label"><span class="fl-ur" lang="ur" dir="rtl">سائز</span><span class="fl-en">Size</span></span>
+                <div class="seg" role="group" aria-label="Card size">
+                  <button type="button" data-card-size="1:1" class="active">1:1 · Post</button>
+                  <button type="button" data-card-size="9:16">9:16 · Status</button>
+                </div>
+              </div>
+            </div>
+            <div class="tool-actions">
+              <button type="button" class="btn btn-gold" id="cardDownload">Download PNG · ڈاؤن لوڈ</button>
+            </div>
+            <p class="tool-note">The card is made in your own browser at full HD (1080px) — ready for WhatsApp status, Facebook and Instagram. <span class="n-ur" lang="ur" dir="rtl">کارڈ آپ کے براؤزر ہی میں بنتا ہے، کہیں اپلوڈ نہیں ہوتا۔</span></p>
+          </div>
+          <div class="card-preview" id="cardPreviewWrap">
+            <canvas id="cardCanvas" width="1080" height="1080" aria-label="Poetry card preview"></canvas>
+            <p class="card-cap">Live preview · براہِ راست جھلک</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL B: AGE + HIJRI -->
+  <section class="section tool-sec" id="tool-age" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 02</p>
+      <h2 class="h2">Age &amp; Hijri Converter</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">درست عمر اور ہجری کنورٹر</p>
+      <div class="tool-panel">
+        <div class="f-group" style="max-width:360px">
+          <label class="f-label" for="dob"><span class="fl-ur" lang="ur" dir="rtl">تاریخ پیدائش منتخب کیجیے</span><span class="fl-en">Date of birth</span></label>
+          <input class="f-input" type="date" id="dob">
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="ageBtn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="ageErr" hidden>Please pick a valid date of birth. · <span lang="ur" dir="rtl">براہ کرم درست تاریخ پیدائش منتخب کیجیے</span></p>
+        <div class="tool-result" id="ageResult" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">آپ کی درست عمر</span> · Your exact age</div><div class="r-val" id="ageYMD"></div><div class="r-sub" id="ageYMDSub"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">کل دن</span> · Total days</div><div class="r-val" id="ageDays"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">کل گھنٹے</span> · Total hours</div><div class="r-val" id="ageHours"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">پیدائش کا دن</span> · Day of birth</div><div class="r-val" id="ageWeekday"></div><div class="r-sub" id="ageWeekdaySub"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">اگلی سالگرہ میں</span> · Next birthday in</div><div class="r-val" id="ageCountdown"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ہجری تاریخ پیدائش</span> · Hijri date of birth</div><div class="r-val" style="font-size:20px" id="ageHijriDob"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">آج کی ہجری تاریخ</span> · Today in Hijri</div><div class="r-val" style="font-size:20px" id="ageHijriToday"></div></div>
+          </div>
+          <p class="tool-note">Hijri dates follow the Umm al-Qura (Saudi) calendar; the moon-sighting date can differ by a day. <span class="n-ur" lang="ur" dir="rtl">ہجری تاریخیں ام القریٰ کیلنڈر کے مطابق ہیں۔</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL C: YOUTUBE INCOME -->
+  <section class="section tool-sec alt" id="tool-youtube" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 03</p>
+      <h2 class="h2">YouTube Income Calculator</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">یوٹیوب آمدنی کیلکولیٹر</p>
+      <div class="tool-panel">
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="ytViews"><span class="fl-ur" lang="ur" dir="rtl">روزانہ کے ویوز</span><span class="fl-en">Daily views</span></label>
+            <input class="f-input" type="number" id="ytViews" min="1" value="25000" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="ytFormat"><span class="fl-ur" lang="ur" dir="rtl">ویڈیو کی قسم</span><span class="fl-en">Format</span></label>
+            <select class="f-select" id="ytFormat">
+              <option value="shorts">Shorts</option>
+              <option value="long">Long video · لمبی ویڈیو</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="ytNiche"><span class="fl-ur" lang="ur" dir="rtl">چینل کا موضوع</span><span class="fl-en">Channel niche</span></label>
+            <select class="f-select" id="ytNiche">
+              <option value="edu">Education · تعلیم</option>
+              <option value="tech">Tech · ٹیکنالوجی</option>
+              <option value="biz">Business / Finance · کاروبار</option>
+              <option value="ent">Entertainment · تفریح</option>
+              <option value="vlog" selected>Vlogging · ولاگ</option>
+              <option value="other">Other · دیگر</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="ytRegion"><span class="fl-ur" lang="ur" dir="rtl">ناظرین کا علاقہ</span><span class="fl-en">Audience region</span></label>
+            <select class="f-select" id="ytRegion">
+              <option value="pk">Pakistan · پاکستان</option>
+              <option value="gulf">Gulf · خلیج</option>
+              <option value="usuk">US / UK · امریکہ و برطانیہ</option>
+              <option value="mixed" selected>Mixed · ملا جلا</option>
+            </select>
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="ytBtn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="ytErr" hidden>Please enter a valid number of daily views. · <span lang="ur" dir="rtl">براہ کرم درست ویوز لکھیے</span></p>
+        <div class="tool-result" id="ytResult" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ماہانہ تخمینہ</span> · Estimated monthly income</div><div class="r-val" id="ytMonthly"></div><div class="r-sub" id="ytMonthlySub"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">فی ہزار ویوز</span> · RPM used</div><div class="r-val" style="font-size:20px" id="ytRpm"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">روزانہ</span> · Daily</div><div class="r-val" id="ytDaily"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">سالانہ</span> · Yearly</div><div class="r-val" id="ytYearly"></div><div class="r-sub" id="ytYearlySub"></div></div>
+          </div>
+          <p class="tool-note">This is a rough estimate from typical RPM ranges — real earnings vary with watch time, season and advertiser demand. PKR at Rs 280 / $ and AED at 3.67 / $. <span class="n-ur" lang="ur" dir="rtl">یہ صرف ایک تخمینہ ہے، اصل آمدنی کم یا زیادہ ہو سکتی ہے۔</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL D: BMI -->
+  <section class="section tool-sec" id="tool-bmi" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 04</p>
+      <h2 class="h2">BMI &amp; Health Calculator</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">صحت، مثالی وزن و بی ایم آئی کیلکولیٹر</p>
+      <div class="tool-panel">
+        <div class="f-group">
+          <span class="f-label"><span class="fl-ur" lang="ur" dir="rtl">قد کی اکائی</span><span class="fl-en">Height unit</span></span>
+          <div class="seg" role="group" aria-label="Height unit">
+            <button type="button" data-hunit="cm" class="active">cm · سینٹی میٹر</button>
+            <button type="button" data-hunit="ft">ft / in · فٹ انچ</button>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group" id="hCmGroup">
+            <label class="f-label" for="hCm"><span class="fl-ur" lang="ur" dir="rtl">قد (سینٹی میٹر)</span><span class="fl-en">Height (cm)</span></label>
+            <input class="f-input" type="number" id="hCm" min="80" max="260" placeholder="170" inputmode="decimal">
+          </div>
+          <div class="f-group" id="hFtGroup" hidden>
+            <label class="f-label"><span class="fl-ur" lang="ur" dir="rtl">قد (فٹ / انچ)</span><span class="fl-en">Height (ft / in)</span></label>
+            <div class="f-row">
+              <input class="f-input" type="number" id="hFt" min="2" max="8" placeholder="ft" inputmode="numeric" aria-label="Feet">
+              <input class="f-input" type="number" id="hIn" min="0" max="11" placeholder="in" inputmode="numeric" aria-label="Inches">
+            </div>
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="bmiWeight"><span class="fl-ur" lang="ur" dir="rtl">وزن (کلو)</span><span class="fl-en">Weight (kg)</span></label>
+            <input class="f-input" type="number" id="bmiWeight" min="15" max="500" placeholder="70" inputmode="decimal">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="bmiAge"><span class="fl-ur" lang="ur" dir="rtl">عمر (سال)</span><span class="fl-en">Age (years)</span></label>
+            <input class="f-input" type="number" id="bmiAge" min="2" max="120" placeholder="30" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="bmiGender"><span class="fl-ur" lang="ur" dir="rtl">جنس</span><span class="fl-en">Gender</span></label>
+            <select class="f-select" id="bmiGender">
+              <option value="m">Male · مرد</option>
+              <option value="f">Female · عورت</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="bmiActivity"><span class="fl-ur" lang="ur" dir="rtl">روزانہ کی سرگرمی</span><span class="fl-en">Activity level</span></label>
+            <select class="f-select" id="bmiActivity">
+              <option value="sed">Sedentary · بیٹھے رہنا</option>
+              <option value="light">Light · ہلکی</option>
+              <option value="mod" selected>Moderate · درمیانی</option>
+              <option value="act">Active · بہت فعال</option>
+            </select>
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="bmiBtn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="bmiErr" hidden>Please check height, weight and age. · <span lang="ur" dir="rtl">براہ کرم قد، وزن اور عمر درست لکھیے</span></p>
+        <div class="tool-result" id="bmiResult" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">آپ کا بی ایم آئی</span> · Your BMI</div><div class="r-val" id="bmiVal"></div><div><span class="bmi-chip" id="bmiChip"></span></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">مثالی وزن</span> · Ideal weight range</div><div class="r-val" id="bmiIdeal"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">روزانہ پانی</span> · Daily water</div><div class="r-val" id="bmiWater"></div><div class="r-sub" id="bmiWaterSub"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">روزانہ کیلوریز</span> · Daily calories (TDEE)</div><div class="r-val" id="bmiCal"></div></div>
+          </div>
+          <p class="tool-note">General information only, using WHO BMI bands and the Mifflin-St Jeor formula — this is not medical advice. For personal guidance, consult a doctor. <span class="n-ur" lang="ur" dir="rtl">یہ صرف عمومی معلومات ہیں، طبی مشورہ نہیں۔</span></p>
+        </div>
+      </div>
+      <div class="subscribe-band" style="margin-top:54px">
+        <h3>Get Khari Baat in your inbox</h3>
+        <p>Every column and blog post is also published free on Substack. Subscribe once and each new piece arrives by email.</p>
+        <a class="btn btn-gold" href="https://adeelqureshi98.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="ur-inline" lang="ur" dir="rtl">کھری بات — محمد عدیل</div>
+  <div>Khari Baat · Columns by Muhammad Adeel · Kot Addu, Pakistan</div>
+  <div>© <span id="year">2026</span> Muhammad Adeel. All rights reserved.</div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/tools.js"></script>
+<a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+</body>
+</html>
