@@ -8,150 +8,6 @@
     return n.toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
   };
 
-  /* ================= Tool A — Nastaliq Poetry Card Generator ================= */
-  var card = (function () {
-    var cv = $("cardCanvas");
-    if (!cv) return null;
-    var ctx = cv.getContext("2d");
-    var size = "1:1";
-    var THEMES = {
-      royal:   { bg1: "#16203a", bg2: "#0B0F1A", frame: "#C9A24B", frame2: "#E7C877", text: "#F4E3B2", sub: "#E7C877", wm: "rgba(231,200,119,.62)" },
-      emerald: { bg1: "#14665A", bg2: "#07332c", frame: "#C9A24B", frame2: "#E7C877", text: "#F7F2E9", sub: "#E7C877", wm: "rgba(231,200,119,.62)" },
-      ivory:   { bg1: "#FFFDF7", bg2: "#EFE7D7", frame: "#9A7B2D", frame2: "#C9A24B", text: "#232323", sub: "#9A7B2D", wm: "rgba(154,123,45,.66)" },
-      midnight:{ bg1: "#232323", bg2: "#000000", frame: "#C9A24B", frame2: "#E7C877", text: "#EFE7D7", sub: "#E7C877", wm: "rgba(231,200,119,.6)" }
-    };
-
-    function diamond(x, y, r, color) {
-      ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4);
-      ctx.fillStyle = color; ctx.fillRect(-r, -r, r * 2, r * 2); ctx.restore();
-    }
-
-    function draw() {
-      var W = cv.width, H = cv.height;
-      var th = THEMES[$("cardTheme").value] || THEMES.royal;
-      var g = ctx.createLinearGradient(0, 0, W * 0.25, H);
-      g.addColorStop(0, th.bg1); g.addColorStop(1, th.bg2);
-      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-
-      // soft glow
-      var rg = ctx.createRadialGradient(W / 2, H * 0.36, 40, W / 2, H * 0.36, W * 0.75);
-      rg.addColorStop(0, "rgba(201,162,75,.20)"); rg.addColorStop(1, "rgba(201,162,75,0)");
-      ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
-
-      // double gold frame + corner diamonds
-      ctx.strokeStyle = th.frame; ctx.lineWidth = 6; ctx.strokeRect(30, 30, W - 60, H - 60);
-      ctx.strokeStyle = th.frame2; ctx.lineWidth = 2; ctx.strokeRect(52, 52, W - 104, H - 104);
-      [[30, 30], [W - 30, 30], [30, H - 30], [W - 30, H - 30]].forEach(function (p) { diamond(p[0], p[1], 9, th.frame2); });
-
-      ctx.textAlign = "center"; ctx.textBaseline = "middle";
-      try { ctx.direction = "rtl"; } catch (e) {}
-
-      var cx = W / 2;
-      // top ornament
-      diamond(cx, 104, 8, th.frame2);
-      ctx.strokeStyle = th.frame; ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(cx - 120, 104); ctx.lineTo(cx - 26, 104); ctx.moveTo(cx + 26, 104); ctx.lineTo(cx + 120, 104); ctx.stroke();
-
-      var tag = ($("cardTag").value || "").trim();
-      var y = 150;
-      if (tag) {
-        ctx.fillStyle = th.sub;
-        ctx.font = "44px 'Noto Nastaliq Urdu', serif";
-        ctx.fillText(tag, cx, y + 16);
-        y += 108;
-      }
-
-      // main sher text — auto-fit
-      var raw = ($("cardText").value || "").split("\n").map(function (s) { return s.trim(); }).filter(Boolean);
-      if (!raw.length) raw = ["اپنا شعر یہاں لکھیے"];
-      var availH = H - y - 330; // leave room for divider, creator, watermark
-      var fs = size === "1:1" ? 64 : 68;
-      var lh, total;
-      while (fs > 26) {
-        ctx.font = "700 " + fs + "px 'Noto Nastaliq Urdu', serif";
-        lh = fs * 2.2; total = raw.length * lh;
-        var tooWide = raw.some(function (ln) { return ctx.measureText(ln).width > W - 190; });
-        if (total <= availH && !tooWide) break;
-        fs -= 3;
-      }
-      ctx.font = "700 " + fs + "px 'Noto Nastaliq Urdu', serif";
-      lh = fs * 2.2; total = raw.length * lh;
-      var ty = y + 40 + (availH - total) / 2 + lh / 2;
-      ctx.fillStyle = th.text;
-      raw.forEach(function (ln) { ctx.fillText(ln, cx, ty); ty += lh; });
-
-      // divider ornament under the verse
-      var dy = H - 258;
-      ctx.strokeStyle = th.frame; ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(cx - 150, dy); ctx.lineTo(cx - 24, dy); ctx.moveTo(cx + 24, dy); ctx.lineTo(cx + 150, dy); ctx.stroke();
-      diamond(cx, dy, 7, th.frame2);
-
-      var creator = ($("cardCreator").value || "").trim();
-      if (creator) {
-        ctx.fillStyle = th.sub;
-        ctx.font = "38px 'Noto Nastaliq Urdu', serif";
-        ctx.fillText(creator, cx, dy + 58);
-      }
-
-      // watermark
-      try { ctx.direction = "ltr"; } catch (e) {}
-      ctx.fillStyle = th.wm;
-      ctx.font = "600 25px 'Playfair Display', Georgia, serif";
-      ctx.fillText("K H A R I   B A A T", cx, H - 128);
-      ctx.font = "23px 'Source Serif 4', Georgia, serif";
-      ctx.fillText("adeelqureshi98.github.io/awam-ki-awaz-blog", cx, H - 92);
-    }
-
-    function setSize(s) {
-      size = s;
-      cv.width = 1080; cv.height = (s === "9:16") ? 1920 : 1080;
-      document.querySelectorAll("[data-card-size]").forEach(function (b) {
-        b.classList.toggle("active", b.getAttribute("data-card-size") === s);
-      });
-      var wrap = $("cardPreviewWrap");
-      if (wrap) wrap.classList.toggle("tall", s === "9:16");
-      draw();
-    }
-
-    ["cardText", "cardTag", "cardCreator"].forEach(function (id) { on($(id), "input", draw); });
-    on($("cardTheme"), "change", draw);
-    document.querySelectorAll("[data-card-size]").forEach(function (b) {
-      b.addEventListener("click", function () { setSize(b.getAttribute("data-card-size")); });
-    });
-    document.querySelectorAll("[data-fill]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        $("cardText").value = b.getAttribute("data-fill");
-        draw();
-      });
-    });
-    on($("cardDownload"), "click", function () {
-      draw();
-      if (cv.toBlob) {
-        cv.toBlob(function (blob) {
-          var a = document.createElement("a");
-          a.href = URL.createObjectURL(blob);
-          a.download = "khari-baat-card.png";
-          document.body.appendChild(a); a.click();
-          setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 600);
-        }, "image/png");
-      } else {
-        var a2 = document.createElement("a");
-        a2.href = cv.toDataURL("image/png"); a2.download = "khari-baat-card.png"; a2.click();
-      }
-    });
-
-    // draw now, and again once the Nastaliq webfont is truly ready
-    draw();
-    if (document.fonts && document.fonts.load) {
-      Promise.all([
-        document.fonts.load("700 64px 'Noto Nastaliq Urdu'"),
-        document.fonts.load("44px 'Noto Nastaliq Urdu'")
-      ]).then(draw).catch(function () {});
-      if (document.fonts.ready) document.fonts.ready.then(draw);
-    }
-    return { draw: draw };
-  })();
-
   /* ================= Tool B — Age + Hijri Converter ================= */
   (function () {
     var btn = $("ageBtn");
@@ -279,4 +135,32 @@
       box.hidden = false;
     });
   })();
+})();
+
+/* Khari Baat — Tools v3.6 enrichment: share/copy rows for the Phase 1 tools. */
+(function () {
+  "use strict";
+  function row(containerId, title) {
+    var host = document.getElementById(containerId);
+    if (!host) return;
+    var d = document.createElement("div");
+    d.className = "tool-actions"; d.style.flexWrap = "wrap"; d.style.marginTop = "16px";
+    function text() {
+      var t = (host.innerText || "").replace(/\n{2,}/g, "\n").trim();
+      return title + "\n" + t + "\n— Khari Baat Tools";
+    }
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "btn btn-ghost"; b.textContent = "Copy Result · نتیجہ کاپی کریں";
+    b.addEventListener("click", function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(text()).catch(function () {});
+      b.textContent = "Copied ✓"; setTimeout(function () { b.textContent = "Copy Result · نتیجہ کاپی کریں"; }, 1600);
+    });
+    var a = document.createElement("a");
+    a.className = "btn btn-ghost"; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Share on WhatsApp · واٹس ایپ پر بھیجیں";
+    a.addEventListener("click", function () { a.href = "https://wa.me/?text=" + encodeURIComponent(text()); });
+    d.appendChild(b); d.appendChild(a); host.appendChild(d);
+  }
+  row("ageResult", "My Age & Hijri Date (Khari Baat Tools)");
+  row("ytResult", "YouTube Income Estimate (Khari Baat Tools)");
+  row("bmiResult", "My BMI & Health Numbers (Khari Baat Tools)");
 })();

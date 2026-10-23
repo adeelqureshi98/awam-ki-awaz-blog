@@ -549,3 +549,36 @@ button.btn{cursor:pointer;border:0;font-family:var(--body)}
   .tm-result{animation:none}
   .tm-live::before{animation:none}
 }
+
+
+/* ============================================================
+   TOOLS v3.6 — Occasion Card Maker (cm-) + premium motion
+   ============================================================ */
+/* ---------- CARDMAKER (cm-) — Occasion Card Maker ---------- */
+#cardmaker .cm-fields{margin-bottom:4px}
+#cardmaker textarea.cm-ta{font-family:var(--body);direction:ltr;text-align:left;line-height:1.6;font-size:16.5px;min-height:84px}
+.cm-swatches{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.cm-swatch-cell{display:flex;flex-direction:column;align-items:center;gap:7px;width:76px;text-align:center}
+.cm-swatch{width:46px;height:46px;border-radius:50%;border:2px solid rgba(201,162,75,.45);cursor:pointer;padding:0;transition:.25s var(--ease);box-shadow:0 6px 16px rgba(11,15,26,.18)}
+.cm-swatch:hover{transform:translateY(-2px)}
+.cm-swatch.active{border-color:var(--gold-deep);box-shadow:0 0 0 4px rgba(201,162,75,.28)}
+.cm-swatch-name{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.35}
+.cm-colors{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.cm-color{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.cm-color-input{width:48px;height:42px;border:1px solid var(--gold);border-radius:10px;background:#fff;padding:3px;cursor:pointer}
+.cm-reset{cursor:pointer;border:1px solid var(--gold);background:transparent;color:var(--gold-deep);border-radius:999px;padding:9px 18px;font-size:13px;letter-spacing:.06em;font-family:var(--body);transition:.3s;min-height:42px}
+.cm-reset:hover{background:var(--ink);color:var(--gold2)}
+.cm-toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-size:15px;color:var(--ink);min-height:44px}
+.cm-toggle input{width:20px;height:20px;accent-color:var(--gold-deep);cursor:pointer;flex:none}
+
+/* premium motion: 3D tilt + gold glow on tool cards, smooth results */
+.tools-grid { perspective: 1200px; }
+.tool-card { transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); will-change: transform; }
+.tool-card:hover { transform: translateY(-8px) rotateX(3deg) rotateY(-3deg); box-shadow: 0 30px 60px rgba(11,17,32,.28), 0 0 34px rgba(216,178,90,.35); }
+.tool-result { animation: kbFadeUp .5s var(--ease) both; }
+@keyframes kbFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.f-input, .f-select, .btn, .tm-input, .tm-select, .tm-textarea, .tm-btn { transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease), background .25s var(--ease); }
+@media (prefers-reduced-motion: reduce) {
+  .tool-card:hover { transform: none; box-shadow: 0 18px 40px rgba(11,17,32,.16); }
+  .tool-result, .tm-result { animation: none; }
+}
