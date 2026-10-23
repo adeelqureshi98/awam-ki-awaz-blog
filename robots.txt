@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adeelqureshi98.github.io/awam-ki-awaz-blog/sitemap.xml
