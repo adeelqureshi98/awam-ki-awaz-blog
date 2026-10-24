@@ -1829,7 +1829,7 @@
       var packs = litres === 0 ? "—" : (fours > 0 ? fours + " × 4 litre" : "") + (fours > 0 && ones > 0 ? " + " : "") + (ones > 0 ? ones + " × 1 litre" : "");
       var primer = $("paint-primer").value === "yes" ? (area > 0 ? Math.ceil(area / 150) + " litres" : "—") : "— (not selected)";
       $("paint-litres").textContent = litres + " litres";
-      $("paint-exact").textContent = "Exact need: " + fmt1(exact) + " litres (rounded up) · <span lang='ur' dir='rtl'>اصل ضرورت " + fmt1(exact) + " لیٹر تھی</span>";
+      $("paint-exact").innerHTML = "Exact need: " + fmt1(exact) + " litres (rounded up) · <span lang='ur' dir='rtl'>اصل ضرورت " + fmt1(exact) + " لیٹر تھی</span>";
       $("paint-area").textContent = fmt1(area) + " sq ft";
       $("paint-walls").textContent = fmt1(walls) + " + " + fmt1(ceil) + " sq ft";
       $("paint-deduct").textContent = "− " + fmt1(deduct) + " sq ft";
