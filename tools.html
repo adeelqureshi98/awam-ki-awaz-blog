@@ -1207,11 +1207,18 @@
       <h2 class="h2">Solar Panel Calculator</h2>
       <p class="h2-ur" lang="ur" dir="rtl">سولر پینل کیلکولیٹر — لوڈ سے پینل، پینل سے مکمل خرچہ</p>
       <div class="tool-panel">
-        <p class="tool-note" style="margin-top:0">Step 1 — Apne ghar ke appliances likhen (watt, tadad, rozana ghante — sab badle ja sakte hain). <span class="n-ur" lang="ur" dir="rtl">اپنے گھر کے آلات لکھیں — واٹ، تعداد اور روزانہ گھنٹے سب قابلِ تبدیلی ہیں۔</span></p>
+        <p class="tool-note" style="margin-top:0">Sirf ye batayen ke ghar me kia kia hai aur kitna — watt aur ghante hum khud hisab me lagayenge۔ Jo cheez ghar me nahi, us ki tadad 0 kar dein۔ <span class="n-ur" lang="ur" dir="rtl">صرف یہ بتائیں کہ گھر میں کیا کیا ہے اور کتنا — واٹ اور گھنٹے ہم خود لگائیں گے۔</span></p>
         <table class="slab-table" aria-label="Appliances">
-          <thead><tr><th><span lang="ur" dir="rtl">آلہ</span> · Appliance</th><th class="num"><span lang="ur" dir="rtl">واٹ</span> · Watts</th><th class="num"><span lang="ur" dir="rtl">تعداد</span> · Qty</th><th class="num"><span lang="ur" dir="rtl">گھنٹے / دن</span> · Hours / day</th></tr></thead>
+          <thead><tr><th><span lang="ur" dir="rtl">آلہ</span> · Appliance</th><th class="num"><span lang="ur" dir="rtl">تعداد</span> · How many?</th></tr></thead>
           <tbody id="sol-tbody"></tbody>
         </table>
+        <details style="margin:16px 0 4px">
+          <summary style="cursor:pointer;color:var(--gold-2);font-family:'Playfair Display',serif;letter-spacing:.03em">Advanced settings · تفصیل کھولیں (واٹ، گھنٹے، ریٹ، قیمتیں)</summary>
+          <p class="tool-note">Yahan watt, ghante aur tamam rate/qeematein apni marzi se badli ja sakti hain — jo yahan badlein ge, wahi hisab me lage ga۔ <span class="n-ur" lang="ur" dir="rtl">یہاں واٹ، گھنٹے اور نرخ اپنی مرضی سے بدلیں۔</span></p>
+          <table class="slab-table" aria-label="Appliance details">
+            <thead><tr><th><span lang="ur" dir="rtl">آلہ</span> · Appliance</th><th class="num"><span lang="ur" dir="rtl">واٹ</span> · Watts</th><th class="num"><span lang="ur" dir="rtl">گھنٹے / دن</span> · Hours / day</th></tr></thead>
+            <tbody id="sol-tbody-adv"></tbody>
+          </table>
         <div class="f-row" style="margin-top:14px">
           <div class="f-group">
             <label class="f-label" for="sol-other-w"><span class="fl-ur" lang="ur" dir="rtl">دیگر لوڈ (واٹ)</span><span class="fl-en">Other load (watts)</span></label>
@@ -1275,6 +1282,7 @@
             <input class="f-input" type="number" id="sol-bhours" min="0" max="24" step="0.5" value="4" inputmode="decimal">
           </div>
         </div>
+        </details>
         <div class="tool-actions">
           <button type="button" class="btn btn-gold" id="sol-btn">Calculate · حساب لگائیے</button>
         </div>
@@ -1871,16 +1879,23 @@
     { name: "Laptop · لیپ ٹاپ", w: 65, q: 1, h: 6 },
     { name: "Microwave · مائیکرو ویو", w: 1200, q: 1, h: 0.5 }
   ];
-  var tbody = $("sol-tbody");
+  var tbody = $("sol-tbody"), tbodyAdv = $("sol-tbody-adv");
   if (tbody) {
     var html = "";
     APPS.forEach(function (a, i) {
       html += "<tr><td>" + a.name + "</td>" +
-        "<td class='num'><input class='f-input' type='number' id='sol-w" + i + "' min='0' value='" + a.w + "' style='max-width:110px;text-align:right'></td>" +
-        "<td class='num'><input class='f-input' type='number' id='sol-q" + i + "' min='0' value='" + a.q + "' style='max-width:80px;text-align:right'></td>" +
-        "<td class='num'><input class='f-input' type='number' id='sol-h" + i + "' min='0' max='24' step='0.5' value='" + a.h + "' style='max-width:80px;text-align:right'></td></tr>";
+        "<td class='num'><input class='f-input' type='number' id='sol-q" + i + "' min='0' value='" + a.q + "' style='max-width:100px;text-align:right'></td></tr>";
     });
     tbody.innerHTML = html;
+  }
+  if (tbodyAdv) {
+    var htmlAdv = "";
+    APPS.forEach(function (a, i) {
+      htmlAdv += "<tr><td>" + a.name + "</td>" +
+        "<td class='num'><input class='f-input' type='number' id='sol-w" + i + "' min='0' value='" + a.w + "' style='max-width:110px;text-align:right'></td>" +
+        "<td class='num'><input class='f-input' type='number' id='sol-h" + i + "' min='0' max='24' step='0.5' value='" + a.h + "' style='max-width:80px;text-align:right'></td></tr>";
+    });
+    tbodyAdv.innerHTML = htmlAdv;
   }
 
   var btn = $("sol-btn"); if (!btn) return;
