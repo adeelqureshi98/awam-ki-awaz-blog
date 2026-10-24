@@ -149,8 +149,8 @@
           <span class="tool-live">Live · براہِ راست</span>
           <span class="tool-t">BMI &amp; Health Calculator</span>
           <span class="tool-ur" lang="ur" dir="rtl">صحت اور بی ایم آئی کیلکولیٹر</span>
-          <span class="tool-x">BMI, ideal weight, daily water and calories from your height and weight. <span class="x-ur" lang="ur" dir="rtl">قد و وزن سے بی ایم آئی، مثالی وزن، پانی اور کیلوریز جانیے۔</span></span>
-          <span class="tool-tags"><span class="chip">BMI · WHO</span><span class="chip">Calories</span><span class="chip">Water</span></span>
+          <span class="tool-x">BMI, BMR, ideal weight, calorie targets and personal nutrition advice — vitamins, minerals and protein for your body. <span class="x-ur" lang="ur" dir="rtl">بی ایم آئی، بی ایم آر، مثالی وزن، کیلوری اہداف اور اپنے جسم کے مطابق غذائی مشورہ — وٹامنز، معدنیات اور پروٹین۔</span></span>
+          <span class="tool-tags"><span class="chip">BMI · WHO</span><span class="chip">BMR · Calories</span><span class="chip">Nutrition Advice</span></span>
           <span class="tool-more">Open the tool ↓</span>
         </a>
         <a class="tool-card" href="#tool-zakat">
@@ -176,8 +176,8 @@
           <span class="tool-live">Live · براہِ راست</span>
           <span class="tool-t">Electricity Bill Calculator</span>
           <span class="tool-ur" lang="ur" dir="rtl">بجلی بل کیلکولیٹر</span>
-          <span class="tool-x">Slab-wise estimate of a Pakistani home bill — protected and non-protected. <span class="x-ur" lang="ur" dir="rtl">یونٹ لکھیے، سلیب کے حساب سے بجلی کے بل کا تخمینہ پائیے۔</span></span>
-          <span class="tool-tags"><span class="chip">NEPRA Slabs</span><span class="chip">GST · FPA</span></span>
+          <span class="tool-x">Slab-wise estimate of a Pakistani home bill — the category is detected automatically from your units, with a side-by-side comparison of lifeline, protected and non-protected bills. <span class="x-ur" lang="ur" dir="rtl">یونٹ لکھیے — کیٹیگری خود شناخت ہو گی اور تینوں درجوں کے بل کا موازنہ بھی ملے گا۔</span></span>
+          <span class="tool-tags"><span class="chip">NEPRA Slabs</span><span class="chip">GST · FPA</span><span class="chip">Auto Category</span></span>
           <span class="tool-more">Open the tool ↓</span>
         </a>
         <a class="tool-card" href="#tool-photo">
@@ -461,7 +461,7 @@
     <div class="wrap reveal">
       <p class="kicker">Tool 04</p>
       <h2 class="h2">BMI &amp; Health Calculator</h2>
-      <p class="h2-ur" lang="ur" dir="rtl">صحت، مثالی وزن و بی ایم آئی کیلکولیٹر</p>
+      <p class="h2-ur" lang="ur" dir="rtl">صحت، بی ایم آئی، بی ایم آر و غذائی مشورہ</p>
       <div class="tool-panel">
         <div class="f-group">
           <span class="f-label"><span class="fl-ur" lang="ur" dir="rtl">قد کی اکائی</span><span class="fl-en">Height unit</span></span>
@@ -519,8 +519,12 @@
             <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">مثالی وزن</span> · Ideal weight range</div><div class="r-val" id="bmiIdeal"></div></div>
             <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">روزانہ پانی</span> · Daily water</div><div class="r-val" id="bmiWater"></div><div class="r-sub" id="bmiWaterSub"></div></div>
             <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">روزانہ کیلوریز</span> · Daily calories (TDEE)</div><div class="r-val" id="bmiCal"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">بنیادی میٹابولک ریٹ (آرام کی حالت میں کیلوریز)</span> · BMR</div><div class="r-val" id="bmiBmr"></div><div class="r-sub">Calories your body burns at complete rest · <span lang="ur" dir="rtl">مکمل آرام کی حالت میں جسم کی جلنے والی کیلوریز</span></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">کیلوری اہداف</span> · Calorie targets (per day)</div><div class="r-val" id="bmiCalMaintain" style="font-size:20px"></div><div class="r-sub" id="bmiCalLose"></div><div class="r-sub" id="bmiCalGain"></div><div class="r-sub" id="bmiCalNote"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">وزن میں تبدیلی</span> · Weight to change</div><div class="r-val" id="bmiChange" style="font-size:20px"></div><div class="r-sub" id="bmiChangeSub"></div></div>
           </div>
-          <p class="tool-note">General information only, using WHO BMI bands and the Mifflin-St Jeor formula — this is not medical advice. For personal guidance, consult a doctor. <span class="n-ur" lang="ur" dir="rtl">یہ صرف عمومی معلومات ہیں، طبی مشورہ نہیں۔</span></p>
+          <div id="bmiAdvice" hidden style="margin-top:18px;border:1px solid rgba(176,141,62,.4);border-radius:12px;padding:16px 18px;background:rgba(231,200,119,.07);text-align:left"></div>
+          <p class="tool-note">General educational information only — based on WHO BMI bands, the Mifflin-St Jeor formula and standard daily nutrient values. This is not medical advice and does not replace a doctor. If you are pregnant, unwell, or your BMI is below 16 or above 40, please consult a doctor before following any food or calorie plan. <span class="n-ur" lang="ur" dir="rtl">یہ صرف عمومی تعلیمی معلومات ہیں — طبی مشورہ نہیں۔ حمل، بیماری، یا بی ایم آئی 16 سے کم یا 40 سے زیادہ ہونے کی صورت میں کسی بھی غذائی پلان سے پہلے ڈاکٹر سے ضرور مشورہ کریں۔</span></p>
         </div>
       </div>
       <div class="subscribe-band" style="margin-top:54px">
@@ -601,12 +605,12 @@
     <div class="wrap reveal">
       <p class="kicker">Tool 07</p>
       <h2 class="h2">Electricity Bill Calculator</h2>
-      <p class="h2-ur" lang="ur" dir="rtl">بجلی کے بل کا تخمینہ</p>
+      <p class="h2-ur" lang="ur" dir="rtl">بجلی کے بل کا تخمینہ — خودکار کیٹیگری و موازنہ</p>
       <div class="tool-panel">
         <div class="tool-grid-2">
           <div class="f-group"><label class="f-label" for="eb-units"><span class="fl-ur" lang="ur" dir="rtl">ماہانہ یونٹ</span><span class="fl-en">Units used this month</span></label><input class="f-input" type="number" id="eb-units" min="0" value="250"></div>
           <div class="f-group"><label class="f-label" for="eb-cat"><span class="fl-ur" lang="ur" dir="rtl">صارف کی قسم</span><span class="fl-en">Consumer type</span></label>
-            <select class="f-select" id="eb-cat"><option value="non-protected">Non-Protected · نان پروٹیکٹڈ</option><option value="protected">Protected (≤200 units) · پروٹیکٹڈ</option><option value="lifeline">Lifeline (≤100 units) · لائف لائن</option></select></div>
+            <select class="f-select" id="eb-cat"><option value="auto" selected>Auto (units se khud) · Auto — detect from units</option><option value="non-protected">Non-Protected · نان پروٹیکٹڈ</option><option value="protected">Protected (≤200 units) · پروٹیکٹڈ</option><option value="lifeline">Lifeline (≤100 units) · لائف لائن</option></select></div>
         </div>
         <div class="tool-grid-2">
           <div class="f-group"><label class="f-label" for="eb-fpa-rate"><span class="fl-ur" lang="ur" dir="rtl">فیول ایڈجسٹمنٹ فی یونٹ (قابلِ تبدیلی)</span><span class="fl-en">Fuel adjustment per unit (Rs) — editable</span></label><input class="f-input" type="number" id="eb-fpa-rate" min="0" step="0.01" value="3"></div>
@@ -646,7 +650,14 @@
             <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">کسٹمر چارجز</span> · Customer charges</div><div class="r-val" id="eb-cust-val">—</div></div>
             <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">جی ایس ٹی 18%</span> · GST 18%</div><div class="r-val" id="eb-gst">—</div></div>
             <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">کل تخمینہ بل</span> · Estimated total</div><div class="r-val" id="eb-total">—</div><div class="r-sub">+ TV fee Rs 35 included</div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">آپ کی کیٹیگری</span> · Your category</div><div class="r-val" id="eb-detected" style="font-size:20px">—</div><div class="r-sub" id="eb-detected-sub"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">فی یونٹ اوسط قیمت</span> · Average cost per unit</div><div class="r-val" id="eb-avg" style="font-size:20px">—</div><div class="r-sub">Total bill ÷ units · <span lang="ur" dir="rtl">کل بل تقسیم یونٹ</span></div></div>
           </div>
+          <table class="slab-table" id="eb-compare" aria-label="Category comparison">
+            <thead><tr><th><span lang="ur" dir="rtl">کیٹیگری</span> · Category</th><th class="num"><span lang="ur" dir="rtl">تخمینہ کل بل</span> · Estimated total (Rs)</th></tr></thead>
+            <tbody id="eb-compare-rows"></tbody>
+          </table>
+          <div class="tool-note" id="eb-alert" hidden style="border:1px solid var(--gold);border-radius:10px;padding:12px 14px;background:rgba(231,200,119,.13);color:var(--ink);font-size:14px"></div>
           <p class="tool-note" id="eb-note"></p>
           <p class="tool-note">Takhmeena (estimate) — asal bill mukhtalif ho sakta hai. Base rates: NEPRA notified uniform consumer tariff, in force from 1 January 2026. Model: slab charges + fuel adjustment + customer charges, then 18% GST, plus TV fee Rs 35. Quarterly adjustments and arrears are not included. <span class="n-ur" lang="ur" dir="rtl">یہ صرف تخمینہ ہے — اصل بل مختلف ہو سکتا ہے۔</span></p>
         </div>
@@ -949,6 +960,290 @@
 <script src="assets/js/module-timeconv.js"></script>
 <script src="assets/js/module-ideas.js"></script>
 <script src="assets/js/module-postcreator.js"></script>
+<script>
+/* Khari Baat — Tools upgrade (2026-10-24): electricity auto category + comparison + alerts, BMI BMR/targets/advice.
+   Self-contained layer: reads the same inputs as tools2.js / tools.js and fills the new result areas. */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function fmt0(n) { return Math.round(n).toLocaleString("en-US"); }
+  function fmt2(n) { return Number(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  /* ================= ELECTRICITY BILL UPGRADE ================= */
+  (function () {
+    if (!$("eb-units")) return;
+    var NP_CAPS = [100, 200, 300, 400, 500, 600, 700, Infinity];
+    var NP_DEF = [22.44, 28.91, 33.10, 37.99, 40.22, 41.62, 42.76, 47.69];
+    var L_SLABS = [[50, 3.95], [100, 7.74]];
+    var NAMES = {
+      "lifeline": "Lifeline · <span lang='ur' dir='rtl'>لائف لائن</span>",
+      "protected": "Protected · <span lang='ur' dir='rtl'>پروٹیکٹڈ</span>",
+      "non-protected": "Non-Protected · <span lang='ur' dir='rtl'>نان پروٹیکٹڈ</span>"
+    };
+    function npSlabs() {
+      var out = [];
+      for (var i = 0; i < 8; i++) { var v = parseFloat($("eb-r" + (i + 1)).value); out.push([NP_CAPS[i], isNaN(v) ? NP_DEF[i] : v]); }
+      return out;
+    }
+    function slabsFor(cat) {
+      if (cat === "lifeline") return L_SLABS;
+      if (cat === "protected") {
+        var p1 = parseFloat($("eb-p1").value); if (isNaN(p1)) p1 = 10.54;
+        var p2 = parseFloat($("eb-p2").value); if (isNaN(p2)) p2 = 13.01;
+        return [[100, p1], [200, p2]];
+      }
+      return npSlabs();
+    }
+    function energyFor(cat, units) {
+      var slabs = slabsFor(cat), energy = 0, prev = 0;
+      for (var i = 0; i < slabs.length; i++) {
+        if (units <= prev) break;
+        energy += (Math.min(units, slabs[i][0]) - prev) * slabs[i][1];
+        prev = slabs[i][0];
+      }
+      return energy;
+    }
+    function totalFor(cat, units) {
+      var fpa = units * (parseFloat($("eb-fpa-rate").value) || 0);
+      var cust = parseFloat($("eb-cust").value) || 0;
+      return (energyFor(cat, units) + fpa + cust) * 1.18 + 35;
+    }
+    function detectCat(units) { return units <= 100 ? "lifeline" : (units <= 200 ? "protected" : "non-protected"); }
+    function effectiveCat(sel, units) {
+      if (sel === "auto") return detectCat(units);
+      if (sel === "lifeline") return units <= 100 ? "lifeline" : (units <= 200 ? "protected" : "non-protected");
+      if (sel === "protected") return units <= 200 ? "protected" : "non-protected";
+      return "non-protected";
+    }
+    function renderMain(cat, units) {
+      var slabs = slabsFor(cat), rows = "", energy = 0, prev = 0;
+      for (var i = 0; i < slabs.length; i++) {
+        var cap = slabs[i][0], rate = slabs[i][1];
+        if (units <= prev) break;
+        var inSlab = Math.min(units, cap) - prev, amt = inSlab * rate; energy += amt;
+        rows += "<tr><td>" + (prev + 1) + " – " + (cap === Infinity ? "∞" : cap) + "</td><td class='num'>" + inSlab + "</td><td class='num'>" + rate.toFixed(2) + "</td><td class='num'>" + fmt2(amt) + "</td></tr>";
+        prev = cap;
+      }
+      var fpa = units * (parseFloat($("eb-fpa-rate").value) || 0);
+      var cust = parseFloat($("eb-cust").value) || 0;
+      var gst = (energy + fpa + cust) * 0.18;
+      var total = energy + fpa + cust + gst + 35;
+      $("eb-rows").innerHTML = rows || "<tr><td colspan='4'>—</td></tr>";
+      $("eb-energy").textContent = "Rs " + fmt2(energy);
+      $("eb-fpa").textContent = "Rs " + fmt2(fpa);
+      $("eb-cust-val").textContent = "Rs " + fmt2(cust);
+      $("eb-gst").textContent = "Rs " + fmt2(gst);
+      $("eb-total").textContent = "Rs " + fmt0(total);
+      return total;
+    }
+    function update() {
+      var units = Math.max(0, Math.floor(parseFloat($("eb-units").value) || 0));
+      var sel = $("eb-cat").value;
+      var eff = effectiveCat(sel, units);
+      var total;
+      if (sel === "auto") {
+        total = renderMain(eff, units);
+        $("eb-note").textContent = "نوٹ: سرکاری کیٹیگری کا فیصلہ صرف اس مہینے کے یونٹ سے نہیں ہوتا — پچھلے 6 ماہ کے استعمال کو بھی دیکھا جاتا ہے۔ · Note: the official category also depends on your consumption over the last 6 months, not on this month alone.";
+      } else {
+        total = totalFor(eff, units);
+      }
+      /* detected / applied category badge */
+      $("eb-detected").innerHTML = NAMES[eff];
+      if (sel === "auto") $("eb-detected-sub").innerHTML = "Auto-detected from your units · <span lang='ur' dir='rtl'>یونٹ دیکھ کر خود شناخت کی گئی</span>";
+      else if (eff === sel) $("eb-detected-sub").innerHTML = "Selected by you · <span lang='ur' dir='rtl'>آپ کی منتخب کردہ کیٹیگری</span>";
+      else $("eb-detected-sub").innerHTML = "Applied by rule at these units · <span lang='ur' dir='rtl'>ان یونٹ پر قاعدے کے مطابق یہی کیٹیگری لاگو ہوتی ہے</span>";
+      /* average cost per unit */
+      $("eb-avg").textContent = units > 0 ? "Rs " + fmt2(total / units) : "—";
+      /* category comparison */
+      function row(cat, applicable, naText) {
+        var mark = cat === eff ? " style='font-weight:700'" : "";
+        var yours = cat === eff ? " · <span lang='ur' dir='rtl'>آپ کی کیٹیگری</span> · Your category" : "";
+        var val = applicable ? "Rs " + fmt0(totalFor(cat, units)) : naText;
+        return "<tr" + mark + "><td>" + NAMES[cat] + yours + "</td><td class='num'>" + val + "</td></tr>";
+      }
+      $("eb-compare-rows").innerHTML =
+        row("lifeline", units <= 100, "— · <span lang='ur' dir='rtl'>صرف 100 یونٹ تک</span> · Up to 100 units only") +
+        row("protected", units <= 200, "— · <span lang='ur' dir='rtl'>200 سے زیادہ پر لاگو نہیں</span> · Not applicable above 200 units") +
+        row("non-protected", true, "");
+      /* threshold alerts */
+      var alertBox = $("eb-alert"), msg = "";
+      if (units >= 90 && units <= 100) {
+        msg = "⚠ <span lang='ur' dir='rtl'>انتباہ: آپ لائف لائن حد (100 یونٹ) کے بالکل قریب ہیں۔ 100 سے اوپر جاتے ہی سستے لائف لائن نرخ ختم ہو جائیں گے اور بل نمایاں بڑھ جائے گا۔</span> · Warning: you are close to the lifeline limit of 100 units. Crossing it ends the cheap lifeline rates and the bill rises noticeably.";
+      } else if (units >= 180 && units <= 200) {
+        msg = "⚠ <span lang='ur' dir='rtl'>انتباہ: آپ پروٹیکٹڈ حد (200 یونٹ) کے بالکل قریب ہیں۔ 200 سے اوپر جاتے ہی نان پروٹیکٹڈ نرخ لگیں گے اور بل اچانک بہت بڑھ جائے گا۔</span> · Warning: you are close to the protected limit of 200 units. Crossing it moves you to non-protected rates and the bill jumps sharply.";
+      } else if (units >= 201 && units <= 220) {
+        var p200 = totalFor("protected", 200), diff = total - p200, over = units - 200;
+        msg = "⚠ <span lang='ur' dir='rtl'>صرف " + over + " یونٹ زیادہ! اگر استعمال 200 یونٹ ہوتا تو پروٹیکٹڈ نرخوں پر بل تقریباً Rs " + fmt0(p200) + " بنتا — ان چند یونٹ کی وجہ سے بل تقریباً Rs " + fmt0(diff) + " بڑھ گیا۔</span> · Just " + over + " unit(s) over the line! At 200 units on protected rates the bill would have been about Rs " + fmt0(p200) + " — those few units added roughly Rs " + fmt0(diff) + ".";
+      }
+      if (msg) { alertBox.innerHTML = msg; alertBox.hidden = false; } else { alertBox.hidden = true; alertBox.innerHTML = ""; }
+    }
+    ["eb-units", "eb-fpa-rate", "eb-p1", "eb-p2", "eb-r1", "eb-r2", "eb-r3", "eb-r4", "eb-r5", "eb-r6", "eb-r7", "eb-r8", "eb-cat", "eb-cust"].forEach(function (id) {
+      var el = $(id); if (el) { el.addEventListener("input", update); el.addEventListener("change", update); }
+    });
+    document.querySelectorAll("#tool-bill .quick-fill button").forEach(function (b) { b.addEventListener("click", update); });
+    update();
+  })();
+
+  /* ================= BMI UPGRADE ================= */
+  (function () {
+    var btn = $("bmiBtn"); if (!btn) return;
+    var ACT = { sed: 1.2, light: 1.375, mod: 1.55, act: 1.725 };
+    function li(en, ur) { return "<li>" + en + " <span lang='ur' dir='rtl'>" + ur + "</span></li>"; }
+    function advice(key, g) {
+      var iron = g === "f"
+        ? li("Iron — 18 mg a day: meat, spinach, dates.", "آئرن — گوشت، پالک، کھجور۔")
+        : li("Iron — 8 mg a day: meat, spinach, dates.", "آئرن — گوشت، پالک، کھجور۔");
+      var vitC = g === "f"
+        ? li("Vitamin C — 75 mg a day: citrus fruit, guava, amla.", "وٹامن سی — مالٹے، امرود، آملہ۔")
+        : li("Vitamin C — 90 mg a day: citrus fruit, guava, amla.", "وٹامن سی — مالٹے، امرود، آملہ۔");
+      var A = {
+        under: {
+          vEn: "Your weight is below the healthy range. The goal is steady, healthy gain — more good food, not junk food.",
+          vUr: "آپ کا وزن صحت مند حد سے کم ہے۔ مقصد صحت مند طریقے سے بتدریج وزن بڑھانا ہے — اچھا کھانا بڑھائیں، جنک فوڈ نہیں۔",
+          eat: [
+            li("Eat one extra meal or two snacks a day — milk, eggs, bananas.", "روزانہ ایک اضافی کھانا یا دو اسنیکس لیں — دودھ، انڈے، کیلے۔"),
+            li("Choose energy-dense healthy foods: nuts, peanut butter, cheese, and desi ghee in moderation.", "میوے، مونگ پھلی کا مکھن، پنیر اور اعتدال میں دیسی گھی کھائیں۔"),
+            li("Never skip breakfast; add a milkshake or lassi with lunch.", "ناشتہ کبھی نہ چھوڑیں؛ دوپہر کے کھانے کے ساتھ دودھ یا لسی لیں۔"),
+            li("Light strength exercise 2–3 times a week builds muscle, not just fat.", "ہفتے میں 2–3 بار ہلکی ورزش کریں — اس سے عضلات بنتے ہیں، صرف چربی نہیں۔")
+          ],
+          nut: [
+            li("Vitamin D — 600–800 IU a day: sunlight, eggs, fortified milk.", "وٹامن ڈی — دھوپ، انڈے، دودھ۔"),
+            li("Vitamin B12 — 2.4 µg a day: eggs, milk, meat.", "وٹامن بی 12 — انڈے، دودھ، گوشت۔"),
+            iron,
+            li("Calcium — 1,000 mg a day: milk, yogurt, cheese.", "کیلشیم — دودھ، دہی، پنیر۔"),
+            li("Folate — 400 µg a day: leafy greens, lentils.", "فولیٹ — پتوں والی سبزیاں، دالیں۔")
+          ],
+          caution: "If weight keeps falling, or your appetite has disappeared, please see a doctor — it can be a sign of illness. <span lang='ur' dir='rtl'>اگر وزن مسلسل گر رہا ہو یا بھوک ختم ہو گئی ہو تو ڈاکٹر سے ضرور ملیں — یہ بیماری کی علامت ہو سکتی ہے۔</span>"
+        },
+        normal: {
+          vEn: "Your weight is in the healthy range. The job now is simply to protect it.",
+          vUr: "آپ کا وزن صحت مند حد میں ہے۔ اب کام صرف اسے برقرار رکھنا ہے۔",
+          eat: [
+            li("The balanced plate: half vegetables and salad, one quarter protein, one quarter roti or rice.", "متوازن پلیٹ: آدھی سبزی و سلاد، چوتھائی پروٹین، چوتھائی روٹی یا چاول۔"),
+            li("Fibre 25–30 g a day: whole grains, dal, and fruit eaten with its skin.", "روزانہ 25–30 گرام فائبر: ثابت اناج، دالیں اور چھلکے سمیت پھل۔"),
+            li("More home cooking, fewer deep-fried bazaar snacks.", "گھر کا کھانا زیادہ، بازاری تلی ہوئی چیزیں کم۔"),
+            li("Keep sugar in tea to one spoon, and drink water through the day.", "چائے میں چینی ایک چمچ تک رکھیں اور دن بھر پانی پیتے رہیں۔")
+          ],
+          nut: [
+            li("Calcium — 1,000 mg a day: milk, yogurt.", "کیلشیم — دودھ، دہی۔"),
+            li("Vitamin D — 600–800 IU a day: sunlight, eggs.", "وٹامن ڈی — دھوپ، انڈے۔"),
+            iron,
+            vitC,
+            li("Potassium: bananas, beans, yogurt.", "پوٹاشیم — کیلے، لوبیا، دہی۔")
+          ],
+          caution: "Stay active at least 150 minutes a week (WHO guideline) — a healthy weight still needs movement. <span lang='ur' dir='rtl'>ہفتے میں کم از کم 150 منٹ جسمانی سرگرمی رکھیں (WHO ہدایت) — صحت مند وزن کو بھی حرکت چاہیے۔</span>"
+        },
+        over: {
+          vEn: "Your weight is above the healthy range. A gentle, steady reduction protects your heart, knees and blood sugar.",
+          vUr: "آپ کا وزن صحت مند حد سے زیادہ ہے۔ آہستہ اور مستقل کمی آپ کے دل، گھٹنوں اور شوگر کی حفاظت کرتی ہے۔",
+          eat: [
+            li("Protein first at every meal — eggs, dal, chicken, yogurt — it keeps you full for longer.", "ہر کھانے میں پروٹین پہلے لیں — انڈے، دال، مرغی، دہی — اس سے دیر تک بھوک نہیں لگتی۔"),
+            li("Cut sugary drinks and deep-fried snacks; switch to whole grains.", "میٹھے مشروبات اور تلی ہوئی چیزیں کم کریں؛ ثابت اناج کھائیں۔"),
+            li("Fill half the plate with vegetables and dal before adding roti or rice.", "روٹی یا چاول سے پہلے آدھی پلیٹ سبزی و دال سے بھریں۔"),
+            li("Eat slowly, and stop at the first feeling of fullness.", "آہستہ کھائیں اور پہلی سیرابی پر رک جائیں۔")
+          ],
+          nut: [
+            li("Vitamin D — 600–800 IU a day: sunlight, eggs.", "وٹامن ڈی — دھوپ، انڈے۔"),
+            li("Vitamin B12 — 2.4 µg a day: eggs, milk, meat.", "وٹامن بی 12 — انڈے، دودھ، گوشت۔"),
+            li("Magnesium — 350–400 mg a day: nuts, seeds, whole grains.", "میگنیشیم — میوے، بیج، ثابت اناج۔"),
+            li("Omega-3: oily fish twice a week, or flaxseed and walnuts.", "اومیگا 3 — ہفتے میں دو بار روغنی مچھلی، یا السی و اخروٹ۔"),
+            li("Calcium — 1,000 mg a day: milk, yogurt.", "کیلشیم — دودھ، دہی۔")
+          ],
+          caution: "Avoid crash diets and unproven pills. Half a kilo a week is the safe pace. <span lang='ur' dir='rtl'>کریش ڈائٹ اور غیر ثابت شدہ گولیوں سے بچیں۔ ہفتے میں آدھا کلو ہی محفوظ رفتار ہے۔</span>"
+        },
+        obese: {
+          vEn: "Your weight is in the obese range. Small, steady steps taken now can hold off diabetes and blood pressure later.",
+          vUr: "آپ کا وزن موٹاپے کی حد میں ہے۔ ابھی کے چھوٹے مستقل قدم آگے چل کر ذیابیطس و بلڈ پریشر سے بچا سکتے ہیں۔",
+          eat: [
+            li("Use the plate method at every meal: half vegetables, one quarter protein, one quarter roti or rice.", "ہر کھانے میں پلیٹ کا اصول: آدھی سبزی، چوتھائی پروٹین، چوتھائی روٹی یا چاول۔"),
+            li("Walk 20–30 minutes after dinner, every day.", "روزانہ رات کے کھانے کے بعد 20–30 منٹ چہل قدمی کریں۔"),
+            li("Keep protein high while the weight comes down — it protects your muscle.", "وزن گھٹاتے ہوئے پروٹین زیادہ رکھیں — اس سے عضلات محفوظ رہتے ہیں۔"),
+            li("Stop sugary drinks completely — water or unsweetened tea instead.", "میٹھے مشروبات بالکل بند کر دیں — اس کی جگہ پانی یا بغیر چینی کی چائے۔")
+          ],
+          nut: [
+            li("Vitamin D — 600–800 IU a day: sunlight, eggs.", "وٹامن ڈی — دھوپ، انڈے۔"),
+            li("Vitamin B12 — 2.4 µg a day: eggs, milk, meat.", "وٹامن بی 12 — انڈے، دودھ، گوشت۔"),
+            li("Magnesium — 350–400 mg a day: nuts, seeds, whole grains.", "میگنیشیم — میوے، بیج، ثابت اناج۔"),
+            li("Omega-3: oily fish twice a week, or flaxseed and walnuts.", "اومیگا 3 — ہفتے میں دو بار روغنی مچھلی، یا السی و اخروٹ۔"),
+            li("Calcium — 1,000 mg a day: milk, yogurt.", "کیلشیم — دودھ، دہی۔")
+          ],
+          caution: "Please consult a doctor before starting a strict plan — especially if you have diabetes, blood pressure or a thyroid problem. <span lang='ur' dir='rtl'>سخت پلان شروع کرنے سے پہلے ڈاکٹر سے مشورہ ضرور کریں — خصوصاً ذیابیطس، بلڈ پریشر یا تھائرائیڈ ہو تو۔</span>"
+        }
+      };
+      return A[key];
+    }
+    btn.addEventListener("click", function () {
+      var panel = $("bmiAdvice");
+      var hCm;
+      if (!$("hCmGroup").hidden) { hCm = parseFloat($("hCm").value); }
+      else {
+        var ft = parseFloat($("hFt").value) || 0, inch = parseFloat($("hIn").value) || 0;
+        hCm = (ft * 12 + inch) * 2.54;
+      }
+      var w = parseFloat($("bmiWeight").value);
+      var age = parseFloat($("bmiAge").value);
+      if (!hCm || hCm < 80 || hCm > 260 || !w || w < 15 || w > 500 || !age || age < 2 || age > 120) {
+        panel.hidden = true; panel.innerHTML = ""; return;
+      }
+      var g = $("bmiGender").value;
+      var m = hCm / 100, m2 = m * m;
+      var bmi = w / m2;
+      var key = bmi < 18.5 ? "under" : (bmi < 25 ? "normal" : (bmi < 30 ? "over" : "obese"));
+      var lo = 18.5 * m2, hi = 24.9 * m2;
+      var bmr = 10 * w + 6.25 * hCm - 5 * age + (g === "m" ? 5 : -161);
+      var tdee = bmr * ACT[$("bmiActivity").value];
+      /* BMR */
+      $("bmiBmr").textContent = fmt0(bmr) + " kcal";
+      /* calorie targets */
+      var floor = g === "f" ? 1200 : 1500;
+      var lose = tdee - 500, clamped = false;
+      if (lose < floor) { lose = floor; clamped = true; }
+      $("bmiCalMaintain").textContent = fmt0(tdee) + " kcal · Maintain";
+      $("bmiCalLose").innerHTML = "Lose ~0.5 kg/week · <span lang='ur' dir='rtl'>وزن گھٹائیں</span>: " + fmt0(lose) + " kcal";
+      $("bmiCalGain").innerHTML = "Gain · <span lang='ur' dir='rtl'>وزن بڑھائیں</span>: " + fmt0(tdee + 300) + " kcal";
+      $("bmiCalNote").innerHTML = clamped
+        ? "Minimum safe level applied (" + fmt0(floor) + " kcal) — eating below this is not advised. · <span lang='ur' dir='rtl'>کم از کم محفوظ حد لگائی گئی ہے — اس سے کم کھانا مناسب نہیں۔</span>"
+        : "";
+      /* weight to change */
+      if (key === "under") {
+        $("bmiChange").textContent = "Gain " + (lo - w).toFixed(1) + " kg";
+        $("bmiChangeSub").innerHTML = "to reach the healthy range · <span lang='ur' dir='rtl'>صحت مند حد تک پہنچنے کے لیے اتنا وزن بڑھائیں</span>";
+      } else if (key === "normal") {
+        $("bmiChange").textContent = "In healthy range ✓";
+        $("bmiChangeSub").innerHTML = "Your weight is already in the healthy range · <span lang='ur' dir='rtl'>آپ کا وزن پہلے ہی صحت مند حد میں ہے</span>";
+      } else {
+        $("bmiChange").textContent = "Lose " + (w - hi).toFixed(1) + " kg";
+        $("bmiChangeSub").innerHTML = "to reach the healthy range · <span lang='ur' dir='rtl'>صحت مند حد میں آنے کے لیے اتنا وزن گھٹائیں</span>";
+      }
+      /* protein target */
+      var protein, basis;
+      if (key === "under") { protein = Math.round(1.2 * w) + " g"; basis = "1.2 g per kg of your weight"; }
+      else if (key === "normal") { protein = Math.round(0.8 * w) + "–" + Math.round(1.0 * w) + " g"; basis = "0.8–1.0 g per kg of your weight"; }
+      else {
+        var mid = (lo + hi) / 2;
+        protein = Math.round(1.2 * mid) + "–" + Math.round(1.6 * mid) + " g";
+        basis = "1.2–1.6 g per kg of target weight (" + mid.toFixed(1) + " kg)";
+      }
+      /* gender note */
+      var gNote = g === "f"
+        ? "Note for women · <span lang='ur' dir='rtl'>خواتین کے لیے نوٹ</span> — In the childbearing years, folate (400 µg) and iron (18 mg) matter most; zinc need is 8 mg a day. <span lang='ur' dir='rtl'>بچے پیدا کرنے کی عمر میں فولیٹ (400 مائیکروگرام) اور آئرن (18 ملی گرام) سب سے اہم ہیں؛ زنک کی ضرورت 8 ملی گرام ہے۔</span>"
+        : "Note for men · <span lang='ur' dir='rtl'>مردوں کے لیے نوٹ</span> — Men need less iron (8 mg a day) but more zinc (11 mg a day): meat, eggs, seeds. <span lang='ur' dir='rtl'>مردوں کو آئرن کم (8 ملی گرام) مگر زنک زیادہ (11 ملی گرام) چاہیے: گوشت، انڈے، بیج۔</span>";
+      var a = advice(key, g);
+      var H = "style='font-family:\"Playfair Display\",serif;color:var(--gold-2);letter-spacing:.03em;margin:14px 0 6px;font-size:16px'";
+      var UL = "style='margin:0;padding-left:20px;line-height:1.9;font-size:14.5px'";
+      panel.innerHTML =
+        "<p style='font-size:15.5px;line-height:1.8;margin:0'><strong>Your advice · <span lang='ur' dir='rtl'>آپ کے لیے مشورہ</span></strong></p>" +
+        "<p style='line-height:1.8;margin:8px 0 0'>" + a.vEn + " <span lang='ur' dir='rtl' style='font-family:var(--ur)'>" + a.vUr + "</span></p>" +
+        "<h4 " + H + ">What to eat · <span lang='ur' dir='rtl'>کیا کھائیں</span></h4><ul " + UL + ">" + a.eat.join("") + "</ul>" +
+        "<h4 " + H + ">Key vitamins &amp; minerals · <span lang='ur' dir='rtl'>اہم وٹامنز و معدنیات</span></h4><ul " + UL + ">" + a.nut.join("") + "</ul>" +
+        "<p style='line-height:1.8;margin:12px 0 0'><strong>Protein target · <span lang='ur' dir='rtl'>پروٹین کا ہدف</span>:</strong> " + protein + " per day (" + basis + ") — eggs, milk, yogurt, dal, chicken, fish. <span lang='ur' dir='rtl'>انڈے، دودھ، دہی، دالیں، مرغی، مچھلی۔</span></p>" +
+        "<p style='line-height:1.8;margin:8px 0 0'>" + gNote + "</p>" +
+        "<p style='line-height:1.8;margin:8px 0 0'>⚠ " + a.caution + "</p>";
+      panel.hidden = false;
+    });
+  })();
+})();
+</script>
 <a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 </body>
 </html>
