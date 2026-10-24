@@ -113,8 +113,8 @@
   <section class="section" style="padding-top:56px;padding-bottom:20px">
     <div class="wrap reveal">
       <p class="kicker">The Toolkit</p>
-      <h2 class="h2">Twenty-nine Free Tools</h2>
-      <p class="h2-ur" lang="ur" dir="rtl">انتیس مفت اوزار</p>
+      <h2 class="h2">Thirty Free Tools</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">تیس مفت اوزار</p>
       <p class="lede">Everything runs right here in your browser — nothing to install, nothing uploaded anywhere. <span lang="ur" dir="rtl">ہر اوزار آپ کے براؤزر ہی میں چلتا ہے۔</span></p>
       <div class="tools-grid">
         <a class="tool-card" href="#tool-card">
@@ -376,6 +376,15 @@
           <span class="tool-ur" lang="ur" dir="rtl">پینٹ کیلکولیٹر</span>
           <span class="tool-x">Room size in, paint litres out — walls, ceiling, doors, windows, coats, primer and the exact packs to buy. <span class="x-ur" lang="ur" dir="rtl">کمرے کا سائز لکھیں — دیواریں، چھت، دروازے، کھڑکیاں، کوٹ، پرائمر اور خریدنے والے ڈبے سب حساب کے ساتھ۔</span></span>
           <span class="tool-tags"><span class="chip">Rooms</span><span class="chip">Primer</span><span class="chip">Packs</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-solar">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2L19 19M19 5l-1.8 1.8M6.8 17.2L5 19"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">Solar Panel Calculator</span>
+          <span class="tool-ur" lang="ur" dir="rtl">سولر پینل کیلکولیٹر</span>
+          <span class="tool-x">Your home's load in, the full solar answer out — how many panels, what size inverter, roof space, and the complete cost estimate. <span class="x-ur" lang="ur" dir="rtl">گھر کا لوڈ لکھیں — کتنے پینل، کتنا انورٹر، چھت پر کتنی جگہ، اور مکمل خرچے کا تخمینہ۔</span></span>
+          <span class="tool-tags"><span class="chip">Load Based</span><span class="chip">Full Cost</span><span class="chip">Payback</span></span>
           <span class="tool-more">Open the tool ↓</span>
         </a>
       </div>
@@ -1191,6 +1200,112 @@
     </div>
   </section>
 
+  <!-- TOOL 30: SOLAR PANEL CALCULATOR -->
+  <section class="section tool-sec" id="tool-solar" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 30</p>
+      <h2 class="h2">Solar Panel Calculator</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">سولر پینل کیلکولیٹر — لوڈ سے پینل، پینل سے مکمل خرچہ</p>
+      <div class="tool-panel">
+        <p class="tool-note" style="margin-top:0">Step 1 — Apne ghar ke appliances likhen (watt, tadad, rozana ghante — sab badle ja sakte hain). <span class="n-ur" lang="ur" dir="rtl">اپنے گھر کے آلات لکھیں — واٹ، تعداد اور روزانہ گھنٹے سب قابلِ تبدیلی ہیں۔</span></p>
+        <table class="slab-table" aria-label="Appliances">
+          <thead><tr><th><span lang="ur" dir="rtl">آلہ</span> · Appliance</th><th class="num"><span lang="ur" dir="rtl">واٹ</span> · Watts</th><th class="num"><span lang="ur" dir="rtl">تعداد</span> · Qty</th><th class="num"><span lang="ur" dir="rtl">گھنٹے / دن</span> · Hours / day</th></tr></thead>
+          <tbody id="sol-tbody"></tbody>
+        </table>
+        <div class="f-row" style="margin-top:14px">
+          <div class="f-group">
+            <label class="f-label" for="sol-other-w"><span class="fl-ur" lang="ur" dir="rtl">دیگر لوڈ (واٹ)</span><span class="fl-en">Other load (watts)</span></label>
+            <input class="f-input" type="number" id="sol-other-w" min="0" value="0" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-other-h"><span class="fl-ur" lang="ur" dir="rtl">دیگر لوڈ (گھنٹے / دن)</span><span class="fl-en">Other load (hours / day)</span></label>
+            <input class="f-input" type="number" id="sol-other-h" min="0" max="24" step="0.5" value="0" inputmode="decimal">
+          </div>
+        </div>
+        <p class="tool-note">Step 2 — System aur rate (sab editable — apne sheher ke rate se badlein). <span class="n-ur" lang="ur" dir="rtl">سسٹم اور نرخ سب قابلِ تبدیلی ہیں۔</span></p>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="sol-sun"><span class="fl-ur" lang="ur" dir="rtl">روزانہ دھوپ کے گھنٹے</span><span class="fl-en">Peak sun hours per day (Pakistan avg ≈ 5)</span></label>
+            <input class="f-input" type="number" id="sol-sun" min="1" max="10" step="0.1" value="5" inputmode="decimal">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-panelw"><span class="fl-ur" lang="ur" dir="rtl">ایک پینل کے واٹ</span><span class="fl-en">One panel watts (standard 585W)</span></label>
+            <input class="f-input" type="number" id="sol-panelw" min="100" value="585" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-tariff"><span class="fl-ur" lang="ur" dir="rtl">بجلی کا ریٹ فی یونٹ (روپے)</span><span class="fl-en">Electricity rate per unit (Rs)</span></label>
+            <input class="f-input" type="number" id="sol-tariff" min="1" value="45" inputmode="numeric">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="sol-panelprice"><span class="fl-ur" lang="ur" dir="rtl">ایک پینل کی قیمت (روپے)</span><span class="fl-en">One panel price (Rs)</span></label>
+            <input class="f-input" type="number" id="sol-panelprice" min="0" value="21000" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-invprice"><span class="fl-ur" lang="ur" dir="rtl">انورٹر قیمت فی کلوواٹ (روپے)</span><span class="fl-en">Inverter price per kW (Rs)</span></label>
+            <input class="f-input" type="number" id="sol-invprice" min="0" value="50000" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-instpct"><span class="fl-ur" lang="ur" dir="rtl">انسٹالیشن (فیصد)</span><span class="fl-en">Installation (% of panel + inverter)</span></label>
+            <input class="f-input" type="number" id="sol-instpct" min="0" max="50" value="10" inputmode="numeric">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="sol-netfee"><span class="fl-ur" lang="ur" dir="rtl">نیٹ میٹرنگ / میٹر فیس (روپے)</span><span class="fl-en">Net metering / meter fee (Rs)</span></label>
+            <input class="f-input" type="number" id="sol-netfee" min="0" value="50000" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-backup"><span class="fl-ur" lang="ur" dir="rtl">لوڈ شیڈنگ بیک اپ چاہیے؟</span><span class="fl-en">Battery backup needed?</span></label>
+            <select class="f-select" id="sol-backup"><option value="no" selected>No · نہیں (on-grid)</option><option value="yes">Yes · جی ہاں (hybrid)</option></select>
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-battprice"><span class="fl-ur" lang="ur" dir="rtl">بیٹری قیمت فی کلوواٹ گھنٹہ (روپے)</span><span class="fl-en">Battery price per kWh (Rs) — only if backup</span></label>
+            <input class="f-input" type="number" id="sol-battprice" min="0" value="45000" inputmode="numeric">
+          </div>
+        </div>
+        <div class="f-row" id="sol-backup-row">
+          <div class="f-group">
+            <label class="f-label" for="sol-bwatts"><span class="fl-ur" lang="ur" dir="rtl">بیک اپ لوڈ (واٹ)</span><span class="fl-en">Backup load (watts — fans, lights, fridge)</span></label>
+            <input class="f-input" type="number" id="sol-bwatts" min="0" value="500" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="sol-bhours"><span class="fl-ur" lang="ur" dir="rtl">بیک اپ گھنٹے</span><span class="fl-en">Backup hours</span></label>
+            <input class="f-input" type="number" id="sol-bhours" min="0" max="24" step="0.5" value="4" inputmode="decimal">
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="sol-btn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="sol-err" hidden>Please enter at least some load and valid rates. · <span lang="ur" dir="rtl">براہ کرم کوئی لوڈ اور درست نرخ لکھیے</span></p>
+        <div class="tool-result" id="sol-result" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">مکمل تخمینہ خرچہ</span> · Total estimated cost</div><div class="r-val" id="sol-total"></div><div class="r-sub" id="sol-sub"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">روزانہ لوڈ</span> · Daily load</div><div class="r-val" id="sol-daily" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ماہانہ یونٹ</span> · Monthly units</div><div class="r-val" id="sol-monthly" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">سسٹم سائز</span> · System size</div><div class="r-val" id="sol-kw" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">پینل درکار</span> · Panels needed</div><div class="r-val" id="sol-panels" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">چھت کی جگہ</span> · Roof space needed</div><div class="r-val" id="sol-roof" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">انورٹر</span> · Inverter</div><div class="r-val" id="sol-inv" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">بیٹری (اگر بیک اپ ہو)</span> · Battery (if backup)</div><div class="r-val" id="sol-batt" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ماہانہ بچت (زیادہ سے زیادہ)</span> · Monthly saving (maximum)</div><div class="r-val" id="sol-saving" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">پیسہ واپسی (تخمیناً)</span> · Payback period (approx)</div><div class="r-val" id="sol-payback" style="font-size:20px"></div></div>
+          </div>
+          <table class="slab-table" aria-label="Solar cost breakdown" style="margin-top:18px">
+            <thead><tr><th><span lang="ur" dir="rtl">مد</span> · Item</th><th class="num"><span lang="ur" dir="rtl">تفصیل</span> · Detail</th><th class="num"><span lang="ur" dir="rtl">رقم</span> · Amount (Rs)</th></tr></thead>
+            <tbody id="sol-costrows"></tbody>
+          </table>
+          <div class="tool-actions" style="flex-wrap:wrap;margin-top:16px">
+            <button type="button" class="btn btn-ghost" id="sol-copy">Copy Result · نتیجہ کاپی کریں</button>
+            <a class="btn btn-ghost" id="sol-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp · واٹس ایپ پر بھیجیں</a>
+          </div>
+          <p class="tool-note">Qeematein andaza hain — apne sheher ke dealer se tasdeeq karein. System size me 20% nuqsan (losses) shamil hai. Bachat is mafrooze par hai ke tamam load solar se poora ho; asal me export rate kam hota hai aur sardiyon me production kam hoti hai, is liye asal payback aam tor par is se lamba hota hai. <span class="n-ur" lang="ur" dir="rtl">قیمتیں اندازاً ہیں؛ اپنے شہر کے ڈیلر سے تصدیق کریں۔ اصل بچت عام طور پر اس سے کچھ کم ہوتی ہے۔</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -1731,6 +1846,114 @@
       $("paint-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText);
     });
   })();
+})();
+</script>
+<script>
+/* Khari Baat — Tool 30: Solar Panel Calculator (2026-10-24).
+   Load-based sizing: appliances -> daily units -> system kW -> panels,
+   inverter, roof space, battery (optional) and a full cost estimate. */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function num(id) { var v = parseFloat($(id).value); return isNaN(v) ? NaN : v; }
+  function fmt(n) { return Math.round(n).toLocaleString("en-US"); }
+  function fmt1(n) { return n.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
+
+  var APPS = [
+    { name: "Ceiling fan · چھت والا پنکھا", w: 75, q: 4, h: 12 },
+    { name: "LED bulb · ایل ای ڈی بلب", w: 12, q: 8, h: 6 },
+    { name: "Fridge · فریج", w: 150, q: 1, h: 12 },
+    { name: "Inverter AC 1.5 ton · انورٹر اے سی", w: 1500, q: 1, h: 8 },
+    { name: "LED TV · ٹی وی", w: 100, q: 1, h: 4 },
+    { name: "Washing machine · واشنگ مشین", w: 500, q: 1, h: 1 },
+    { name: "Water motor 1 HP · پانی کی موٹر", w: 750, q: 1, h: 1 },
+    { name: "Iron · استری", w: 1000, q: 1, h: 0.5 },
+    { name: "Laptop · لیپ ٹاپ", w: 65, q: 1, h: 6 },
+    { name: "Microwave · مائیکرو ویو", w: 1200, q: 1, h: 0.5 }
+  ];
+  var tbody = $("sol-tbody");
+  if (tbody) {
+    var html = "";
+    APPS.forEach(function (a, i) {
+      html += "<tr><td>" + a.name + "</td>" +
+        "<td class='num'><input class='f-input' type='number' id='sol-w" + i + "' min='0' value='" + a.w + "' style='max-width:110px;text-align:right'></td>" +
+        "<td class='num'><input class='f-input' type='number' id='sol-q" + i + "' min='0' value='" + a.q + "' style='max-width:80px;text-align:right'></td>" +
+        "<td class='num'><input class='f-input' type='number' id='sol-h" + i + "' min='0' max='24' step='0.5' value='" + a.h + "' style='max-width:80px;text-align:right'></td></tr>";
+    });
+    tbody.innerHTML = html;
+  }
+
+  var btn = $("sol-btn"); if (!btn) return;
+  btn.addEventListener("click", function () {
+    var err = $("sol-err"), box = $("sol-result");
+    err.hidden = true;
+    var dailyWh = 0, bad = false;
+    APPS.forEach(function (a, i) {
+      var w = num("sol-w" + i), q = num("sol-q" + i), h = num("sol-h" + i);
+      if (isNaN(w) || isNaN(q) || isNaN(h) || w < 0 || q < 0 || h < 0 || h > 24) bad = true;
+      else dailyWh += w * q * h;
+    });
+    var ow = num("sol-other-w"), oh = num("sol-other-h");
+    if (isNaN(ow) || isNaN(oh) || ow < 0 || oh < 0 || oh > 24) bad = true; else dailyWh += ow * oh;
+    var sun = num("sol-sun"), panelW = num("sol-panelw"), tariff = num("sol-tariff");
+    var panelPrice = num("sol-panelprice"), invPrice = num("sol-invprice");
+    var instPct = num("sol-instpct"), netFee = num("sol-netfee"), battPrice = num("sol-battprice");
+    if ([sun, panelW, tariff, panelPrice, invPrice, instPct, netFee, battPrice].some(function (v) { return isNaN(v); })
+      || sun <= 0 || sun > 10 || panelW <= 0 || tariff <= 0 || panelPrice < 0 || invPrice < 0 || instPct < 0 || instPct > 50 || netFee < 0 || battPrice < 0) bad = true;
+    if (bad || dailyWh <= 0) { err.hidden = false; box.hidden = true; return; }
+
+    var dailyUnits = dailyWh / 1000;
+    var monthlyUnits = dailyUnits * 30;
+    var sysKW = dailyUnits / (sun * 0.8); // 20% system losses
+    var panels = Math.ceil(sysKW * 1000 / panelW);
+    var roofM2 = panels * 2.6;
+    var roofSqft = roofM2 * 10.7639;
+    var roofMarla = roofSqft / 272.25;
+    var invKW = Math.ceil(sysKW);
+    var panelCost = panels * panelPrice;
+    var invCost = invKW * invPrice;
+    var instCost = (panelCost + invCost) * instPct / 100;
+    var backup = $("sol-backup").value === "yes";
+    var battKWh = 0, battCost = 0;
+    if (backup) {
+      var bw = num("sol-bwatts"), bh = num("sol-bhours");
+      if (isNaN(bw) || isNaN(bh) || bw < 0 || bh < 0 || bh > 24) { err.hidden = false; box.hidden = true; return; }
+      battKWh = bw * bh / 1000 / 0.8; // 80% usable (lithium)
+      battCost = battKWh * battPrice;
+    }
+    var total = panelCost + invCost + instCost + netFee + battCost;
+    var saving = monthlyUnits * tariff;
+    var payMonths = saving > 0 ? total / saving : 0;
+    var payY = Math.floor(payMonths / 12), payM = Math.round(payMonths - payY * 12);
+
+    $("sol-total").textContent = "Rs " + fmt(total);
+    $("sol-sub").textContent = fmt1(sysKW) + " kW system · " + panels + " panels · " + (backup ? "hybrid (battery backup)" : "on-grid");
+    $("sol-daily").textContent = fmt1(dailyUnits) + " units";
+    $("sol-monthly").textContent = fmt(monthlyUnits) + " units";
+    $("sol-kw").textContent = fmt1(sysKW) + " kW";
+    $("sol-panels").textContent = panels + " × " + fmt(panelW) + "W";
+    $("sol-roof").textContent = fmt(roofSqft) + " sq ft · ≈ " + fmt1(roofMarla) + " marla";
+    $("sol-inv").textContent = invKW + " kW";
+    $("sol-batt").textContent = backup ? fmt1(battKWh) + " kWh" : "— (on-grid)";
+    $("sol-saving").textContent = "Rs " + fmt(saving) + " / month";
+    $("sol-payback").textContent = payY > 0 ? payY + " saal " + payM + " mahine" : payM + " mahine";
+    var rows = "<tr><td>Solar panels · <span lang='ur' dir='rtl'>سولر پینل</span></td><td class='num'>" + panels + " × Rs " + fmt(panelPrice) + "</td><td class='num'>" + fmt(panelCost) + "</td></tr>" +
+      "<tr><td>Inverter · <span lang='ur' dir='rtl'>انورٹر</span></td><td class='num'>" + invKW + " kW × Rs " + fmt(invPrice) + "</td><td class='num'>" + fmt(invCost) + "</td></tr>" +
+      "<tr><td>Installation + structure · <span lang='ur' dir='rtl'>انسٹالیشن</span></td><td class='num'>" + instPct + "%</td><td class='num'>" + fmt(instCost) + "</td></tr>" +
+      "<tr><td>Net metering / meter fee · <span lang='ur' dir='rtl'>نیٹ میٹرنگ فیس</span></td><td class='num'>—</td><td class='num'>" + fmt(netFee) + "</td></tr>";
+    if (backup) rows += "<tr><td>Battery · <span lang='ur' dir='rtl'>بیٹری</span></td><td class='num'>" + fmt1(battKWh) + " kWh × Rs " + fmt(battPrice) + "</td><td class='num'>" + fmt(battCost) + "</td></tr>";
+    rows += "<tr><td><strong>Total · <span lang='ur' dir='rtl'>کل خرچہ</span></strong></td><td class='num'>—</td><td class='num'><strong>" + fmt(total) + "</strong></td></tr>";
+    $("sol-costrows").innerHTML = rows;
+    box.hidden = false;
+
+    var shareText = "My Solar Estimate (Khari Baat Tools)\nDaily load: " + fmt1(dailyUnits) + " units (" + fmt(monthlyUnits) + "/month)\nSystem: " + fmt1(sysKW) + " kW, " + panels + " panels of " + fmt(panelW) + "W\nInverter: " + invKW + " kW, Roof: " + fmt(roofSqft) + " sq ft\nTotal cost: Rs " + fmt(total) + "\nMonthly saving: Rs " + fmt(saving) + ", Payback: " + (payY > 0 ? payY + " years " + payM + " months" : payM + " months") + "\n— Khari Baat Tools";
+    var copyBtn = $("sol-copy");
+    copyBtn.onclick = function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(shareText).catch(function () {});
+      copyBtn.textContent = "Copied ✓"; setTimeout(function () { copyBtn.textContent = "Copy Result · نتیجہ کاپی کریں"; }, 1600);
+    };
+    $("sol-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+  });
 })();
 </script>
 <a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
