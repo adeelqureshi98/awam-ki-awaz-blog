@@ -113,8 +113,8 @@
   <section class="section" style="padding-top:56px;padding-bottom:20px">
     <div class="wrap reveal">
       <p class="kicker">The Toolkit</p>
-      <h2 class="h2">Twenty-six Free Tools</h2>
-      <p class="h2-ur" lang="ur" dir="rtl">چھبیس مفت اوزار</p>
+      <h2 class="h2">Twenty-seven Free Tools</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">ستائیس مفت اوزار</p>
       <p class="lede">Everything runs right here in your browser — nothing to install, nothing uploaded anywhere. <span lang="ur" dir="rtl">ہر اوزار آپ کے براؤزر ہی میں چلتا ہے۔</span></p>
       <div class="tools-grid">
         <a class="tool-card" href="#tool-card">
@@ -349,6 +349,15 @@
           <span class="tool-ur" lang="ur" dir="rtl">سوشل پوسٹ ساز</span>
           <span class="tool-x">Ready-to-post captions for your business in Urdu, English and Roman Urdu — with matching hashtags. <span class="x-ur" lang="ur" dir="rtl">آپ کے کاروبار کے لیے تیار پوسٹس — تینوں زبانوں میں، ہیش ٹیگز کے ساتھ۔</span></span>
           <span class="tool-tags"><span class="chip">3 Languages</span><span class="chip">Hashtags</span><span class="chip">Copy &amp; Share</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-merit">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3L2 9l10 6 10-6-10-6z"/><path d="M6 11v4c0 1.5 2.7 3 6 3s6-1.5 6-3v-4"/><path d="M22 9v5"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">Admission Merit Calculator</span>
+          <span class="tool-ur" lang="ur" dir="rtl">داخلہ میرٹ کیلکولیٹر</span>
+          <span class="tool-x">Matric, Inter and entry-test marks into one final aggregate — with medical, engineering and custom formulas, plus a target planner that tells you exactly how many more test marks you need. <span class="x-ur" lang="ur" dir="rtl">میٹرک، انٹر اور انٹری ٹیسٹ کے نمبروں سے حتمی میرٹ — اور ٹارگٹ پلانر جو بتائے گا کہ ٹیسٹ میں کتنے نمبر اور چاہئیں۔</span></span>
+          <span class="tool-tags"><span class="chip">MDCAT · ECAT</span><span class="chip">Target Planner</span><span class="chip">Custom Formula</span></span>
           <span class="tool-more">Open the tool ↓</span>
         </a>
       </div>
@@ -934,6 +943,98 @@
     </div>
   </section>
 
+  <!-- TOOL 27: ADMISSION MERIT CALCULATOR -->
+  <section class="section tool-sec alt" id="tool-merit" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 27</p>
+      <h2 class="h2">Admission Merit Calculator</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">داخلہ میرٹ کیلکولیٹر — میڈیکل، انجینئرنگ و یونیورسٹی</p>
+      <div class="tool-panel">
+        <div class="f-group" style="max-width:440px">
+          <label class="f-label" for="mer-preset"><span class="fl-ur" lang="ur" dir="rtl">داخلہ فارمولا چنیے</span><span class="fl-en">Choose the admission formula</span></label>
+          <select class="f-select" id="mer-preset">
+            <option value="medical" selected>Medical — MDCAT style · میڈیکل (میٹرک 10%، انٹر 40%، ٹیسٹ 50%)</option>
+            <option value="eng">Engineering — UET style · انجینئرنگ (میٹرک 25%، انٹر 45%، ٹیسٹ 30%)</option>
+            <option value="general">General university · عام یونیورسٹی (میٹرک 20%، انٹر 30%، ٹیسٹ 50%)</option>
+            <option value="custom">Custom — apni marzi · اپنی مرضی کے ویٹیج</option>
+          </select>
+        </div>
+        <p class="tool-note" style="margin-top:-2px">Ye mashhoor tareeqe hain — har idaray ka apna formula ho sakta hai, is liye tamam weightage neechay badle ja sakte hain. <span class="n-ur" lang="ur" dir="rtl">ہر ادارے کا فارمولا مختلف ہو سکتا ہے؛ ویٹیج اپنی ضرورت کے مطابق بدلیں۔</span></p>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="mer-m-obt"><span class="fl-ur" lang="ur" dir="rtl">میٹرک — حاصل کردہ نمبر</span><span class="fl-en">Matric / SSC — obtained marks</span></label>
+            <input class="f-input" type="number" id="mer-m-obt" min="0" value="950" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="mer-m-tot"><span class="fl-ur" lang="ur" dir="rtl">میٹرک — کل نمبر</span><span class="fl-en">Matric / SSC — total marks</span></label>
+            <input class="f-input" type="number" id="mer-m-tot" min="1" value="1100" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="mer-m-w"><span class="fl-ur" lang="ur" dir="rtl">میٹرک — ویٹیج %</span><span class="fl-en">Matric weightage %</span></label>
+            <input class="f-input" type="number" id="mer-m-w" min="0" max="100" step="0.5" value="10" inputmode="decimal">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="mer-i-obt"><span class="fl-ur" lang="ur" dir="rtl">انٹر / ایف ایس سی — حاصل کردہ نمبر</span><span class="fl-en">Inter / FSc / HSSC — obtained marks</span></label>
+            <input class="f-input" type="number" id="mer-i-obt" min="0" value="900" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="mer-i-tot"><span class="fl-ur" lang="ur" dir="rtl">انٹر / ایف ایس سی — کل نمبر</span><span class="fl-en">Inter / FSc / HSSC — total marks</span></label>
+            <input class="f-input" type="number" id="mer-i-tot" min="1" value="1100" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="mer-i-w"><span class="fl-ur" lang="ur" dir="rtl">انٹر — ویٹیج %</span><span class="fl-en">Inter weightage %</span></label>
+            <input class="f-input" type="number" id="mer-i-w" min="0" max="100" step="0.5" value="40" inputmode="decimal">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="mer-t-obt"><span class="fl-ur" lang="ur" dir="rtl">انٹری ٹیسٹ — حاصل کردہ نمبر</span><span class="fl-en">Entry test — obtained marks</span></label>
+            <input class="f-input" type="number" id="mer-t-obt" min="0" value="160" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="mer-t-tot"><span class="fl-ur" lang="ur" dir="rtl">انٹری ٹیسٹ — کل نمبر</span><span class="fl-en">Entry test — total marks</span></label>
+            <input class="f-input" type="number" id="mer-t-tot" min="1" value="200" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="mer-t-w"><span class="fl-ur" lang="ur" dir="rtl">ٹیسٹ — ویٹیج %</span><span class="fl-en">Test weightage %</span></label>
+            <input class="f-input" type="number" id="mer-t-w" min="0" max="100" step="0.5" value="50" inputmode="decimal">
+          </div>
+        </div>
+        <p class="tool-note" id="mer-weightsum" style="margin-top:-2px">Total weightage: 100% ✓ · <span lang="ur" dir="rtl">کل ویٹیج 100 فیصد ہے</span></p>
+        <div class="f-group" style="max-width:440px">
+          <label class="f-label" for="mer-target"><span class="fl-ur" lang="ur" dir="rtl">ٹارگٹ میرٹ % (اختیاری)</span><span class="fl-en">Target merit % — optional (your dream college's merit)</span></label>
+          <input class="f-input" type="number" id="mer-target" min="0" max="100" step="0.01" placeholder="Example: 85" inputmode="decimal">
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="mer-btn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="mer-err" hidden>Please check your marks and weightages. · <span lang="ur" dir="rtl">براہ کرم نمبر اور ویٹیج درست لکھیے</span></p>
+        <div class="tool-result" id="mer-result" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">حتمی داخلہ میرٹ (ایگریگیٹ)</span> · Final admission aggregate</div><div class="r-val" id="mer-agg"></div><div class="r-sub" id="mer-verdict"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">میٹرک کا حصہ</span> · Matric contribution</div><div class="r-val" id="mer-m-c" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">انٹر کا حصہ</span> · Inter contribution</div><div class="r-val" id="mer-i-c" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ٹیسٹ کا حصہ</span> · Test contribution</div><div class="r-val" id="mer-t-c" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ٹیسٹ میں پورے نمبر آئیں تو</span> · If you score full marks in the test</div><div class="r-val" id="mer-max" style="font-size:20px"></div><div class="r-sub">Maximum possible aggregate with your Matric + Inter · <span lang="ur" dir="rtl">آپ کے میٹرک و انٹر کے ساتھ زیادہ سے زیادہ ممکنہ میرٹ</span></div></div>
+          </div>
+          <div style="margin:18px 0 4px;height:12px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden" aria-hidden="true"><div id="mer-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#b08d3e,#e7c877);border-radius:8px"></div></div>
+          <table class="slab-table" aria-label="Merit breakdown">
+            <thead><tr><th><span lang="ur" dir="rtl">مرحلہ</span> · Stage</th><th class="num"><span lang="ur" dir="rtl">حاصل / کل</span> · Obtained / Total</th><th class="num"><span lang="ur" dir="rtl">فیصد</span> · %</th><th class="num"><span lang="ur" dir="rtl">ویٹیج</span> · Weightage</th><th class="num"><span lang="ur" dir="rtl">میرٹ میں حصہ</span> · Contribution</th></tr></thead>
+            <tbody id="mer-rows"></tbody>
+          </table>
+          <div id="mer-plan" hidden style="margin-top:18px;border:1px solid rgba(176,141,62,.4);border-radius:12px;padding:16px 18px;background:rgba(231,200,119,.07);text-align:left"></div>
+          <div class="tool-actions" style="flex-wrap:wrap;margin-top:16px">
+            <button type="button" class="btn btn-ghost" id="mer-copy">Copy Result · نتیجہ کاپی کریں</button>
+            <a class="btn btn-ghost" id="mer-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp · واٹس ایپ پر بھیجیں</a>
+          </div>
+          <p class="tool-note">Ye aik takhmeena hai — asal dakhla us saal ki official merit list aur seats par munhasir hai. Apna data sirf aap ke browser me rehta hai, kahin upload nahi hota. <span class="n-ur" lang="ur" dir="rtl">یہ صرف تخمینہ ہے؛ اصل داخلہ متعلقہ ادارے کی میرٹ لسٹ پر منحصر ہے۔</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -1243,6 +1344,134 @@
       panel.hidden = false;
     });
   })();
+})();
+</script>
+<script>
+/* Khari Baat — Tool 27: Admission Merit Calculator (2026-10-24).
+   Original implementation: Matric + Inter + entry-test marks, weighted into one
+   aggregate, with presets, a live weightage check and a target-merit planner. */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function num(id) { var v = parseFloat($(id).value); return isNaN(v) ? NaN : v; }
+  function fmt2(n) { return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function fmtMarks(n) { return (Math.round(n * 100) / 100).toLocaleString("en-US"); }
+
+  var PRESETS = {
+    medical: [10, 40, 50],
+    eng: [25, 45, 30],
+    general: [20, 30, 50]
+  };
+  var WIDS = ["mer-m-w", "mer-i-w", "mer-t-w"];
+
+  function weightSum() {
+    var s = 0, ok = true;
+    WIDS.forEach(function (id) { var v = num(id); if (isNaN(v)) ok = false; else s += v; });
+    return { sum: s, ok: ok };
+  }
+  function renderSum() {
+    var w = weightSum(), el = $("mer-weightsum");
+    if (!w.ok) { el.innerHTML = "Total weightage: — · <span lang='ur' dir='rtl'>ویٹیج مکمل لکھیں</span>"; return; }
+    var good = Math.abs(w.sum - 100) < 0.01;
+    el.innerHTML = good
+      ? "Total weightage: 100% ✓ · <span lang='ur' dir='rtl'>کل ویٹیج 100 فیصد ہے</span>"
+      : "Total weightage: " + fmtMarks(w.sum) + "% — it must add up to 100% before calculating. · <span lang='ur' dir='rtl'>کل ویٹیج 100 فیصد ہونا ضروری ہے</span>";
+  }
+  $("mer-preset").addEventListener("change", function () {
+    var p = PRESETS[$("mer-preset").value];
+    if (p) { WIDS.forEach(function (id, i) { $(id).value = p[i]; }); }
+    renderSum();
+  });
+  WIDS.forEach(function (id) {
+    $(id).addEventListener("input", function () {
+      if ($("mer-preset").value !== "custom") $("mer-preset").value = "custom";
+      renderSum();
+    });
+  });
+  renderSum();
+
+  function stageErr(label, obt, tot) {
+    if (isNaN(obt) || isNaN(tot) || tot <= 0 || obt < 0 || obt > tot)
+      return label + " — obtained marks must be between 0 and the total marks. · <span lang='ur' dir='rtl'>حاصل کردہ نمبر 0 اور کل نمبروں کے درمیان ہونے چاہئیں۔</span>";
+    return "";
+  }
+
+  $("mer-btn").addEventListener("click", function () {
+    var err = $("mer-err"), box = $("mer-result");
+    err.hidden = true;
+    var mObt = num("mer-m-obt"), mTot = num("mer-m-tot"), mW = num("mer-m-w");
+    var iObt = num("mer-i-obt"), iTot = num("mer-i-tot"), iW = num("mer-i-w");
+    var tObt = num("mer-t-obt"), tTot = num("mer-t-tot"), tW = num("mer-t-w");
+    var msg = stageErr("Matric", mObt, mTot) || stageErr("Inter", iObt, iTot) || stageErr("Entry test", tObt, tTot);
+    if (!msg) {
+      if ([mW, iW, tW].some(function (v) { return isNaN(v) || v < 0 || v > 100; }))
+        msg = "Each weightage must be between 0% and 100%. · <span lang='ur' dir='rtl'>ہر ویٹیج 0 سے 100 فیصد کے درمیان ہونا چاہیے۔</span>";
+      else if (Math.abs(mW + iW + tW - 100) >= 0.01)
+        msg = "Weightages must add up to exactly 100% (currently " + fmtMarks(mW + iW + tW) + "%). · <span lang='ur' dir='rtl'>ویٹیج کا مجموعہ بالکل 100 فیصد ہونا چاہیے۔</span>";
+    }
+    var target = $("mer-target").value === "" ? NaN : num("mer-target");
+    if (!msg && !isNaN(target) && (target <= 0 || target > 100))
+      msg = "Target merit must be between 0% and 100%. · <span lang='ur' dir='rtl'>ٹارگٹ میرٹ 0 سے 100 فیصد کے درمیان ہونا چاہیے۔</span>";
+    if (msg) { err.innerHTML = msg; err.hidden = false; box.hidden = true; return; }
+
+    var mPct = mObt / mTot * 100, iPct = iObt / iTot * 100, tPct = tObt / tTot * 100;
+    var mC = mPct * mW / 100, iC = iPct * iW / 100, tC = tPct * tW / 100;
+    var agg = mC + iC + tC;
+    var maxAgg = mC + iC + tW; // test at 100%
+
+    $("mer-agg").textContent = fmt2(agg) + "%";
+    $("mer-verdict").innerHTML = agg >= 85
+      ? "Excellent aggregate — a very competitive score. · <span lang='ur' dir='rtl'>بہترین میرٹ — بہت مضبوط اسکور۔</span>"
+      : agg >= 70
+      ? "Good aggregate — competitive for many institutions. · <span lang='ur' dir='rtl'>اچھا میرٹ — کئی اداروں کے لیے موزوں۔</span>"
+      : "Below 70% — improving the entry test is the fastest way to lift it, since it carries the biggest weight. · <span lang='ur' dir='rtl'>70 فیصد سے کم — انٹری ٹیسٹ بہتر کرنا سب سے تیز طریقہ ہے، کیونکہ اس کا ویٹیج سب سے زیادہ ہے۔</span>";
+    $("mer-m-c").textContent = fmt2(mC) + "%";
+    $("mer-i-c").textContent = fmt2(iC) + "%";
+    $("mer-t-c").textContent = fmt2(tC) + "%";
+    $("mer-max").textContent = fmt2(maxAgg) + "%";
+    $("mer-bar").style.width = Math.min(100, Math.max(0, agg)) + "%";
+    $("mer-rows").innerHTML =
+      "<tr><td>Matric / SSC · <span lang='ur' dir='rtl'>میٹرک</span></td><td class='num'>" + fmtMarks(mObt) + " / " + fmtMarks(mTot) + "</td><td class='num'>" + fmt2(mPct) + "%</td><td class='num'>" + fmtMarks(mW) + "%</td><td class='num'>" + fmt2(mC) + "%</td></tr>" +
+      "<tr><td>Inter / FSc · <span lang='ur' dir='rtl'>انٹر</span></td><td class='num'>" + fmtMarks(iObt) + " / " + fmtMarks(iTot) + "</td><td class='num'>" + fmt2(iPct) + "%</td><td class='num'>" + fmtMarks(iW) + "%</td><td class='num'>" + fmt2(iC) + "%</td></tr>" +
+      "<tr><td>Entry test · <span lang='ur' dir='rtl'>انٹری ٹیسٹ</span></td><td class='num'>" + fmtMarks(tObt) + " / " + fmtMarks(tTot) + "</td><td class='num'>" + fmt2(tPct) + "%</td><td class='num'>" + fmtMarks(tW) + "%</td><td class='num'>" + fmt2(tC) + "%</td></tr>" +
+      "<tr><td><strong>Total aggregate · <span lang='ur' dir='rtl'>کل میرٹ</span></strong></td><td class='num'>—</td><td class='num'>—</td><td class='num'>100%</td><td class='num'><strong>" + fmt2(agg) + "%</strong></td></tr>";
+
+    /* ---- Target planner ---- */
+    var plan = $("mer-plan");
+    if (isNaN(target)) { plan.hidden = true; plan.innerHTML = ""; }
+    else {
+      plan.hidden = false;
+      var gap = target - agg;
+      if (gap <= 0) {
+        plan.innerHTML = "<p style='line-height:1.8;margin:0'><strong>Target clear ✓</strong> — your aggregate (" + fmt2(agg) + "%) is " + fmt2(-gap) + " point(s) above your target (" + fmt2(target) + "%). Final selection still depends on that year's official merit list. <span lang='ur' dir='rtl'>آپ کا میرٹ ٹارگٹ سے زیادہ ہے — حتمی داخلہ اس سال کی میرٹ لسٹ پر منحصر ہے۔</span></p>";
+      } else if (tW <= 0) {
+        plan.innerHTML = "<p style='line-height:1.8;margin:0'><strong>Target needs " + fmt2(gap) + " more point(s).</strong> But the entry test weightage is 0% in this formula, so the test cannot lift the aggregate — change the formula weights or improve Matric/Inter marks. <span lang='ur' dir='rtl'>ٹیسٹ کا ویٹیج صفر ہے، اس لیے ٹیسٹ سے میرٹ نہیں بڑھے گا۔</span></p>";
+      } else {
+        var needPct = (target - mC - iC) / tW * 100; // absolute test % required
+        var needMarks = needPct / 100 * tTot;
+        if (needPct > 100) {
+          plan.innerHTML = "<p style='line-height:1.8;margin:0'><strong>Target not reachable through the test alone.</strong> Even with full marks in the test, your aggregate would be " + fmt2(maxAgg) + "%, still below your target of " + fmt2(target) + "%. You would need a higher Matric/Inter score, or a different institution's formula. <span lang='ur' dir='rtl'>ٹیسٹ میں پورے نمبر بھی لیں تو میرٹ " + fmt2(maxAgg) + " فیصد بنے گا — ٹارگٹ سے کم۔</span></p>";
+        } else {
+          var extra = needMarks - tObt;
+          plan.innerHTML = "<p style='line-height:1.8;margin:0'><strong>Target planner · <span lang='ur' dir='rtl'>ٹارگٹ پلان</span></strong></p>" +
+            "<p style='line-height:1.8;margin:8px 0 0'>To reach " + fmt2(target) + "% you need <strong>" + fmt2(needPct) + "% in the entry test</strong> — that is <strong>" + fmtMarks(Math.ceil(needMarks)) + " marks out of " + fmtMarks(tTot) + "</strong>. " +
+            (extra > 0
+              ? "You currently have " + fmtMarks(tObt) + ", so you need <strong>" + fmtMarks(Math.ceil(extra)) + " more mark(s)</strong> in the test. <span lang='ur' dir='rtl'>ٹیسٹ میں مزید " + fmtMarks(Math.ceil(extra)) + " نمبر درکار ہیں۔</span>"
+              : "Your current test score already covers it — the gap is in the weightage mix, so recheck the formula. <span lang='ur' dir='rtl'>آپ کا موجودہ ٹیسٹ اسکور کافی ہے — فارمولا دوبارہ چیک کریں۔</span>") + "</p>";
+        }
+      }
+    }
+    box.hidden = false;
+
+    /* ---- Copy / WhatsApp ---- */
+    var shareText = "My Admission Merit (Khari Baat Tools)\nMatric: " + fmtMarks(mObt) + "/" + fmtMarks(mTot) + " (" + fmt2(mPct) + "%, weight " + fmtMarks(mW) + "%)\nInter: " + fmtMarks(iObt) + "/" + fmtMarks(iTot) + " (" + fmt2(iPct) + "%, weight " + fmtMarks(iW) + "%)\nEntry test: " + fmtMarks(tObt) + "/" + fmtMarks(tTot) + " (" + fmt2(tPct) + "%, weight " + fmtMarks(tW) + "%)\nFinal aggregate: " + fmt2(agg) + "%\n— Khari Baat Tools";
+    var copyBtn = $("mer-copy");
+    copyBtn.onclick = function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(shareText).catch(function () {});
+      copyBtn.textContent = "Copied ✓"; setTimeout(function () { copyBtn.textContent = "Copy Result · نتیجہ کاپی کریں"; }, 1600);
+    };
+    $("mer-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+  });
 })();
 </script>
 <a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
