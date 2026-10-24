@@ -113,8 +113,8 @@
   <section class="section" style="padding-top:56px;padding-bottom:20px">
     <div class="wrap reveal">
       <p class="kicker">The Toolkit</p>
-      <h2 class="h2">Twenty-seven Free Tools</h2>
-      <p class="h2-ur" lang="ur" dir="rtl">ستائیس مفت اوزار</p>
+      <h2 class="h2">Twenty-nine Free Tools</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">انتیس مفت اوزار</p>
       <p class="lede">Everything runs right here in your browser — nothing to install, nothing uploaded anywhere. <span lang="ur" dir="rtl">ہر اوزار آپ کے براؤزر ہی میں چلتا ہے۔</span></p>
       <div class="tools-grid">
         <a class="tool-card" href="#tool-card">
@@ -358,6 +358,24 @@
           <span class="tool-ur" lang="ur" dir="rtl">داخلہ میرٹ کیلکولیٹر</span>
           <span class="tool-x">Matric, Inter and entry-test marks into one final aggregate — with medical, engineering and custom formulas, plus a target planner that tells you exactly how many more test marks you need. <span class="x-ur" lang="ur" dir="rtl">میٹرک، انٹر اور انٹری ٹیسٹ کے نمبروں سے حتمی میرٹ — اور ٹارگٹ پلانر جو بتائے گا کہ ٹیسٹ میں کتنے نمبر اور چاہئیں۔</span></span>
           <span class="tool-tags"><span class="chip">MDCAT · ECAT</span><span class="chip">Target Planner</span><span class="chip">Custom Formula</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-life">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">Life in Numbers</span>
+          <span class="tool-ur" lang="ur" dir="rtl">زندگی کے اعداد</span>
+          <span class="tool-x">How many days have you lived? How many heartbeats, breaths and nights of sleep — plus how far along a 70-year life you are. <span class="x-ur" lang="ur" dir="rtl">آپ کتنے دن جی چکے ہیں — کتنی دھڑکنیں، کتنی سانسیں، کتنی نیند — اور 70 سالہ زندگی کا کتنا سفر طے ہوا۔</span></span>
+          <span class="tool-tags"><span class="chip">Heartbeats</span><span class="chip">Shareable</span></span>
+          <span class="tool-more">Open the tool ↓</span>
+        </a>
+        <a class="tool-card" href="#tool-paint">
+          <span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z"/><path d="M9 9v6a3 3 0 0 0 6 0V9"/><path d="M12 18v3"/></svg></span>
+          <span class="tool-live">Live · براہِ راست</span>
+          <span class="tool-t">Paint Calculator</span>
+          <span class="tool-ur" lang="ur" dir="rtl">پینٹ کیلکولیٹر</span>
+          <span class="tool-x">Room size in, paint litres out — walls, ceiling, doors, windows, coats, primer and the exact packs to buy. <span class="x-ur" lang="ur" dir="rtl">کمرے کا سائز لکھیں — دیواریں، چھت، دروازے، کھڑکیاں، کوٹ، پرائمر اور خریدنے والے ڈبے سب حساب کے ساتھ۔</span></span>
+          <span class="tool-tags"><span class="chip">Rooms</span><span class="chip">Primer</span><span class="chip">Packs</span></span>
           <span class="tool-more">Open the tool ↓</span>
         </a>
       </div>
@@ -1035,6 +1053,144 @@
     </div>
   </section>
 
+  <!-- TOOL 28: LIFE IN NUMBERS -->
+  <section class="section tool-sec" id="tool-life" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 28</p>
+      <h2 class="h2">Life in Numbers</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">زندگی کے اعداد — آپ نے اب تک کیا جیا</p>
+      <div class="tool-panel">
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="life-dob"><span class="fl-ur" lang="ur" dir="rtl">تاریخ پیدائش</span><span class="fl-en">Date of birth</span></label>
+            <input class="f-input" type="date" id="life-dob">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="life-sleep"><span class="fl-ur" lang="ur" dir="rtl">روزانہ اوسط نیند (گھنٹے)</span><span class="fl-en">Average sleep per day (hours)</span></label>
+            <input class="f-input" type="number" id="life-sleep" min="0" max="24" step="0.5" value="8" inputmode="decimal">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="life-hr"><span class="fl-ur" lang="ur" dir="rtl">اوسط دل کی دھڑکن (فی منٹ)</span><span class="fl-en">Average heart rate (beats per minute)</span></label>
+            <input class="f-input" type="number" id="life-hr" min="40" max="120" value="72" inputmode="numeric">
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="life-btn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="life-err" hidden>Please pick a valid date of birth (not in the future). · <span lang="ur" dir="rtl">براہ کرم درست تاریخ پیدائش منتخب کیجیے</span></p>
+        <div class="tool-result" id="life-result" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">آپ جی چکے ہیں</span> · You have lived</div><div class="r-val" id="life-days"></div><div class="r-sub" id="life-ymd"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ہفتے</span> · Weeks</div><div class="r-val" id="life-weeks"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">گھنٹے</span> · Hours</div><div class="r-val" id="life-hours"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">منٹ</span> · Minutes</div><div class="r-val" id="life-mins"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">دل کی دھڑکنیں (تخمیناً)</span> · Heartbeats (approx)</div><div class="r-val" id="life-beats"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">سانسیں (تخمیناً)</span> · Breaths (approx)</div><div class="r-val" id="life-breaths"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">کل نیند</span> · Total sleep</div><div class="r-val" id="life-sleep-out" style="font-size:20px"></div></div>
+          </div>
+          <div style="margin:18px 0 4px;height:12px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden" aria-hidden="true"><div id="life-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#b08d3e,#e7c877);border-radius:8px"></div></div>
+          <p class="tool-note" id="life-pct"></p>
+          <div class="tool-actions" style="flex-wrap:wrap;margin-top:16px">
+            <button type="button" class="btn btn-ghost" id="life-copy">Copy Result · نتیجہ کاپی کریں</button>
+            <a class="btn btn-ghost" id="life-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp · واٹس ایپ پر بھیجیں</a>
+          </div>
+          <p class="tool-note">Ye ausat (average) par mabni takhmeene hain — dil ki dharakn, saans aur neend har shakhs me mukhtalif hoti hai. 70 saal ka pemana sirf aik misaal hai, koi paish goi nahi. <span class="n-ur" lang="ur" dir="rtl">یہ اوسط پر مبنی تخمینے ہیں؛ ہر شخص کی دھڑکن، سانس اور نیند مختلف ہوتی ہے۔</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL 29: PAINT CALCULATOR -->
+  <section class="section tool-sec alt" id="tool-paint" style="padding-top:64px">
+    <div class="wrap reveal">
+      <p class="kicker">Tool 29</p>
+      <h2 class="h2">Paint Calculator</h2>
+      <p class="h2-ur" lang="ur" dir="rtl">پینٹ کیلکولیٹر — کمرے کا پینٹ، ڈبوں سمیت</p>
+      <div class="tool-panel">
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="paint-l"><span class="fl-ur" lang="ur" dir="rtl">کمرے کی لمبائی (فٹ)</span><span class="fl-en">Room length (feet)</span></label>
+            <input class="f-input" type="number" id="paint-l" min="0.1" step="0.1" value="12" inputmode="decimal">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="paint-w"><span class="fl-ur" lang="ur" dir="rtl">کمرے کی چوڑائی (فٹ)</span><span class="fl-en">Room width (feet)</span></label>
+            <input class="f-input" type="number" id="paint-w" min="0.1" step="0.1" value="10" inputmode="decimal">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="paint-h"><span class="fl-ur" lang="ur" dir="rtl">دیوار کی اونچائی (فٹ)</span><span class="fl-en">Wall height (feet)</span></label>
+            <input class="f-input" type="number" id="paint-h" min="0.1" step="0.1" value="10" inputmode="decimal">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="paint-doors"><span class="fl-ur" lang="ur" dir="rtl">دروازوں کی تعداد</span><span class="fl-en">Number of doors</span></label>
+            <input class="f-input" type="number" id="paint-doors" min="0" value="1" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="paint-windows"><span class="fl-ur" lang="ur" dir="rtl">کھڑکیوں کی تعداد</span><span class="fl-en">Number of windows</span></label>
+            <input class="f-input" type="number" id="paint-windows" min="0" value="1" inputmode="numeric">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="paint-coats"><span class="fl-ur" lang="ur" dir="rtl">کوٹ کی تعداد</span><span class="fl-en">Number of coats</span></label>
+            <input class="f-input" type="number" id="paint-coats" min="1" max="4" value="2" inputmode="numeric">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="paint-dsize"><span class="fl-ur" lang="ur" dir="rtl">ایک دروازے کا رقبہ (مربع فٹ)</span><span class="fl-en">One door area (sq ft) — standard 3×7 = 21</span></label>
+            <input class="f-input" type="number" id="paint-dsize" min="0" step="0.5" value="21" inputmode="decimal">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="paint-wsize"><span class="fl-ur" lang="ur" dir="rtl">ایک کھڑکی کا رقبہ (مربع فٹ)</span><span class="fl-en">One window area (sq ft) — standard 3×5 = 15</span></label>
+            <input class="f-input" type="number" id="paint-wsize" min="0" step="0.5" value="15" inputmode="decimal">
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="paint-cov"><span class="fl-ur" lang="ur" dir="rtl">ایک لیٹر کی کوریج (مربع فٹ)</span><span class="fl-en">Coverage per litre (sq ft) — editable</span></label>
+            <input class="f-input" type="number" id="paint-cov" min="1" value="100" inputmode="numeric">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label"><span class="fl-ur" lang="ur" dir="rtl">چھت بھی پینٹ کرنی ہے؟</span><span class="fl-en">Include ceiling?</span></label>
+            <select class="f-select" id="paint-ceil"><option value="yes" selected>Yes · جی ہاں</option><option value="no">No · نہیں</option></select>
+          </div>
+          <div class="f-group">
+            <label class="f-label"><span class="fl-ur" lang="ur" dir="rtl">10% اضافی (ضیاع کے لیے)</span><span class="fl-en">Add 10% extra for wastage?</span></label>
+            <select class="f-select" id="paint-extra"><option value="yes" selected>Yes · جی ہاں</option><option value="no">No · نہیں</option></select>
+          </div>
+          <div class="f-group">
+            <label class="f-label"><span class="fl-ur" lang="ur" dir="rtl">پرائمر بھی چاہیے؟</span><span class="fl-en">Primer needed too?</span></label>
+            <select class="f-select" id="paint-primer"><option value="no" selected>No · نہیں</option><option value="yes">Yes · جی ہاں</option></select>
+          </div>
+        </div>
+        <div class="f-group" style="max-width:440px">
+          <label class="f-label" for="paint-price"><span class="fl-ur" lang="ur" dir="rtl">پینٹ کی قیمت فی لیٹر (روپے، اختیاری)</span><span class="fl-en">Paint price per litre (Rs) — optional, for cost estimate</span></label>
+          <input class="f-input" type="number" id="paint-price" min="0" placeholder="Example: 1500" inputmode="numeric">
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="btn btn-gold" id="paint-btn">Calculate · حساب لگائیے</button>
+        </div>
+        <p class="tool-err" id="paint-err" hidden>Please check room size, counts and coverage. · <span lang="ur" dir="rtl">براہ کرم کمرے کا سائز اور اعداد درست لکھیے</span></p>
+        <div class="tool-result" id="paint-result" hidden>
+          <div class="result-grid">
+            <div class="result-item result-hero"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">خریدنے کے لیے پینٹ</span> · Paint to buy</div><div class="r-val" id="paint-litres"></div><div class="r-sub" id="paint-exact"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">پینٹ والا رقبہ</span> · Paintable area</div><div class="r-val" id="paint-area" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">دیواریں + چھت</span> · Walls + ceiling</div><div class="r-val" id="paint-walls" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">دروازے و کھڑکیاں (منہا)</span> · Doors + windows deducted</div><div class="r-val" id="paint-deduct" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">ڈبوں کی ترتیب</span> · Packs to buy</div><div class="r-val" id="paint-packs" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">پرائمر (ایک کوٹ)</span> · Primer (one coat)</div><div class="r-val" id="paint-primer-out" style="font-size:20px"></div></div>
+            <div class="result-item"><div class="r-lbl"><span class="r-ur" lang="ur" dir="rtl">تخمینہ لاگت (صرف پینٹ)</span> · Estimated cost (paint only)</div><div class="r-val" id="paint-cost" style="font-size:20px"></div></div>
+          </div>
+          <div class="tool-actions" style="flex-wrap:wrap;margin-top:16px">
+            <button type="button" class="btn btn-ghost" id="paint-copy">Copy Result · نتیجہ کاپی کریں</button>
+            <a class="btn btn-ghost" id="paint-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp · واٹس ایپ پر بھیجیں</a>
+          </div>
+          <p class="tool-note">Standard sizes used: door 3×7 ft = 21 sq ft, window 3×5 ft = 15 sq ft — badle ja sakte hain. Primer coverage 150 sq ft per litre (one coat). Asal kharch paint ki quality aur deewar ki haalat par munhasir hai. <span class="n-ur" lang="ur" dir="rtl">یہ تخمینہ ہے؛ اصل خرچ پینٹ کی کوالٹی اور دیوار کی حالت پر منحصر ہے۔</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -1472,6 +1628,109 @@
     };
     $("mer-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText);
   });
+})();
+</script>
+<script>
+/* Khari Baat — Tools 28 + 29 (2026-10-24): Life in Numbers, Paint Calculator.
+   Original implementations, all client-side. */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function num(id) { var v = parseFloat($(id).value); return isNaN(v) ? NaN : v; }
+  function fmt(n) { return Math.round(n).toLocaleString("en-US"); }
+  function fmt1(n) { return n.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
+
+  /* ================= Tool 28 — Life in Numbers ================= */
+  (function () {
+    var btn = $("life-btn"); if (!btn) return;
+    btn.addEventListener("click", function () {
+      var err = $("life-err"), box = $("life-result");
+      err.hidden = true;
+      var v = $("life-dob").value;
+      var sleep = num("life-sleep"), hr = num("life-hr");
+      if (!v) { err.hidden = false; box.hidden = true; return; }
+      var p = v.split("-").map(Number);
+      var dob = new Date(p[0], p[1] - 1, p[2], 12, 0, 0);
+      var today = new Date(); today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 12, 0, 0);
+      if (isNaN(dob.getTime()) || dob > today) { err.hidden = false; box.hidden = true; return; }
+      if (isNaN(sleep) || sleep < 0 || sleep > 24) sleep = 8;
+      if (isNaN(hr) || hr < 40 || hr > 120) hr = 72;
+      var years = today.getFullYear() - dob.getFullYear();
+      var months = today.getMonth() - dob.getMonth();
+      var daysLeft = today.getDate() - dob.getDate();
+      if (daysLeft < 0) { months--; daysLeft += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+      if (months < 0) { years--; months += 12; }
+      var days = Math.floor((today - dob) / 86400000);
+      var weeks = Math.floor(days / 7);
+      var hours = days * 24, mins = hours * 60;
+      var beats = mins * hr, breaths = days * 20000;
+      var sleepH = days * sleep, sleepDays = sleepH / 24;
+      var pct70 = days / (70 * 365.25) * 100;
+      $("life-days").textContent = fmt(days) + " days";
+      $("life-ymd").textContent = years + " years, " + months + " months, " + daysLeft + " days · " + years + " سال، " + months + " ماہ، " + daysLeft + " دن";
+      $("life-weeks").textContent = fmt(weeks);
+      $("life-hours").textContent = fmt(hours);
+      $("life-mins").textContent = fmt(mins);
+      $("life-beats").textContent = "≈ " + fmt(beats);
+      $("life-breaths").textContent = "≈ " + fmt(breaths);
+      $("life-sleep-out").textContent = fmt(sleepH) + " hours · ≈ " + fmt(sleepDays) + " days";
+      $("life-bar").style.width = Math.min(100, Math.max(0, pct70)) + "%";
+      $("life-pct").innerHTML = pct70 >= 100
+        ? "You have already lived past 70 years — mashaAllah, a long life. · <span lang='ur' dir='rtl'>آپ 70 سال سے زیادہ جی چکے ہیں — ماشاءاللہ طویل زندگی۔</span>"
+        : "On a 70-year scale, you have lived about <strong>" + fmt1(pct70) + "%</strong> of it — this is only an average scale, not a prediction. <span lang='ur' dir='rtl'>70 سال کے پیمانے پر آپ تقریباً " + fmt1(pct70) + " فیصد سفر طے کر چکے ہیں — یہ صرف ایک اوسط پیمانہ ہے، کوئی پیش گوئی نہیں۔</span>";
+      box.hidden = false;
+      var shareText = "My Life in Numbers (Khari Baat Tools)\nLived: " + fmt(days) + " days (" + years + " years, " + months + " months)\nHeartbeats: approx " + fmt(beats) + "\nBreaths: approx " + fmt(breaths) + "\nTotal sleep: " + fmt(sleepH) + " hours\n— Khari Baat Tools";
+      var copyBtn = $("life-copy");
+      copyBtn.onclick = function () {
+        if (navigator.clipboard) navigator.clipboard.writeText(shareText).catch(function () {});
+        copyBtn.textContent = "Copied ✓"; setTimeout(function () { copyBtn.textContent = "Copy Result · نتیجہ کاپی کریں"; }, 1600);
+      };
+      $("life-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+    });
+  })();
+
+  /* ================= Tool 29 — Paint Calculator ================= */
+  (function () {
+    var btn = $("paint-btn"); if (!btn) return;
+    btn.addEventListener("click", function () {
+      var err = $("paint-err"), box = $("paint-result");
+      err.hidden = true;
+      var L = num("paint-l"), W = num("paint-w"), H = num("paint-h");
+      var doors = num("paint-doors"), wins = num("paint-windows"), coats = num("paint-coats");
+      var dSize = num("paint-dsize"), wSize = num("paint-wsize"), cov = num("paint-cov");
+      var price = $("paint-price").value === "" ? NaN : num("paint-price");
+      var bad = [L, W, H, doors, wins, coats, dSize, wSize, cov].some(function (v) { return isNaN(v); })
+        || L <= 0 || W <= 0 || H <= 0 || doors < 0 || wins < 0 || coats < 1 || dSize < 0 || wSize < 0 || cov <= 0;
+      if (bad) { err.hidden = false; box.hidden = true; return; }
+      doors = Math.floor(doors); wins = Math.floor(wins); coats = Math.floor(coats);
+      var walls = 2 * (L + W) * H;
+      var ceil = $("paint-ceil").value === "yes" ? L * W : 0;
+      var deduct = doors * dSize + wins * wSize;
+      var area = Math.max(0, walls + ceil - deduct);
+      var exact = area / cov * coats;
+      if ($("paint-extra").value === "yes") exact *= 1.1;
+      var litres = area > 0 ? Math.max(1, Math.ceil(exact)) : 0;
+      var fours = Math.floor(litres / 4), ones = litres % 4;
+      var packs = litres === 0 ? "—" : (fours > 0 ? fours + " × 4 litre" : "") + (fours > 0 && ones > 0 ? " + " : "") + (ones > 0 ? ones + " × 1 litre" : "");
+      var primer = $("paint-primer").value === "yes" ? (area > 0 ? Math.ceil(area / 150) + " litres" : "—") : "— (not selected)";
+      $("paint-litres").textContent = litres + " litres";
+      $("paint-exact").textContent = "Exact need: " + fmt1(exact) + " litres (rounded up) · <span lang='ur' dir='rtl'>اصل ضرورت " + fmt1(exact) + " لیٹر تھی</span>";
+      $("paint-area").textContent = fmt1(area) + " sq ft";
+      $("paint-walls").textContent = fmt1(walls) + " + " + fmt1(ceil) + " sq ft";
+      $("paint-deduct").textContent = "− " + fmt1(deduct) + " sq ft";
+      $("paint-packs").textContent = packs;
+      $("paint-primer-out").textContent = primer;
+      $("paint-cost").textContent = (!isNaN(price) && price > 0) ? "Rs " + fmt(litres * price) : "— (enter price above)";
+      box.hidden = false;
+      var shareText = "My Paint Estimate (Khari Baat Tools)\nRoom: " + L + " × " + W + " × " + H + " ft\nPaintable area: " + fmt1(area) + " sq ft\nPaint to buy: " + litres + " litres (" + packs + ")\n" + ($("paint-primer").value === "yes" ? "Primer: " + primer + "\n" : "") + "— Khari Baat Tools";
+      var copyBtn = $("paint-copy");
+      copyBtn.onclick = function () {
+        if (navigator.clipboard) navigator.clipboard.writeText(shareText).catch(function () {});
+        copyBtn.textContent = "Copied ✓"; setTimeout(function () { copyBtn.textContent = "Copy Result · نتیجہ کاپی کریں"; }, 1600);
+      };
+      $("paint-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+    });
+  })();
 })();
 </script>
 <a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
