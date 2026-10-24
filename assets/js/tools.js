@@ -114,9 +114,19 @@
       }
       var w = parseFloat($("bmiWeight").value);
       var age = parseFloat($("bmiAge").value);
-      if (!hCm || hCm < 80 || hCm > 260 || !w || w < 15 || w > 500 || !age || age < 2 || age > 120) {
+      if (!hCm || hCm < 80 || hCm > 260) {
+        err.innerHTML = "Height must be between 80 and 260 cm. You entered " + (isNaN(hCm) ? "nothing" : hCm + " cm") + " — if you meant inches, 63 inches = 160 cm (or switch to ft / in above). · <span lang='ur' dir='rtl'>قد 80 سے 260 سینٹی میٹر کے درمیان ہونا چاہیے۔ اگر آپ نے انچ میں لکھا ہے تو 63 انچ = 160 سینٹی میٹر بنتا ہے (یا اوپر ft/in بٹن استعمال کریں)۔</span>";
         err.hidden = false; box.hidden = true; return;
       }
+      if (!w || w < 15 || w > 500) {
+        err.innerHTML = "Weight must be between 15 and 500 kg. · <span lang='ur' dir='rtl'>وزن 15 سے 500 کلو کے درمیان ہونا چاہیے۔</span>";
+        err.hidden = false; box.hidden = true; return;
+      }
+      if (!age || age < 2 || age > 120) {
+        err.innerHTML = "Age must be between 2 and 120 years. · <span lang='ur' dir='rtl'>عمر 2 سے 120 سال کے درمیان ہونی چاہیے۔</span>";
+        err.hidden = false; box.hidden = true; return;
+      }
+      err.innerHTML = "Please check height, weight and age. · <span lang='ur' dir='rtl'>براہ کرم قد، وزن اور عمر درست لکھیے</span>";
       var m = hCm / 100;
       var bmi = w / (m * m);
       var c = cat(bmi);
