@@ -9,7 +9,6 @@
 (function () {
   'use strict';
 
-  var WATERMARK_TEXT = 'Khari Baat \u2022 adeelqureshi98.github.io/awam-ki-awaz-blog';
   var BISMILLAH = '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u064e\u0651\u0647\u0650 \u0627\u0644\u0631\u064e\u0651\u062D\u0652\u0645\u064e\u0670\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062D\u0650\u064a\u0645\u0650';
   var URDU_RE = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
 
@@ -130,7 +129,6 @@
     mode: 'poetry',
     theme: 'royal',
     size: '1:1',           // '1:1' | '9:16'
-    watermark: true,
     customBg: '',          // '' = use theme
     customFg: '',
     values: { poetry: {}, wedding: {}, birthday: {}, custom: {} }
@@ -270,7 +268,7 @@
     colorGroup.appendChild(colors);
     left.appendChild(colorGroup);
 
-    /* size + watermark */
+    /* size */
     var row2 = el('div', 'f-row');
     var sizeGroup = el('div', 'f-group');
     sizeGroup.innerHTML = '<span class="f-label"><span class="fl-ur" lang="ur" dir="rtl">سائز</span><span class="fl-en">Size</span></span>';
@@ -287,17 +285,6 @@
     sizeGroup.appendChild(sizeSeg);
     row2.appendChild(sizeGroup);
 
-    var wmGroup = el('div', 'f-group');
-    wmGroup.innerHTML = '<span class="f-label"><span class="fl-ur" lang="ur" dir="rtl">واٹر مارک</span><span class="fl-en">Watermark</span></span>';
-    var wmLabel = el('label', 'cm-toggle');
-    var wmBox = el('input');
-    wmBox.type = 'checkbox';
-    wmBox.checked = state.watermark;
-    wmBox.addEventListener('change', function () { state.watermark = wmBox.checked; scheduleDraw(); });
-    wmLabel.appendChild(wmBox);
-    wmLabel.appendChild(el('span', '', 'Khari Baat line on card'));
-    wmGroup.appendChild(wmLabel);
-    row2.appendChild(wmGroup);
     left.appendChild(row2);
 
     /* actions */
@@ -570,7 +557,7 @@
 
   function resolve(blocks, W, H, t) {
     var maxW = W - 220;
-    var top = 124, bottom = H - (state.watermark ? 172 : 130);
+    var top = 124, bottom = H - 130;
     var avail = bottom - top;
     var scale = 1, items = [], total = 0, iter;
     for (iter = 0; iter < 3; iter++) {
@@ -651,17 +638,6 @@
       y += it.gap;
     });
 
-    // watermark
-    if (state.watermark) {
-      ctx.save();
-      ctx.font = '400 25px "Playfair Display",Georgia,serif';
-      ctx.fillStyle = t.accent;
-      ctx.globalAlpha = 0.85;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(WATERMARK_TEXT, W / 2, H - 92);
-      ctx.restore();
-    }
   }
 
   var rafPending = false;
