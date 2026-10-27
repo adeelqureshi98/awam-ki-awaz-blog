@@ -101,4 +101,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://adeelqureshi98.github.io/awam-ki-awaz-blog/posts/three-sisters-30-more-days-detention.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://adeelqureshi98.github.io/awam-ki-awaz-blog/blog/how-cyclone-forms-landfall-storm-surge.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
