@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does an ATM Work? From Card to Cash, the Whole System — اے ٹی ایم کیسے کام کرتا ہے؟ کارڈ سے کیش تک کا پورا نظام | Khari Baat</title>
+<meta name="description" content="How does an ATM work? A plain-words system explainer: how the machine reads your card, how your PIN stays encrypted, how the request travels through a payment switch to your bank, how notes are counted from cassettes, and what happens when cash does not come out, the card is retained, or the machine is offline. اردو بلاگ: اے ٹی ایم کیسے کام کرتا ہے؟ کارڈ سے کیش تک کا پورا نظام">
+<meta name="author" content="Muhammad Adeel">
+<link rel="canonical" href="https://adeelqureshi98.github.io/awam-ki-awaz-blog/blog/how-atm-works-card-pin-bank-cash.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Khari Baat">
+<meta property="og:title" content="How Does an ATM Work? From Card to Cash, the Whole System — Muhammad Adeel">
+<meta property="og:description" content="How does an ATM work? A plain-words system explainer: how the machine reads your card, how your PIN stays encrypted, how the request travels through a payment switch to your bank, how notes are counted from cassettes, and what happens when cash does not come out, the card is retained, or the machine is offline. اردو بلاگ: اے ٹی ایم کیسے کام کرتا ہے؟ کارڈ سے کیش تک کا پورا نظام">
+<meta property="og:url" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/blog/how-atm-works-card-pin-bank-cash.html">
+<meta property="og:image" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Does an ATM Work? From Card to Cash, the Whole System — Muhammad Adeel">
+<meta name="twitter:description" content="How does an ATM work? A plain-words system explainer: how the machine reads your card, how your PIN stays encrypted, how the request travels through a payment switch to your bank, how notes are counted from cassettes, and what happens when cash does not come out, the card is retained, or the machine is offline. اردو بلاگ: اے ٹی ایم کیسے کام کرتا ہے؟ کارڈ سے کیش تک کا پورا نظام">
+<meta name="twitter:image" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/assets/img/og-cover.jpg">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Does an ATM Work? From Card to Cash, the Whole System", "alternativeHeadline": "اے ٹی ایم کیسے کام کرتا ہے؟ کارڈ سے کیش تک کا پورا نظام", "datePublished": "2026-10-29", "author": {"@type": "Person", "name": "Muhammad Adeel"}, "inLanguage": ["en", "ur"]}</script>
+</head>
+<body>
+<canvas id="dust" aria-hidden="true"></canvas>
+<aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+  <a class="side-brand" href="../index.html">
+    <span class="brand-mark side-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="side-brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="side-nav">
+    <a href="../index.html"><span>01</span>Home</a>
+    <a href="../index.html#latest"><span>02</span>Latest</a>
+    <a href="../index.html#columns"><span>03</span>Columns</a>
+    <a href="../blog.html"><span>04</span>Blog</a>
+    <a href="../tools.html"><span>05</span>Tools</a>
+    <a href="../writer.html"><span>06</span>Writer</a>
+    <a href="../index.html#podcast"><span>07</span>Podcast</a>
+    <a href="../index.html#contact"><span>08</span>Contact</a>
+    <a href="../books.html"><span>09</span>Books</a>
+  </nav>
+  <div class="side-author">
+    <img src="../assets/img/adeel-portrait.jpg" alt="Portrait of Muhammad Adeel" width="200" height="200">
+    <div class="sa-name">Muhammad Adeel</div>
+    <div class="sa-ur" lang="ur" dir="rtl">محمد عدیل</div>
+    <div class="sa-role">Columnist &amp; Analyst</div>
+  </div>
+  <a class="side-wa" href="https://wa.me/923318009893" target="_blank" rel="noopener">WhatsApp · 0331-8009893</a>
+  <div class="side-foot">Kot Addu · Pakistan</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="progress" id="progress"></div>
+
+<header class="site-header">
+  <a class="brand" href="../index.html" aria-label="Khari Baat home">
+    <span class="brand-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#latest">Latest</a>
+    <a href="../index.html#columns">Columns</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../writer.html">Writer</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main>
+  <section class="post-hero">
+    <div class="aurora" aria-hidden="true"></div>
+    <div style="position:relative;z-index:2">
+      <p class="date">Blog · 29 October 2026 · Technology</p>
+      <div class="ur-h1" lang="ur" dir="rtl">اے ٹی ایم کیسے کام کرتا ہے؟ کارڈ سے کیش تک کا پورا نظام</div>
+      <h1>How Does an ATM Work? From Card to Cash, the Whole System</h1>
+      <div class="byline"><img src="../assets/img/adeel-portrait.jpg" alt="Muhammad Adeel"><span class="byline-text"><span class="byline-name">By <strong>Muhammad Adeel</strong> · <span lang="ur">محمد عدیل</span></span><span class="byline-role">Columnist &amp; Analyst</span></span></div>
+    </div>
+  </section>
+
+  <div class="lang-toggle" role="group" aria-label="Choose language">
+    <button type="button" data-lang-btn="ur" class="ur-btn" lang="ur">اردو</button>
+    <button type="button" data-lang-btn="en">English</button>
+    <button type="button" data-lang-btn="both" class="active">Both · دونوں</button>
+  </div>
+
+  <div class="listen-row"><button type="button" class="listen-btn" id="listenBtn" hidden><span class="listen-ico" aria-hidden="true">▶</span><span class="listen-label">کالم سنیں · Column Sunen — Listen</span></button></div>
+  <article class="article">
+        <section id="col-ur" lang="ur">
+      <div class="ur-text">
+<h2 class="sec-h ur-sec-h">کارڈ ڈالتے ہی کیا ہوتا ہے؟</h2>
+<p>اے ٹی ایم میں کارڈ ڈالتے ہی مشین پہلے کارڈ کو پڑھتی ہے۔ آج کل زیادہ تر کارڈز میں ایک چھوٹی سی چپ لگی ہوتی ہے، اور کچھ پرانے کارڈز میں پیچھے ایک مقناطیسی پٹی ہوتی ہے۔ چپ یا پٹی میں کارڈ نمبر اور بینک کی شناخت محفوظ ہوتی ہے، مگر اس میں آپ کا پن یا بیلنس نہیں ہوتا۔ مشین صرف یہ جانتی ہے کہ یہ کارڈ کس بینک کا ہے اور اس کی قسم کیا ہے۔ اس کے بعد سکرین پر زبان اور لین دین کی قسم پوچھی جاتی ہے، جیسے کیش نکالنا یا بیلنس معلوم کرنا۔</p>
+<p>یہ پہلا مرحلہ اس لیے اہم ہے کہ مشین کارڈ کو پہچاننے کے بعد ہی اگلا قدم اٹھاتی ہے۔ اگر کارڈ خراب ہو، چپ ٹوٹی ہو یا مشین کارڈ نہ پڑھ سکے تو لین دین وہیں رک جاتا ہے اور مشین کارڈ واپس کر دیتی ہے۔ مشین آپ کا پیسہ اپنے پاس سے نہیں دیتی، وہ صرف ایک درخواست تیار کرتی ہے اور اسے آپ کے بینک تک پہنچاتی ہے۔ یہ سمجھنا ضروری ہے کہ اے ٹی ایم خود فیصلہ نہیں کرتا کہ آپ کو پیسہ ملے گا یا نہیں، فیصلہ بینک کرتا ہے۔</p>
+<h2 class="sec-h ur-sec-h">پن خفیہ کیسے رہتا ہے؟</h2>
+<p>کارڈ پڑھنے کے بعد مشین آپ سے پن مانگتی ہے۔ پن ڈالتے ہی ایک اہم حفاظتی عمل شروع ہوتا ہے۔ آپ کا پن سادہ الفاظ میں کہیں نہیں جاتا، وہ فورا خفیہ کوڈ میں بدل دیا جاتا ہے، جسے انکرپشن کہتے ہیں۔ اس کا مطلب یہ ہے کہ راستے میں اگر کوئی اس پیغام کو پکڑ بھی لے تو اسے آپ کا اصل پن نظر نہیں آتا، صرف بے ترتیب کوڈ نظر آتا ہے۔ بینک کے پاس پن کی اصل شکل محفوظ نہیں ہوتی، بلکہ اس کی خفیہ شکل سے موازنہ کیا جاتا ہے۔</p>
+<p>اسی لیے پن کسی کو بتانا اتنا خطرناک ہے۔ مشین، بینک کا عملہ یا کوئی بھی جائز ادارہ آپ سے پن نہیں مانگتا، نہ فون پر، نہ میسج پر، نہ کسی فارم پر۔ غلط پن بار بار ڈالنے پر نظام کارڈ روک بھی سکتا ہے، تاکہ کوئی دوسرا شخص اندازے سے آپ کا پن آزما نہ سکے۔ کی پیڈ پر ہاتھ رکھ کر پن ڈالنا ایک چھوٹی عادت ہے، مگر یہی عادت آپ کے پن کو دوسروں کی نظروں سے بچاتی ہے۔</p>
+<h2 class="sec-h ur-sec-h">پیغام کا سفر: سوئچ اور بینک</h2>
+<p>پن داخل کرنے کے بعد مشین ایک پیغام بناتی ہے جس میں کارڈ کی شناخت، لین دین کی قسم، رقم اور پن کی خفیہ شکل شامل ہوتی ہے۔ یہ پیغام پہلے ایک نیٹ ورک یا سوئچ تک جاتا ہے، جو مختلف بینکوں اور مشینوں کو آپس میں جوڑتا ہے۔ پاکستان میں بینکوں کے درمیان یہ مشترکہ سوئچ کا نظام 2006 سے چل رہا ہے، اسی لیے عام طور پر ایک بینک کا کارڈ دوسرے بینک کی مشین پر بھی کام کر جاتا ہے۔ سوئچ یہ فیصلہ نہیں کرتا کہ پیسہ ملے گا یا نہیں، وہ صرف پیغام کو صحیح بینک تک پہنچاتا ہے۔</p>
+<p>آپ کا بینک پیغام ملتے ہی کئی چیزیں جانچتا ہے۔ پہلا، کارڈ اصلی اور فعال ہے یا نہیں۔ دوسرا، پن درست ہے یا نہیں۔ تیسرا، کھاتے میں اتنی رقم موجود ہے یا نہیں۔ چوتھا، روزانہ کی حد سے تجاوز تو نہیں ہو رہا۔ یہ سب جانچ چند لمحوں میں مکمل ہوتی ہے، اور پھر بینک اپنا جواب اسی راستے سے واپس بھیجتا ہے: منظوری یا انکار، اور انکار کی صورت میں وجہ کا کوڈ۔ مشین وہی کرتی ہے جو بینک کے جواب میں لکھا ہوتا ہے، اس سے زیادہ کچھ نہیں۔</p>
+<h2 class="sec-h ur-sec-h">نوٹ کیسے نکلتے ہیں؟</h2>
+<p>منظوری ملتے ہی مشین کا کیش والا حصہ کام شروع کرتا ہے۔ مشین کے اندر مختلف نوٹوں کے لیے الگ الگ ڈبے ہوتے ہیں، جنہیں کیسٹ کہتے ہیں۔ ہر کیسٹ میں ایک ہی مالیت کے نوٹ رکھے جاتے ہیں، جیسے ایک میں چھوٹے نوٹ اور دوسرے میں بڑے نوٹ۔ مشین رقم کے حساب سے طے کرتی ہے کہ کس کیسٹ سے کتنے نوٹ نکالنے ہیں، پھر ایک خاص پرزہ نوٹوں کو ایک ایک کر کے باہر نکالتا ہے۔</p>
+<p>نوٹ نکلتے وقت سینسر ہر نوٹ کو گنتے ہیں اور یہ بھی دیکھتے ہیں کہ دو نوٹ آپس میں چپکے تو نہیں نکل رہے۔ اگر کوئی نوٹ پھٹا ہوا، مڑا ہوا یا مشین میں اٹک جائے تو وہ نوٹ ایک الگ ڈبے میں چلا جاتا ہے، جسے ریجیکٹ بن کہتے ہیں، اور اس کی جگہ دوسرا صحیح نوٹ دیا جاتا ہے۔ اسی لیے کبھی کبھار ایک ہی رقم مختلف نوٹوں کی صورت میں ملتی ہے۔ اگر کسی کیسٹ میں نوٹ ختم ہو جائیں تو مشین باقی کیسٹوں سے رقم پوری کرنے کی کوشش کرتی ہے، اور اگر پوری رقم نہ بن سکے تو لین دین منسوخ ہو جاتا ہے۔</p>
+<h2 class="sec-h ur-sec-h">جب کچھ غلط ہو جائے تو کیا ہوتا ہے؟</h2>
+<p>سب سے پریشان کن صورت یہ ہوتی ہے کہ کھاتے سے رقم کٹ جائے مگر مشین سے کیش نہ نکلے۔ ایسا عام طور پر اس وقت ہوتا ہے جب منظوری کے بعد مشین یا نیٹ ورک کا رابطہ ٹوٹ جائے۔ اس صورت میں مشین اپنی رپورٹ میں یہ لین دین نامکمل لکھتی ہے، اور بینک دونوں ریکارڈ ملا کر دیکھتا ہے۔ اگر کیش واقعی نہیں نکلا تو رقم عام طور پر خود واپس ہو جاتی ہے، مگر اس میں کچھ وقت لگ سکتا ہے۔ اس لیے رسید سنبھال کر رکھنا، مشین کا نمبر یا جگہ نوٹ کرنا اور بینک کو فورا اطلاع دینا ضروری ہے۔</p>
+<p>کچھ اور صورتیں بھی ہوتی ہیں۔ بار بار غلط پن ڈالنے پر مشین کارڈ روک سکتی ہے، تاکہ غلط شخص اسے استعمال نہ کر سکے۔ مشین میں کیش ختم ہونے پر وہ لین دین سے پہلے ہی بتا دیتی ہے کہ کیش دستیاب نہیں۔ رابطہ ٹوٹنے پر مشین آف لائن ہو جاتی ہے اور کوئی لین دین نہیں کرتی۔ ان سب صورتوں میں گھبرانے کی بجائے رسید یا میسج سنبھال کر بینک سے رابطہ کرنا درست طریقہ ہے، کیونکہ بینک کے پاس مشین اور کھاتے دونوں کا ریکارڈ ہوتا ہے۔</p>
+<h2 class="sec-h ur-sec-h">محفوظ استعمال کے چند اصول</h2>
+<p>اے ٹی ایم استعمال کرتے وقت چند عادتیں آپ کو بڑے نقصان سے بچا سکتی ہیں۔ کارڈ ڈالنے کی جگہ کو دیکھ لیں، اگر وہ ڈھیلی لگے یا اس پر کوئی اضافی پرزہ لگا ہو تو مشین استعمال نہ کریں۔ اس اضافی پرزے کو سکمنگ ڈیوائس کہتے ہیں، جو کارڈ کی معلومات چرا سکتی ہے۔ اسی طرح کی پیڈ کے اوپر لگی چھوٹی کیمرے نما چیز بھی خطرے کی نشانی ہو سکتی ہے۔ پن ڈالتے وقت ہاتھ سے کی پیڈ ڈھانپ لینا اور کسی اجنبی سے مدد نہ لینا بنیادی حفاظت ہے۔</p>
+<p>لین دین کے بعد میسج یا رسید ضرور دیکھیں، تاکہ رقم اور بیلنس کا اندازہ رہے۔ اگر کوئی ایسا میسج آئے جس میں آپ نے لین دین نہ کیا ہو تو فورا بینک کو بتائیں۔ پن اور او ٹی پی کبھی کسی سے شیئر نہ کریں، چاہے کوئی خود کو بینک کا نمائندہ ہی کیوں نہ کہے۔ اے ٹی ایم ایک سہولت ہے، مگر اس کی حفاظت کی ذمہ داری آدھی مشین کی اور آدھی استعمال کرنے والے کی ہے۔</p>
+      </div>
+    </section>
+        <section id="col-en" lang="en">
+<h2 class="sec-h">A computer in a wall</h2>
+<p>An ATM looks like a simple cash box, but it is really a small bank branch built into a wall. It has a card reader, a keypad, a screen, a receipt printer and, most importantly, a safe full of banknotes. It does not keep your money and it does not decide how much you can take. Its job is to identify you, ask your bank for permission, and hand over the cash only when the bank says yes. Every step after you insert the card is a conversation between the machine and your bank.</p>
+<p>That conversation starts with the card itself. Most modern cards carry a small chip, and older cards carry a magnetic strip on the back. The chip or strip holds the card number and identifies the issuing bank, but it does not hold your PIN or your balance. When the machine reads the card, it learns which bank to ask. If the card is damaged or unreadable, the transaction stops right there, and the machine returns the card.</p>
+<h2 class="sec-h">The journey of a single request</h2>
+<p>Once you type your PIN and enter an amount, the machine builds a message. That message contains the card identification, the type of transaction, the amount, and your PIN in encrypted form. Encryption means the PIN is scrambled into code before it leaves the machine, so anyone intercepting the message would see only meaningless characters, not your PIN. The message then travels to a payment network, often called a switch, which connects machines and banks to each other.</p>
+<p>In Pakistan, banks have been connected through a shared switch since 2006, which is why one bank's card generally works at another bank's machine. The switch does not approve or refuse anything. It is a post office, not a judge. It simply routes the message to the bank that issued your card, and later carries the bank's answer back to the machine. The whole round trip usually takes a few seconds, which is why the machine seems to think before it answers.</p>
+<h2 class="sec-h">The decision at the bank</h2>
+<p>Your bank checks four things when the message arrives. First, is the card genuine and active, or has it been blocked or reported? Second, does the PIN match? Third, is there enough money in the account for the amount requested? Fourth, does the request stay within the daily limit set for the card? Only when all four checks pass does the bank send back an approval. If any check fails, the bank sends back a refusal, and the machine follows that instruction exactly.</p>
+<p>This is why two people can get different results from the same machine on the same day. The machine is identical, but the banks' answers are different, because the accounts, limits and card states are different. It is also why the machine cannot be persuaded, argued with or restarted into giving cash. It has no money of its own to give. It only releases the bank's money after the bank has agreed.</p>
+<h2 class="sec-h">Counting cash by machine</h2>
+<p>On approval, the cash dispenser takes over. Inside the safe, banknotes are stored in cassettes, one denomination per cassette. The machine works out which cassettes to use for your amount, then a picking mechanism pulls notes out one by one. Sensors count each note as it passes and check that two notes have not stuck together. This counting matters, because a machine that gives too much or too little would create a dispute with every other customer.</p>
+<p>If a note is torn, folded or jammed, it is diverted into a separate reject bin and replaced with a good note. That is one reason the same amount sometimes arrives as a different mix of notes: the machine uses whatever denominations are available and in good condition. If one cassette runs empty, the machine tries to make up the amount from the others. If it cannot make the full amount, the transaction is cancelled rather than giving you partial cash.</p>
+<h2 class="sec-h">When the machine says no</h2>
+<p>An ATM can refuse in several ways, and each has a different cause. Out of cash means the cassettes are empty, and the machine will usually say so before you enter your amount. Offline means the machine has lost its connection to the network and cannot reach any bank, so it cannot approve anything. A retained card usually means the PIN was entered wrongly too many times, and the machine keeps the card to stop further guessing. In each case, the machine is protecting the account, not malfunctioning out of spite.</p>
+<p>The most worrying case is a debit without cash: the account is charged but no notes come out. This usually happens when the connection breaks after approval but before dispensing. The machine records the transaction as incomplete, and the bank compares its own record with the machine's record. If the cash genuinely did not leave the machine, the amount is normally reversed, though it can take some time. Keeping the receipt, noting the machine's location and number, and informing the bank promptly is the right response, because the bank holds both records and can reconcile them.</p>
+<h2 class="sec-h">Staying safe at the machine</h2>
+<p>Most ATM fraud does not break the machine. It tricks the user. Skimming devices fitted over the card slot can copy card details, and tiny cameras pointed at the keypad can record a PIN, which is why a loose card reader or an extra fitting on the machine is a warning sign. Covering the keypad with your free hand while typing, refusing help from strangers at the machine, and checking that the card slot looks normal are simple habits that defeat most of these tricks.</p>
+<p>After the transaction, check the receipt or the SMS alert so you know what was taken and what remains. If you receive an alert for a transaction you did not make, tell your bank at once. Never share your PIN or any one-time code with anyone, even someone claiming to be from the bank, because no genuine bank asks for them. The machine does its half of the security work with encryption, sensors and bank checks. The other half belongs to the person standing in front of it.</p>
+
+    </section>
+    <p class="post-end">End of post</p>
+    <p class="pair-link"><a href="../posts/bread-missing-portraits-not-politics-display.html">Also read today's column: Bread Is Missing, Portraits Are Not: The Politics of Display in a Hungry Country</a></p>
+    <div class="post-tools">
+      <div class="share-row share-v3">
+        <span class="share-lbl">Share this piece</span>
+        <a class="sbtn" data-share="wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <a class="sbtn" data-share="fb" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="sbtn" data-share="x" href="#" target="_blank" rel="noopener">X</a>
+        <button type="button" class="sbtn" data-share="copy">Copy link</button>
+      </div>
+      <div class="rate-box" data-rate="how-atm-works-card-pin-bank-cash">
+        <div class="rate-head">Rate this piece <span class="rate-ur" lang="ur" dir="rtl">اس تحریر کو درجہ دیں</span></div>
+        <div class="stars" role="radiogroup" aria-label="Your rating, 1 to 5 stars">
+          <button type="button" class="star" data-v="1" role="radio" aria-checked="false" aria-label="1 star">★</button>
+          <button type="button" class="star" data-v="2" role="radio" aria-checked="false" aria-label="2 stars">★</button>
+          <button type="button" class="star" data-v="3" role="radio" aria-checked="false" aria-label="3 stars">★</button>
+          <button type="button" class="star" data-v="4" role="radio" aria-checked="false" aria-label="4 stars">★</button>
+          <button type="button" class="star" data-v="5" role="radio" aria-checked="false" aria-label="5 stars">★</button>
+        </div>
+        <p class="rate-note" data-rate-note>Tap a star to save your rating. It is stored only in your own browser.</p>
+      </div>
+    </div>
+    <nav class="prevnext" aria-label="More pieces">
+      <a class="pn-cell pn-prev" href="how-body-fights-disease-immune-system.html"><span class="pn-lbl">← Older</span><span class="pn-t">How Does the Body Fight Disease? The Immune System Explained</span><span class="pn-ur" lang="ur" dir="rtl">جسم بیماری سے کیسے لڑتا ہے؟ مدافعتی نظام کیسے کام کرتا ہے</span></a>
+      <span class="pn-cell pn-next pn-empty"></span>
+    </nav>
+    <div class="related">
+      <h3>More from the Blog</h3>
+      <div class="rel-list">
+        <a class="rel-row" href="how-body-fights-disease-immune-system.html"><span class="rel-t">How Does the Body Fight Disease? The Immune System Explained</span><span class="rel-ur" lang="ur" dir="rtl">جسم بیماری سے کیسے لڑتا ہے؟ مدافعتی نظام کیسے کام کرتا ہے</span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="rel-row" href="how-cyclone-forms-landfall-storm-surge.html"><span class="rel-t">How a Cyclone Forms, What Landfall Means, and Why the Sea Floods the Coast</span><span class="rel-ur" lang="ur" dir="rtl">طوفان کیسے بنتا ہے، لینڈ فال کیا ہے، اور سمندر ساحل پر کیوں چڑھ آتا ہے؟</span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="subscribe-band">
+      <h3>Get Khari Baat in your inbox</h3>
+      <p>Every column and blog post is also published free on Substack. Subscribe once and each new piece arrives by email.</p>
+      <a class="btn btn-gold" href="https://adeelqureshi98.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
+    </div>
+    <div style="text-align:center"><a class="back-link" href="../blog.html">← All blog posts</a></div>
+</article>
+</main>
+
+<footer>
+  <div class="ur-inline" lang="ur" dir="rtl">کھری بات — محمد عدیل</div>
+  <div>Khari Baat · Columns by Muhammad Adeel · Kot Addu, Pakistan</div>
+  <div>© <span id="year">2026</span> Muhammad Adeel. All rights reserved.</div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/listen.js"></script>
+<a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+</body>
+</html>
