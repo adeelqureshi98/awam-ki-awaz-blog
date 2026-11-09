@@ -73,13 +73,15 @@
   if ($("cur-amt")) curInit();
 
   /* ============ TOOL 7 — ELECTRICITY BILL ============ */
-  /* NEPRA notified uniform consumer tariff, in force from 1 Jan 2026 (FACTS-verified,
-     4 news sources): Lifeline 1-50 Rs 3.95, 51-100 Rs 7.74 · Protected 1-100 Rs 10.54,
-     101-200 Rs 13.01 · Non-protected 22.44 / 28.91 / 33.10 / 37.99 / 40.22 / 41.62 /
-     42.76 / 47.69. Model: slab subtotal + FPA (editable, default Rs 3/unit) + customer
-     charges -> GST 18% -> + TV fee Rs 35. All slab rates editable in the UI. */
+  /* NEPRA notified uniform consumer tariff, S.R.O. 279(I)/2026, effective 12 Feb 2026
+     (NEPRA decision 11 Feb 2026; same A-1 table as the 12 Jan 2026 determination):
+     Lifeline 1-50 Rs 3.95, 51-100 Rs 7.74 · Protected 1-100 Rs 10.54,
+     101-200 Rs 13.01 · Non-protected 22.44 / 28.91 / 33.10 / 36.46 / 38.95 / 40.22 /
+     41.85 / 47.20. Model: slab subtotal + FPA (editable, default Rs 2.37/unit = Nov 2026
+     FCA Rs 2.3673/kWh) + customer charges -> GST 18% -> + TV fee Rs 35. All slab rates
+     editable in the UI. */
   var NP_CAPS = [100, 200, 300, 400, 500, 600, 700, Infinity];
-  var NP_DEF = [22.44, 28.91, 33.10, 37.99, 40.22, 41.62, 42.76, 47.69];
+  var NP_DEF = [22.44, 28.91, 33.10, 36.46, 38.95, 40.22, 41.85, 47.20];
   var L_SLABS = [[50, 3.95], [100, 7.74]];
   function ebNp() {
     var out = [];

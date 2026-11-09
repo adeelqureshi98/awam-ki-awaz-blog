@@ -585,10 +585,10 @@
           <div class="f-group"><label class="f-label" for="zk-debts"><span class="fl-ur" lang="ur" dir="rtl">قرض اور واجبات</span><span class="fl-en">Debts you owe (Rs)</span></label><input class="f-input" type="number" id="zk-debts" min="0" value="100000"></div>
           <div class="f-group"><label class="f-label" for="zk-gold-w"><span class="fl-ur" lang="ur" dir="rtl">سونے کا وزن</span><span class="fl-en">Gold weight</span></label>
             <div style="display:flex;gap:8px"><input class="f-input" type="number" id="zk-gold-w" min="0" step="0.01" value="2"><select class="f-select" id="zk-gold-u" style="max-width:110px"><option value="tola">Tola</option><option value="gram">Gram</option></select></div></div>
-          <div class="f-group"><label class="f-label" for="zk-gold-p"><span class="fl-ur" lang="ur" dir="rtl">سونے کا نرخ فی تولہ (قابلِ تبدیلی)</span><span class="fl-en">Gold rate per tola (Rs) — Sarafa rate 2 Nov 2026, editable</span></label><input class="f-input" type="number" id="zk-gold-p" min="0" value="410000"></div>
+          <div class="f-group"><label class="f-label" for="zk-gold-p"><span class="fl-ur" lang="ur" dir="rtl">سونے کا نرخ فی تولہ (قابلِ تبدیلی)</span><span class="fl-en">Gold rate per tola (Rs) — Sarafa rate 9 Nov 2026, editable</span></label><input class="f-input" type="number" id="zk-gold-p" min="0" value="428700"></div>
           <div class="f-group"><label class="f-label" for="zk-silver-w"><span class="fl-ur" lang="ur" dir="rtl">چاندی کا وزن</span><span class="fl-en">Silver weight</span></label>
             <div style="display:flex;gap:8px"><input class="f-input" type="number" id="zk-silver-w" min="0" step="0.01" value="0"><select class="f-select" id="zk-silver-u" style="max-width:110px"><option value="tola">Tola</option><option value="gram">Gram</option></select></div></div>
-          <div class="f-group"><label class="f-label" for="zk-silver-p"><span class="fl-ur" lang="ur" dir="rtl">چاندی کا نرخ فی تولہ (قابلِ تبدیلی)</span><span class="fl-en">Silver rate per tola (Rs) — Sarafa rate 2 Nov 2026, editable</span></label><input class="f-input" type="number" id="zk-silver-p" min="0" value="5352"></div>
+          <div class="f-group"><label class="f-label" for="zk-silver-p"><span class="fl-ur" lang="ur" dir="rtl">چاندی کا نرخ فی تولہ (قابلِ تبدیلی)</span><span class="fl-en">Silver rate per tola (Rs) — Sarafa rate 9 Nov 2026, editable</span></label><input class="f-input" type="number" id="zk-silver-p" min="0" value="5850"></div>
           <div class="f-group"><label class="f-label" for="zk-other"><span class="fl-ur" lang="ur" dir="rtl">دیگر اثاثے (تجارتی مال وغیرہ)</span><span class="fl-en">Other assets — trade goods etc (Rs)</span></label><input class="f-input" type="number" id="zk-other" min="0" value="0"></div>
           <div class="f-group"><label class="f-label" for="zk-basis"><span class="fl-ur" lang="ur" dir="rtl">نصاب کی بنیاد</span><span class="fl-en">Nisab basis</span></label><select class="f-select" id="zk-basis"><option value="silver" selected>Silver nisab · چاندی کا نصاب (612.36 g)</option><option value="gold">Gold nisab · سونے کا نصاب (87.48 g)</option></select></div>
         </div>
@@ -651,22 +651,22 @@
             <select class="f-select" id="eb-cat"><option value="auto" selected>Auto (units se khud) · Auto — detect from units</option><option value="non-protected">Non-Protected · نان پروٹیکٹڈ</option><option value="protected">Protected (≤200 units) · پروٹیکٹڈ</option><option value="lifeline">Lifeline (≤100 units) · لائف لائن</option></select></div>
         </div>
         <div class="tool-grid-2">
-          <div class="f-group"><label class="f-label" for="eb-fpa-rate"><span class="fl-ur" lang="ur" dir="rtl">فیول ایڈجسٹمنٹ فی یونٹ (قابلِ تبدیلی)</span><span class="fl-en">Fuel adjustment per unit (Rs) — editable</span></label><input class="f-input" type="number" id="eb-fpa-rate" min="0" step="0.01" value="3"></div>
+          <div class="f-group"><label class="f-label" for="eb-fpa-rate"><span class="fl-ur" lang="ur" dir="rtl">فیول ایڈجسٹمنٹ فی یونٹ (قابلِ تبدیلی)</span><span class="fl-en">Fuel adjustment per unit (Rs) — editable</span></label><input class="f-input" type="number" id="eb-fpa-rate" min="0" step="0.01" value="2.37"></div>
           <div class="f-group"><label class="f-label" for="eb-cust"><span class="fl-ur" lang="ur" dir="rtl">کسٹمر چارجز</span><span class="fl-en">Monthly customer charges</span></label><select class="f-select" id="eb-cust"><option value="75" selected>Single phase — Rs 75</option><option value="150">Three phase — Rs 150</option><option value="0">None — Rs 0</option></select></div>
         </div>
         <details style="margin:6px 0 4px">
-          <summary style="cursor:pointer;color:var(--gold-2);font-family:'Playfair Display',serif;letter-spacing:.03em">Slab rates edit karein · نرخ تبدیل کیجیے (NEPRA notified tariff, Jan 2026)</summary>
+          <summary style="cursor:pointer;color:var(--gold-2);font-family:'Playfair Display',serif;letter-spacing:.03em">Slab rates edit karein · نرخ تبدیل کیجیے (NEPRA S.R.O. 279(I)/2026, Feb 2026)</summary>
           <div class="tool-grid-2" style="margin-top:12px">
             <div class="f-group"><label class="f-label" for="eb-p1"><span class="fl-en">Protected 1–100 (Rs)</span></label><input class="f-input" type="number" id="eb-p1" step="0.01" value="10.54"></div>
             <div class="f-group"><label class="f-label" for="eb-p2"><span class="fl-en">Protected 101–200 (Rs)</span></label><input class="f-input" type="number" id="eb-p2" step="0.01" value="13.01"></div>
             <div class="f-group"><label class="f-label" for="eb-r1"><span class="fl-en">Non-protected 1–100 (Rs)</span></label><input class="f-input" type="number" id="eb-r1" step="0.01" value="22.44"></div>
             <div class="f-group"><label class="f-label" for="eb-r2"><span class="fl-en">Non-protected 101–200 (Rs)</span></label><input class="f-input" type="number" id="eb-r2" step="0.01" value="28.91"></div>
             <div class="f-group"><label class="f-label" for="eb-r3"><span class="fl-en">Non-protected 201–300 (Rs)</span></label><input class="f-input" type="number" id="eb-r3" step="0.01" value="33.10"></div>
-            <div class="f-group"><label class="f-label" for="eb-r4"><span class="fl-en">Non-protected 301–400 (Rs)</span></label><input class="f-input" type="number" id="eb-r4" step="0.01" value="37.99"></div>
-            <div class="f-group"><label class="f-label" for="eb-r5"><span class="fl-en">Non-protected 401–500 (Rs)</span></label><input class="f-input" type="number" id="eb-r5" step="0.01" value="40.22"></div>
-            <div class="f-group"><label class="f-label" for="eb-r6"><span class="fl-en">Non-protected 501–600 (Rs)</span></label><input class="f-input" type="number" id="eb-r6" step="0.01" value="41.62"></div>
-            <div class="f-group"><label class="f-label" for="eb-r7"><span class="fl-en">Non-protected 601–700 (Rs)</span></label><input class="f-input" type="number" id="eb-r7" step="0.01" value="42.76"></div>
-            <div class="f-group"><label class="f-label" for="eb-r8"><span class="fl-en">Non-protected above 700 (Rs)</span></label><input class="f-input" type="number" id="eb-r8" step="0.01" value="47.69"></div>
+            <div class="f-group"><label class="f-label" for="eb-r4"><span class="fl-en">Non-protected 301–400 (Rs)</span></label><input class="f-input" type="number" id="eb-r4" step="0.01" value="36.46"></div>
+            <div class="f-group"><label class="f-label" for="eb-r5"><span class="fl-en">Non-protected 401–500 (Rs)</span></label><input class="f-input" type="number" id="eb-r5" step="0.01" value="38.95"></div>
+            <div class="f-group"><label class="f-label" for="eb-r6"><span class="fl-en">Non-protected 501–600 (Rs)</span></label><input class="f-input" type="number" id="eb-r6" step="0.01" value="40.22"></div>
+            <div class="f-group"><label class="f-label" for="eb-r7"><span class="fl-en">Non-protected 601–700 (Rs)</span></label><input class="f-input" type="number" id="eb-r7" step="0.01" value="41.85"></div>
+            <div class="f-group"><label class="f-label" for="eb-r8"><span class="fl-en">Non-protected above 700 (Rs)</span></label><input class="f-input" type="number" id="eb-r8" step="0.01" value="47.20"></div>
           </div>
           <p class="tool-note">Lifeline rates are fixed in the notified tariff: 1–50 units Rs 3.95, 51–100 units Rs 7.74.</p>
         </details>
@@ -697,7 +697,7 @@
           </table>
           <div class="tool-note" id="eb-alert" hidden style="border:1px solid var(--gold);border-radius:10px;padding:12px 14px;background:rgba(231,200,119,.13);color:var(--ink);font-size:14px"></div>
           <p class="tool-note" id="eb-note"></p>
-          <p class="tool-note">Takhmeena (estimate) — asal bill mukhtalif ho sakta hai. Base rates: NEPRA notified uniform consumer tariff, in force from 1 January 2026. Model: slab charges + fuel adjustment + customer charges, then 18% GST, plus TV fee Rs 35. Quarterly adjustments and arrears are not included. <span class="n-ur" lang="ur" dir="rtl">یہ صرف تخمینہ ہے — اصل بل مختلف ہو سکتا ہے۔</span></p>
+          <p class="tool-note">Takhmeena (estimate) — asal bill mukhtalif ho sakta hai. Base rates: NEPRA notified uniform consumer tariff, S.R.O. 279(I)/2026, effective 12 February 2026. Model: slab charges + fuel adjustment + customer charges, then 18% GST, plus TV fee Rs 35. Quarterly adjustments and arrears are not included. <span class="n-ur" lang="ur" dir="rtl">یہ صرف تخمینہ ہے — اصل بل مختلف ہو سکتا ہے۔</span></p>
         </div>
       </div>
     </div>
@@ -844,8 +844,8 @@
       <p class="kicker">Tool 14</p>
       <h2 class="h2">Gold Price Calculator</h2>
       <p class="h2-ur" lang="ur" dir="rtl">سونے کی قیمت کا حساب</p>
-      <div id="goldcalc" data-default-rate="410000"></div>
-      <p class="tool-note">Default rate: APGJSA Sarafa rate, 2 Nov 2026 (Rs 410,000 per tola) — always editable above. <span class="n-ur" lang="ur" dir="rtl">نرخ 2 نومبر 2026 کا ہے، اوپر بدل سکتے ہیں۔</span></p>
+      <div id="goldcalc" data-default-rate="428700"></div>
+      <p class="tool-note">Default rate: APGJSA Sarafa rate, 9 Nov 2026 (Rs 428,700 per tola) — always editable above. <span class="n-ur" lang="ur" dir="rtl">نرخ 9 نومبر 2026 کا ہے، اوپر بدل سکتے ہیں۔</span></p>
     </div>
   </section>
 
@@ -916,8 +916,8 @@
       <p class="kicker">Tool 21</p>
       <h2 class="h2">Fuel &amp; Trip Cost Calculator</h2>
       <p class="h2-ur" lang="ur" dir="rtl">پیٹرول اور سفر کے خرچ کا حساب</p>
-      <div id="fuelcalc" data-default-price="377.91"></div>
-      <p class="tool-note">Default petrol price Rs 377.91 per litre (2 Nov 2026) — Pakistan now revises fuel prices daily, so update it at the pump rate. <span class="n-ur" lang="ur" dir="rtl">پیٹرول کی قیمت روز بدلتی ہے؛ موجودہ نرخ اوپر بدل سکتے ہیں۔</span></p>
+      <div id="fuelcalc" data-default-price="346.00"></div>
+      <p class="tool-note">Default petrol price Rs 346.00 per litre (9 Nov 2026) — Pakistan now revises fuel prices daily, so update it at the pump rate. <span class="n-ur" lang="ur" dir="rtl">پیٹرول کی قیمت روز بدلتی ہے؛ موجودہ نرخ اوپر بدل سکتے ہیں۔</span></p>
     </div>
   </section>
 
@@ -1355,7 +1355,7 @@
   (function () {
     if (!$("eb-units")) return;
     var NP_CAPS = [100, 200, 300, 400, 500, 600, 700, Infinity];
-    var NP_DEF = [22.44, 28.91, 33.10, 37.99, 40.22, 41.62, 42.76, 47.69];
+    var NP_DEF = [22.44, 28.91, 33.10, 36.46, 38.95, 40.22, 41.85, 47.20];
     var L_SLABS = [[50, 3.95], [100, 7.74]];
     var NAMES = {
       "lifeline": "Lifeline · <span lang='ur' dir='rtl'>لائف لائن</span>",
