@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Did a Chatbot Solve Maths&#x27; Greatest Problem? How AI Works — «چیٹ بوٹ نے ریاضی کا سب سے بڑا مسئلہ حل کر دیا؟ اے آئی کیسے کام کرتا ہے» | Khari Baat</title>
+<meta name="description" content="A blog on the claim that Anthropic&#x27;s chatbot Claude proved the Riemann Hypothesis — and what a chatbot actually is, how Lean checks a proof, and why mathematicians are still waiting. Muhammad Adeel&#x27;s bilingual blog. اردو بلاگ: «چیٹ بوٹ نے ریاضی کا سب سے بڑا مسئلہ حل کر دیا؟ اے آئی کیسے کام کرتا ہے»">
+<meta name="author" content="Muhammad Adeel">
+<link rel="canonical" href="https://adeelqureshi98.github.io/awam-ki-awaz-blog/blog/chatbot-riemann-hypothesis-how-ai-works.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Khari Baat">
+<meta property="og:title" content="Did a Chatbot Solve Maths&#x27; Greatest Problem? How AI Works — Muhammad Adeel">
+<meta property="og:description" content="A blog on the claim that Anthropic&#x27;s chatbot Claude proved the Riemann Hypothesis — and what a chatbot actually is, how Lean checks a proof, and why mathematicians are still waiting. Muhammad Adeel&#x27;s bilingual blog. اردو بلاگ: «چیٹ بوٹ نے ریاضی کا سب سے بڑا مسئلہ حل کر دیا؟ اے آئی کیسے کام کرتا ہے»">
+<meta property="og:url" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/blog/chatbot-riemann-hypothesis-how-ai-works.html">
+<meta property="og:image" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Did a Chatbot Solve Maths&#x27; Greatest Problem? How AI Works — Muhammad Adeel">
+<meta name="twitter:description" content="A blog on the claim that Anthropic&#x27;s chatbot Claude proved the Riemann Hypothesis — and what a chatbot actually is, how Lean checks a proof, and why mathematicians are still waiting. Muhammad Adeel&#x27;s bilingual blog. اردو بلاگ: «چیٹ بوٹ نے ریاضی کا سب سے بڑا مسئلہ حل کر دیا؟ اے آئی کیسے کام کرتا ہے»">
+<meta name="twitter:image" content="https://adeelqureshi98.github.io/awam-ki-awaz-blog/assets/img/og-cover.jpg">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Did a Chatbot Solve Maths&#x27; Greatest Problem? How AI Works", "alternativeHeadline": "«چیٹ بوٹ نے ریاضی کا سب سے بڑا مسئلہ حل کر دیا؟ اے آئی کیسے کام کرتا ہے»", "datePublished": "2026-11-21", "author": {"@type": "Person", "name": "Muhammad Adeel"}, "inLanguage": ["en", "ur"]}</script>
+</head>
+<body>
+<canvas id="dust" aria-hidden="true"></canvas>
+<aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+  <a class="side-brand" href="../index.html">
+    <span class="brand-mark side-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="side-brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="side-nav">
+    <a href="../index.html"><span>01</span>Home</a>
+    <a href="../index.html#latest"><span>02</span>Latest</a>
+    <a href="../index.html#columns"><span>03</span>Columns</a>
+    <a href="../blog.html"><span>04</span>Blog</a>
+    <a href="../tools.html"><span>05</span>Tools</a>
+    <a href="../writer.html"><span>06</span>Writer</a>
+    <a href="../index.html#podcast"><span>07</span>Podcast</a>
+    <a href="../index.html#contact"><span>08</span>Contact</a>
+    <a href="../books.html"><span>09</span>Books</a>
+  </nav>
+  <div class="side-author">
+    <img src="../assets/img/adeel-portrait.jpg" alt="Portrait of Muhammad Adeel" width="200" height="200">
+    <div class="sa-name">Muhammad Adeel</div>
+    <div class="sa-ur" lang="ur" dir="rtl">محمد عدیل</div>
+    <div class="sa-role">Columnist &amp; Analyst</div>
+  </div>
+  <a class="side-wa" href="https://wa.me/923318009893" target="_blank" rel="noopener">WhatsApp · 0331-8009893</a>
+  <div class="side-foot">Kot Addu · Pakistan</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="progress" id="progress"></div>
+
+<header class="site-header">
+  <a class="brand" href="../index.html" aria-label="Khari Baat home">
+    <span class="brand-mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6C39.5 18 45 26.5 45 37a13 13 0 1 1-26 0C19 26.5 24.5 18 32 6Z" stroke="#E7C877" stroke-width="3"/><circle cx="32" cy="38" r="4.5" fill="#E7C877"/><path d="M32 42.5V55" stroke="#E7C877" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="brand-name">KHARI BAAT<small lang="ur">کھری بات</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#latest">Latest</a>
+    <a href="../index.html#columns">Columns</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../writer.html">Writer</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main>
+  <section class="post-hero">
+    <div class="aurora" aria-hidden="true"></div>
+    <div style="position:relative;z-index:2">
+      <p class="date">Blog · 21 November 2026 · Technology</p>
+      <div class="ur-h1" lang="ur" dir="rtl">«چیٹ بوٹ نے ریاضی کا سب سے بڑا مسئلہ حل کر دیا؟ اے آئی کیسے کام کرتا ہے»</div>
+      <h1>Did a Chatbot Solve Maths&#x27; Greatest Problem? How AI Works</h1>
+      <div class="byline"><img src="../assets/img/adeel-portrait.jpg" alt="Muhammad Adeel"><span class="byline-text"><span class="byline-name">By <strong>Muhammad Adeel</strong> · <span lang="ur">محمد عدیل</span></span><span class="byline-role">Columnist &amp; Analyst</span></span></div>
+    </div>
+  </section>
+
+  <div class="lang-toggle" role="group" aria-label="Choose language">
+    <button type="button" data-lang-btn="ur" class="ur-btn" lang="ur">اردو</button>
+    <button type="button" data-lang-btn="en">English</button>
+    <button type="button" data-lang-btn="both" class="active">Both · دونوں</button>
+  </div>
+
+  <div class="listen-row"><button type="button" class="listen-btn" id="listenBtn" hidden><span class="listen-ico" aria-hidden="true">▶</span><span class="listen-label">کالم سنیں · Column Sunen — Listen</span></button></div>
+  <article class="article">
+        <section id="col-ur" lang="ur">
+      <div class="ur-text">
+<p>جمعے کو ایک خبر آئی جس نے ریاضی کی دنیا ہلا دی — اینتھروپک کے ریاضی دان لیونٹ الپوجے نے کہا کہ انہوں نے چیٹ بوٹ کلاؤڈ کے ساتھ مل کر ریمان مفروضہ ثابت کر دیا ہے — وہ مسئلہ جو 1859 سے حل نہیں ہوا۔ لیکن ایک بات صاف کر لیں: یہ دعویٰ ہے، تصدیق نہیں۔ اور اسی دعوے میں چھپا ہے آج کا اصل سوال — چیٹ بوٹ ہوتا کیا ہے، اور یہ سوچتا کیسے ہے؟</p>
+<h2 class="sec-h ur-sec-h">چیٹ بوٹ ہوتا کیا ہے؟</h2>
+<p>چیٹ بوٹ ایک کمپیوٹر پروگرام ہے جو انسانی زبان سمجھتا اور بولتا ہے — کلاؤڈ اینتھروپک کا چیٹ بوٹ ہے۔ یہ «سوچتا» نہیں جیسے انسان سوچتا ہے — یہ اندازہ لگاتا ہے کہ اگلا لفظ کیا ہوگا۔ کروڑوں کتابوں، مضامین اور گفتگو پر تربیت پائی ہے — پیٹرن پہچانتا ہے۔ اسی لیے یہ شعر بھی لکھ سکتا ہے، کوڈ بھی، اور ریاضی کا سوال حل کرنے کی کوشش بھی کر سکتا ہے۔ لیکن یہ سمجھتا نہیں — یہ صرف اندازہ لگاتا ہے، بہت اچھا اندازہ۔</p>
+<h2 class="sec-h ur-sec-h">ریمان مفروضہ کیا ہے؟</h2>
+<p>1859 میں جرمن ریاضی دان برنہارڈ ریمان نے کہا کہ پرائم نمبرز — وہ اعداد جو صرف خود سے اور 1 سے تقسیم ہوں — کی تقسیم میں ایک چھپا ہوا پیٹرن ہے۔ ایک سو ساٹھ سال سے کوئی یہ پیٹرن ثابت نہیں کر سکا۔ یہ خالص ریاضی کا سب سے بڑا کھلا سوال ہے، اور کلے میتھمیٹکس انسٹی ٹیوٹ نے اس پر دس لاکھ ڈالر کا انعام رکھا ہے۔</p>
+<h2 class="sec-h ur-sec-h">لین کیا ہے — کمپیوٹر سے جانچ</h2>
+<p>الپوجے نے اپنا ثبوت عام کاغذ پر نہیں، لین میں لکھا — ایک ایسی زبان جس میں کمپیوٹر ریاضی کے ہر قدم کو چیک کرتا ہے۔ سترہ ملین لائنز کوڈ۔ اگر لین کوڈ بغیر غلطی کے کمپائل ہو جائے تو اس کا مطلب ہے کہ ہر قدم کی لاجک درست ہے۔ ایم آئی ٹی کے اینڈریو سدرلینڈ اور سائمن ڈیڈیو نے کوڈ الگ سے کمپائل کیا — کوئی غلطی نہیں ملی۔ سائنٹفک امریکن نے لکھا: «almost certainly true» — تقریباً یقینی طور پر درست۔</p>
+<p>لیکن — اور یہ «لیکن» سب سے اہم ہے — کمپیوٹر لاجک چیک کرتا ہے، مطلب نہیں۔ ایک آخری جانچ باقی ہے جسے «کمپیریٹر رن» کہتے ہیں: یہ چیک کرتا ہے کہ کوڈ نے سوال کے لفظوں کی تعریف تو نہیں بدلی۔ جب تک وہ جانچ مکمل نہیں ہوتی، دعویٰ دعویٰ ہی ہے۔ کلے انسٹی ٹیوٹ نے تصدیق نہیں کی۔ یہ اعلان اینتھروپک کے ریکارڈ آئی پی او کے اگلے دن آیا — الپوجے نے خود ٹائمنگ کو «horrible» کہا اور کہا کہ وہ اور انتظار نہیں کر سکتے تھے۔ اسی ریلیز میں ایولر اور نیویئر اسٹوکس پر بھی پیشرفت کا دعویٰ ہے۔</p>
+<h2 class="sec-h ur-sec-h">انسان کو سمجھنے میں سالوں لگیں گے</h2>
+<p>الپوجے نے خود کہا کہ انہوں نے ساری ریاضی ابھی تک خود بھی نہیں سمجھی — لکھا ہوا ثبوت ڈھائی لاکھ صفحات سے زیادہ ہوتا۔ فیلڈز میڈل جیتنے والے جیمز مےنارڈ نے کہا: اگر یہ پوری طرح درست نکلا تو یہ ایک تاریخی لمحہ ہے۔ نمبر تھیورسٹ اینڈریو گرینول نے کہا کہ دستاویز «garbled» ہے، صاف لکھائی چاہیے تھی۔ مطلب: ثبوت شاید درست ہے، لیکن انسانوں کو سمجھنے میں سالوں لگ سکتے ہیں۔</p>
+<h2 class="sec-h ur-sec-h">اس کا مطلب کیا ہے؟</h2>
+<p>یہ واقعہ اے آئی کے بارے میں ایک اہم بات بتاتا ہے: چیٹ بوٹ نے اپنے انسانی ساتھی سے آگے نکل کر کام کیا — الپوجے نے خود کہا کہ آخری مرحلے میں «Claude far outpaced me»۔ مشین نے وہ کر دکھایا جو انسان ایک سو ساٹھ سال میں نہ کر سکا — لیکن یہ بھی سچ ہے کہ مشین نے سمجھ کر نہیں، پیٹرن پہچان کر کیا۔ اور یہی فرق ہے: اے آئی جواب دے سکتا ہے، سمجھ ابھی بھی انسان کی ذمہ داری ہے۔</p>
+<div class="pull ur-pull">مشین نے دلیل کی جانچ کر لی — اب انسانوں کی باری ہے کہ دلیل کو سمجھیں۔</div>
+      </div>
+    </section>
+        <section id="col-en" lang="en">
+<p>On Friday, a mathematician announced that he and a chatbot had solved the most famous unsolved problem in mathematics. The claim isn&#x27;t yet confirmed. But the claim itself is the perfect doorway into the real question: what is a chatbot, and how does it work?</p>
+<h2 class="sec-h">What Is a Chatbot?</h2>
+<p>A chatbot is a computer program that reads and writes human language. Claude, built by the AI company Anthropic, is one. It doesn&#x27;t think the way you think. It guesses — it predicts the next word, trained on billions of pages of books, articles and conversations. It recognises patterns. That is why it can write a poem, write code, and attempt a maths proof. It doesn&#x27;t understand. It guesses, very well.</p>
+<h2 class="sec-h">What Is the Riemann Hypothesis?</h2>
+<p>In 1859, the German mathematician Bernhard Riemann proposed that there is a hidden pattern in the distribution of prime numbers — the numbers divisible only by themselves and by one. For more than 160 years, nobody has proved it. It is the most important open question in pure mathematics, and the Clay Mathematics Institute has put a $1 million prize on it.</p>
+<h2 class="sec-h">What Is Lean — and Why a Computer&#x27;s Check Matters</h2>
+<p>Alpöge didn&#x27;t publish his proof on paper. He published it in Lean, a language in which a computer checks every step of a mathematical argument. Seventeen million lines of code. If Lean code compiles without errors, the logic of every step holds. Andrew Sutherland of MIT and Simon DeDeo of Carnegie Mellon independently compiled it — no errors. Scientific American called it &quot;almost certainly true&quot;.</p>
+<p>But — and this &quot;but&quot; is the whole story — a computer checks logic, not meaning. One final check remains, called a &quot;comparator run&quot;: it makes sure the code didn&#x27;t quietly redefine the words of the problem. Until that check passes, the claim is a claim. The Clay Institute hasn&#x27;t confirmed it. The announcement came the day after Anthropic&#x27;s record-breaking stock market debut — Alpöge called the timing &quot;horrible&quot; and said he couldn&#x27;t wait any longer. The same release also claimed advances on the Euler and Navier-Stokes problems.</p>
+<h2 class="sec-h">Humans Will Need Years to Understand It</h2>
+<p>Alpöge himself said he hasn&#x27;t yet mastered all the mathematics involved — a written version would run to more than 250,000 pages. James Maynard, a Fields Medal winner, said that if it fully checks out, &quot;it is clearly a historic milestone&quot;. The number theorist Andrew Granville called the document &quot;garbled&quot; and said a clearer write-up was needed. The proof may be right. Understanding it may take years.</p>
+<h2 class="sec-h">What Does It Mean?</h2>
+<p>This tells us something important about AI. The chatbot outpaced its human partner — Alpöge said that near the finish line, &quot;Claude far outpaced me&quot;. A machine did what humans couldn&#x27;t do in 160 years. But it did it by recognising patterns, not by understanding. And that is the difference: AI can deliver an answer. Understanding is still a human job.</p>
+<div class="pull">The machine has checked the argument. Now it is humans&#x27; turn to understand it.</div>
+
+    </section>
+    <p class="post-end">End of post</p>
+    <p class="pair-link"><a href="../posts/corruption-risks-25-federal-institutions-400-reforms.html">Also read today's column: Self-Accountability, or Just Paper? · <span lang="ur" dir="rtl">آج کا کالم بھی پڑھیں</span></a></p>
+    <div class="post-tools">
+      <div class="share-row share-v3">
+        <span class="share-lbl">Share this piece</span>
+        <a class="sbtn" data-share="wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <a class="sbtn" data-share="fb" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="sbtn" data-share="x" href="#" target="_blank" rel="noopener">X</a>
+        <button type="button" class="sbtn" data-share="copy">Copy link</button>
+      </div>
+      <div class="rate-box" data-rate="chatbot-riemann-hypothesis-how-ai-works">
+        <div class="rate-head">Rate this piece <span class="rate-ur" lang="ur" dir="rtl">اس تحریر کو درجہ دیں</span></div>
+        <div class="stars" role="radiogroup" aria-label="Your rating, 1 to 5 stars">
+          <button type="button" class="star" data-v="1" role="radio" aria-checked="false" aria-label="1 star">★</button>
+          <button type="button" class="star" data-v="2" role="radio" aria-checked="false" aria-label="2 stars">★</button>
+          <button type="button" class="star" data-v="3" role="radio" aria-checked="false" aria-label="3 stars">★</button>
+          <button type="button" class="star" data-v="4" role="radio" aria-checked="false" aria-label="4 stars">★</button>
+          <button type="button" class="star" data-v="5" role="radio" aria-checked="false" aria-label="5 stars">★</button>
+        </div>
+        <p class="rate-note" data-rate-note>Tap a star to save your rating. It is stored only in your own browser.</p>
+      </div>
+    </div>
+    <nav class="prevnext" aria-label="More pieces">
+      <a class="pn-cell pn-prev" href="why-stock-market-crashes-ai-selloff-system.html"><span class="pn-lbl">← Older</span><span class="pn-t">Why Does the Stock Market Suddenly Crash? The System of the AI Selloff</span><span class="pn-ur" lang="ur" dir="rtl">«شیئر بازار اچانک کیوں گر جاتا ہے؟ اے آئی سیل آف کا نظام»</span></a>
+      <span class="pn-cell pn-next pn-empty"></span>
+    </nav>
+    <div class="related">
+      <h3>More from the Blog</h3>
+      <div class="rel-list">
+        <a class="rel-row" href="why-stock-market-crashes-ai-selloff-system.html"><span class="rel-t">Why Does the Stock Market Suddenly Crash? The System of the AI Selloff</span><span class="rel-ur" lang="ur" dir="rtl">«شیئر بازار اچانک کیوں گر جاتا ہے؟ اے آئی سیل آف کا نظام»</span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="rel-row" href="antibiotic-misuse-pakistan-amr-system.html"><span class="rel-t">The Medicine That Stopped Working</span><span class="rel-ur" lang="ur" dir="rtl">«اینٹی بائیوٹک کا غلط استعمال ہر سال دو لاکھ جانیں لے رہا ہے — دوا کا نظام»</span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="subscribe-band">
+      <h3>Get Khari Baat in your inbox</h3>
+      <p>Every column and blog post is also published free on Substack. Subscribe once and each new piece arrives by email.</p>
+      <a class="btn btn-gold" href="https://adeelqureshi98.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
+    </div>
+    <div style="text-align:center"><a class="back-link" href="../blog.html">← All blog posts</a></div>
+</article>
+</main>
+
+<footer>
+  <div class="ur-inline" lang="ur" dir="rtl">کھری بات — محمد عدیل</div>
+  <div>Khari Baat · Columns by Muhammad Adeel · Kot Addu, Pakistan</div>
+  <div>© <span id="year">2026</span> Muhammad Adeel. All rights reserved.</div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/listen.js"></script>
+<a class="wa-float" href="https://wa.me/923318009893?text=Assalam%20o%20Alaikum%2C%20I%20am%20contacting%20you%20from%20the%20Khari%20Baat%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+</body>
+</html>
